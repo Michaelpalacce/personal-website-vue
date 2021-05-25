@@ -1,0 +1,24 @@
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar
+{
+	width: 15px;
+}
+
+::-webkit-scrollbar-track
+{
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background: #555;
+}
+
+::-webkit-scrollbar-thumb:hover
+{
+	background: #888;
+}
