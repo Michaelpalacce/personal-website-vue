@@ -2,12 +2,12 @@
 	<div class="border-b p-4 text-lg">
 		<!-- Desktop menu -->
 		<div class="sm:block hidden">
-			<LinkComponent class="sm:inline-block" :text="`stefan@website: /${$route.name} $ ${$store.state.navbarText}`" :blink="true"/>
+			<LinkComponent class="sm:inline-block" :text="`stefan@website: ${$store.state.navbarPath} $ ${$store.state.navbarText}`" :blink="true"/>
 
 			<div class="max-w-7xl flex justify-between sm:items-stretch sm:justify-start ">
 				<div class="flex">
 					<LinkComponent href="/" text="/home"/>
-					<LinkComponent href="/projects" text="/repositories" :text-color="'text-yellow-600'"/>
+					<LinkComponent href="/projects" text="/projects" :text-color="'text-yellow-600'"/>
 					<LinkComponent href="/about" text="/README.md" :text-color="'text-blue-500'"/>
 					<LinkComponent href="/contacts" text="/contacts" :text-color="'text-red-600'"/>
 					<LinkComponent class="cursor-pointer" @click="exit" text="/exit" :text-color="'text-red-600'"/>
@@ -17,7 +17,7 @@
 
 		<!-- Mobile menu, show/hide based on menu state. -->
 		<div class="sm:hidden">
-			<LinkComponent class="inline-block" :text="`stefan@website: /${$route.name} $ ${$store.state.navbarText}`" :blink="true"/>
+			<LinkComponent class="inline-block" :text="`stefan@website: ${$store.state.navbarPath} $ ${$store.state.navbarText}`" :blink="true"/>
 
 			<button class=" float-right hamburger hamburger--elastic p-2" type="button" @click="mobileCollapsed = ! mobileCollapsed">
 			<span class="hamburger-box">
@@ -27,7 +27,7 @@
 
 			<div class="px-2 pt-2 pb-3 text-lg text-center" :class="{ hidden: mobileCollapsed }">
 				<LinkComponent class="block" href="/" text="/home"/>
-				<LinkComponent class="block" href="/projects" text="/repositories" :text-color="'text-yellow-600'"/>
+				<LinkComponent class="block" href="/projects" text="/projects" :text-color="'text-yellow-600'"/>
 				<LinkComponent class="block" href="/about" text="/README.md" :text-color="'text-blue-500'"/>
 				<LinkComponent class="block" href="/contacts" text="/contacts" :text-color="'text-red-600'"/>
 				<LinkComponent class="block cursor-pointer" @click="exit" text="/exit" :text-color="'text-red-600'"/>
@@ -49,6 +49,12 @@ export default {
 	},
 
 	methods: {
+		/**
+		 * @details	If the exit button is clicked, then there will be an animation showing
+		 * 			the cover and then taking the user back to the welcome screen after 250 ms
+		 *
+		 * @return	void
+		 */
 		exit()
 		{
 			this.emitter.emit( 'cover' );

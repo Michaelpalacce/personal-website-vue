@@ -1,5 +1,5 @@
 <template>
-	<div :class="{ fade: shouldFade, 'z-10': shouldFade, 'w-full': shouldFade, 'h-full': shouldFade, top: 0 }"></div>
+	<div :class="{ fade: show, 'z-10': show, 'w-full': show, 'h-full': show, top: 0 }"></div>
 </template>
 
 <script>
@@ -7,14 +7,17 @@ export default {
 	name: "Cover",
 	data: () => {
 		return {
-			shouldFade	: false,
+			show	: false,
 		};
 	},
 	created()
 	{
-		this.emitter.on( 'cover', ( state ) => {
-			this.shouldFade	= state || true;
-			setTimeout( ()=>{ this.shouldFade = !this.shouldFade; }, 500 );
+		/**
+		 * @brief	Waits for cover events that can set the state of the
+		 */
+		this.emitter.on( 'cover', () => {
+			this.show	= true;
+			setTimeout( ()=>{ this.show = false; }, 500 );
 		});
 	}
 }

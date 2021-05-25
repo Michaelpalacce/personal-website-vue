@@ -17,17 +17,27 @@ export default {
 		this.start();
 	},
 	methods: {
+		/**
+		 * @brief	Starts the typewriting effect
+		 *
+		 * @return	void
+		 */
 		start()
 		{
 			if ( this.displayText.length === 0 )
 				setTimeout( this.type, this.speed );
 		},
+		/**
+		 * @brief	Types out the text recursively
+		 *
+		 * @return	void
+		 */
 		type()
 		{
 			if ( this.displayText.length !== this.text.length )
 			{
 				this.displayText	+= this.text.slice( this.textIndex, this.textIndex + this.chunks );
-				this.textIndex+=this.chunks;
+				this.textIndex		+=this.chunks;
 				setTimeout( this.type, this.speed );
 			}
 		}
