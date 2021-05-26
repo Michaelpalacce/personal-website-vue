@@ -6,15 +6,25 @@
 
 <script>
 export default {
-	name: "TypewriterText",
+	name: 'TypewriterText',
 	data() {
 		return {
 			displayText	: '',
-			textIndex	: 0
+			textIndex	: 0,
+			timeout		: null
 		};
 	},
+	/**
+	 * @brief	Start typing
+	 */
 	created() {
 		this.start();
+	},
+	/**
+	 * @brief	Remove the timeout just in case
+	 */
+	beforeUnmount() {
+		clearTimeout( this.timeout );
 	},
 	methods: {
 		/**
@@ -38,7 +48,13 @@ export default {
 			{
 				this.displayText	+= this.text.slice( this.textIndex, this.textIndex + this.chunks );
 				this.textIndex		+=this.chunks;
-				setTimeout( this.type, this.speed );
+				this.timeout	= setTimeout( this.type, this.speed );
+			}
+			else
+			{
+				this.timeout	= setTimeout(()=>{
+					this.$emit( 'done-typing' );
+				}, this.doneTypingTimeout );
 			}
 		}
 	},
@@ -58,6 +74,10 @@ export default {
 		speed: {
 			type: Number,
 			default: 1
+		},
+		doneTypingTimeout: {
+			type: Number,
+			default: 500
 		}
 	},
 }
