@@ -1,13 +1,13 @@
 <template>
-	<div class="flex flex-row max-w-7xl mx-auto">
+	<div class="flex">
 		<transition name="slide">
-			<div class="relative h-96 w-96">
-				<span class="absolute left-0 rounded-2xl cursor-pointer w-12 h-full flex text-black" @click="prev">
+			<div class="relative">
+				<span class="absolute left-0 rounded-2xl cursor-pointer w-12 h-full flex text-black opacity-30 hover:opacity-100" @click="prev">
 					<svg xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
 					</svg>
 				</span>
-				<span class="absolute right-0 rounded-2xl cursor-pointer w-12 h-full flex text-black" @click="next">
+				<span class="absolute right-0 rounded-2xl cursor-pointer w-12 h-full flex text-black opacity-30 hover:opacity-100" @click="next">
 					<svg xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto items-center h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
 					</svg>
@@ -28,21 +28,31 @@ export default {
 		};
 	},
 	methods: {
+		/**
+		 * @brief	Go to previous image
+		 *
+		 * @details	If there is no previous image, go to last image
+		 *
+		 * @return	void
+		 */
 		prev()
 		{
 			this.activeIndex--;
-			this.activeIndex	= Math.max( this.activeIndex, 0 );
-
-			console.log( this.activeIndex );
+			if ( this.activeIndex < 0 )
+				this.activeIndex	= this.images.length - 1;
 		},
+		/**
+		 * @brief	Go to the next image
+		 *
+		 * @details	If there is no next image, go to first image
+		 *
+		 * @return	void
+		 */
 		next()
 		{
 			this.activeIndex++;
-			this.activeIndex	= Math.min( this.images.length - 1, this.activeIndex );
-
-			console.log( this.images.length );
-			console.log( this.activeIndex );
-
+			if ( this.activeIndex > this.images.length - 1 )
+				this.activeIndex	= 0;
 		},
 	},
 	props: {

@@ -1,6 +1,6 @@
 <template>
 	<div class="flex">
-		<LinkComponent class="text-7xl mt-10 w-1/2 mx-auto" text="Hello!"/>
+		<LinkComponent class="text-5xl sm:text-7xl mt-10 w-1/2 mx-auto" text="Hello!"/>
 	</div>
 	<div class="text-blue-500 text-xl text-center mt-20 tracking-wider">
 		&lt;name&gt;
