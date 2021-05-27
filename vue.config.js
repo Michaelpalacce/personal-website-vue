@@ -26,6 +26,6 @@ const config	= {
 };
 
 if ( process.env.NODE_ENV !== 'development' )
-	config.assetsDir	= '..';
+	config.assetsDir	= '../resources';
 
 module.exports	= config;

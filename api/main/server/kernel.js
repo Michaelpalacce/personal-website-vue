@@ -25,20 +25,6 @@ app.apply( app.er_cors, {
 	credentials: true
 });
 
-app.apply( app.er_security,		{
-	csp		: {
-		directives	: {
-			'script-src'	: [''],
-			'style-src'		: [''],
-			'img-src'		: ['data:'],
-		}
-	},
-	hsts	: {
-		includeSubDomains	: false,
-		preload				: true,
-	}
-});
-
 // Add Error Handler
 app.add(( event ) => {
 	event.errorHandler	= ErrorHandler;
@@ -47,8 +33,8 @@ app.add(( event ) => {
 });
 
 // Serve Static Resources
-app.apply( app.er_static,		{ paths	: ['assets', 'imgs'] } );
-app.apply( app.er_static,		{ paths	: ['js', 'css'], cache: { cacheControl: 'public', expirationDirectives: { 'max-age': 120 } } } );
+app.apply( app.er_static,		{ paths	: ['resources/imgs'] } );
+app.apply( app.er_static,		{ paths	: ['resources/js', 'resources/css'], cache: { cacheControl: 'public', expirationDirectives: { 'max-age': 120 } } } );
 
 // Attach the cache server
 app.apply( app.er_data_server, { dataServerOptions: { persist: true } } );

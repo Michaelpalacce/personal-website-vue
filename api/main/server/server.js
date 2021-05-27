@@ -2,6 +2,15 @@
 
 const { App, Server }	= require( 'event_request' );
 const app				= App();
+const path				= require( 'path' );
+const fs				= require( 'fs' );
+const PROJECT_ROOT		= path.parse( require.main.filename ).dir;
+
+// Frontend
+app.get(( event )=>{
+	event.setResponseHeader( 'Content-Type', 'text/html' );
+	fs.createReadStream( `${PROJECT_ROOT}/dist/index.html` ).pipe( event.response );
+});
 
 if ( process.env.ENV !== 'development' )
 {
