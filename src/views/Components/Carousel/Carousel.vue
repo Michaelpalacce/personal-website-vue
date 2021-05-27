@@ -2,12 +2,12 @@
 	<div class="flex">
 		<transition name="slide">
 			<div class="relative">
-				<span class="absolute left-0 rounded-2xl cursor-pointer w-12 h-full flex text-black opacity-30 hover:opacity-100" @click="prev">
+				<span class="absolute left-0 rounded-2xl cursor-pointer w-12 h-full flex text-gray-400 opacity-70 hover:opacity-100" @click="prev" v-if="images.length>1">
 					<svg xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
 					</svg>
 				</span>
-				<span class="absolute right-0 rounded-2xl cursor-pointer w-12 h-full flex text-black opacity-30 hover:opacity-100" @click="next">
+				<span class="absolute right-0 rounded-2xl cursor-pointer w-12 h-full flex text-gray-400 opacity-70 hover:opacity-100" @click="next" v-if="images.length>1">
 					<svg xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto items-center h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
 					</svg>

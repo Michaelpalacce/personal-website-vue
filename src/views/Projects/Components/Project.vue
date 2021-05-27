@@ -11,22 +11,28 @@
 		<transition name="fade">
 			<div class="mx-auto text-center w-full lg:w-4/6" v-if="show === true">
 				<p class="text-3xl">{{ title }}</p>
+				<p class="mt-2" v-if="nodeModule.installCommand">{{ nodeModule.installCommand }}</p>
 
-				<div class="md:flex">
-					<div class="mt-10 w-full" :class="{ 'md:w-1/2': images.length !== 0 }">
+				<div class="md:flex mt-10">
+					<div class="w-full" :class="{ 'md:w-5/12': images.length !== 0 }">
 						<span v-html="text"></span>
 						<div v-if="nodeModule.version">
 							<br/>
 							<span>{{ title }} supports NodeJS {{ nodeModule.version }} and newer.</span>
 						</div>
 
-						<div v-if="links.length > 0"  class="flex">
-								<a v-for="link in links" :href="link.link" class="w-20 h-20 mx-auto">
-									<img :src="link.icon" alt="" class="align-middle h-full">
-								</a>
+						<div v-if="badges.length > 0"  class="grid mt-5" :class="`${images.length > 0 ? 'grid-cols-2 gap-2' : 'grid-cols-4 gap-2'}`">
+							<a v-for="badge in badges" :href="badge.link" class="mx-auto"><img :src="badge.badge" :alt="badge.link"></a>
+						</div>
+
+						<div v-if="links.length > 0"  class="flex mt-5">
+							<a v-for="link in links" :href="link.link" class="w-20 h-20 mx-auto">
+								<img :src="link.icon" alt="" class="h-full">
+							</a>
 						</div>
 					</div>
-					<div class="flex w-full md:w-1/2 h-96 my-auto" v-if="images.length > 0">
+					<div class="md:w-1/12"></div>
+					<div class="flex w-full md:w-6/12 h-96 my-auto" v-if="images.length > 0">
 						<Carousel class="mx-auto" :images="images"/>
 					</div>
 				</div>
@@ -50,7 +56,8 @@ export default {
 			text: this.project.text,
 			images: this.project.images || [],
 			nodeModule: this.project.nodeModule || {},
-			links: this.project.links || []
+			links: this.project.links || [],
+			badges: this.project.badges || [],
 		};
 	},
 	components: {
@@ -66,7 +73,7 @@ export default {
 <style scoped>
 .fade-enter-active,
 .fade-leave-active {
-	transition: opacity 0.5s ease;
+	transition: opacity 1s ease;
 }
 
 .fade-enter-from,

@@ -9,7 +9,6 @@
 					<LinkComponent href="/" text="/home"/>
 					<LinkComponent href="/projects" text="/projects" :text-color="'text-yellow-600'"/>
 					<LinkComponent href="/readme" text="/README.md" :text-color="'text-blue-500'"/>
-					<LinkComponent href="/contacts" text="/contacts" :text-color="'text-red-600'"/>
 					<LinkComponent class="cursor-pointer" @click="exit" text="exit" :text-color="'text-red-600'"/>
 				</div>
 			</div>
@@ -31,7 +30,6 @@
 				<LinkComponent class="block" href="/" text="/home"/>
 				<LinkComponent class="block" href="/projects" text="/projects" :text-color="'text-yellow-600'"/>
 				<LinkComponent class="block" href="/readme" text="/README.md" :text-color="'text-blue-500'"/>
-				<LinkComponent class="block" href="/contacts" text="/contacts" :text-color="'text-red-600'"/>
 				<LinkComponent class="block cursor-pointer" @click="exit" text="exit" :text-color="'text-red-600'"/>
 			</div>
 		</div>
