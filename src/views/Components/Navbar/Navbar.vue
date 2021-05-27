@@ -7,7 +7,7 @@
 			<div class="max-w-7xl flex justify-between sm:items-stretch sm:justify-start ">
 				<div class="flex">
 					<LinkComponent href="/" text="/home"/>
-					<LinkComponent href="/projects" text="/projects" :text-color="'text-yellow-600'"/>
+					<LinkComponent href="/projects" text="/projects" :text-color="'text-yellow-500'"/>
 					<LinkComponent href="/readme" text="/README.md" :text-color="'text-blue-500'"/>
 					<LinkComponent class="cursor-pointer" @click="exit" text="exit" :text-color="'text-red-600'"/>
 				</div>
@@ -28,7 +28,7 @@
 
 			<div class="px-2 pt-2 pb-3 text-lg text-center" :class="{ hidden: mobileCollapsed }">
 				<LinkComponent class="block" href="/" text="/home"/>
-				<LinkComponent class="block" href="/projects" text="/projects" :text-color="'text-yellow-600'"/>
+				<LinkComponent class="block" href="/projects" text="/projects" :text-color="'text-yellow-500'"/>
 				<LinkComponent class="block" href="/readme" text="/README.md" :text-color="'text-blue-500'"/>
 				<LinkComponent class="block cursor-pointer" @click="exit" text="exit" :text-color="'text-red-600'"/>
 			</div>

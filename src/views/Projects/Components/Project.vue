@@ -11,8 +11,7 @@
 		<transition name="fade">
 			<div class="mx-auto text-center w-full lg:w-4/6" v-if="show === true">
 				<p class="text-3xl">{{ title }}</p>
-				<p class="mt-2" v-if="nodeModule.installCommand">{{ nodeModule.installCommand }}</p>
-
+				<CopyableText v-if="installCommand" :text="installCommand" textColor="text-yellow-500"/>
 				<div class="md:flex mt-10">
 					<div class="w-full" :class="{ 'md:w-5/12': images.length !== 0 }">
 						<span v-html="text"></span>
@@ -45,6 +44,7 @@
 <script>
 import TypewriterText from "../../Components/Effects/TypewriterText";
 import Carousel from "../../Components/Carousel/Carousel";
+import CopyableText from "../../Components/Effects/CopyableText";
 export default {
 	name: 'Project',
 	data: function ()
@@ -58,9 +58,11 @@ export default {
 			nodeModule: this.project.nodeModule || {},
 			links: this.project.links || [],
 			badges: this.project.badges || [],
+			installCommand: this.project.installCommand
 		};
 	},
 	components: {
+		CopyableText,
 		Carousel,
 		TypewriterText
 	},

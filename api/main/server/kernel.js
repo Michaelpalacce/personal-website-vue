@@ -28,8 +28,8 @@ app.apply( app.er_cors, {
 app.apply( app.er_security,		{
 	csp		: {
 		directives	: {
-			'script-src'	: ['https://stackpath.bootstrapcdn.com', 'https://code.jquery.com'],
-			'style-src'		: ['https://stackpath.bootstrapcdn.com'],
+			'script-src'	: [''],
+			'style-src'		: [''],
 			'img-src'		: ['data:'],
 		}
 	},
@@ -47,9 +47,8 @@ app.add(( event ) => {
 });
 
 // Serve Static Resources
-// app.apply( app.er_static,		{ paths	: ['assets'] } );
-// app.apply( app.er_static,		{ paths	: ['public/resources/imgs'] } );
-// app.apply( app.er_static,		{ paths	: ['public/resources/js', 'public/resources/css'], cache: { cacheControl: 'public', expirationDirectives: { 'max-age': 120 } } } );
+app.apply( app.er_static,		{ paths	: ['assets', 'imgs'] } );
+app.apply( app.er_static,		{ paths	: ['js', 'css'], cache: { cacheControl: 'public', expirationDirectives: { 'max-age': 120 } } } );
 
 // Attach the cache server
 app.apply( app.er_data_server, { dataServerOptions: { persist: true } } );
