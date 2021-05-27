@@ -37,11 +37,11 @@ module.exports	= [
 		],
 		links: [
 			{
-				icon: '/imgs/github-icon.svg',
+				icon: '/resources/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/EventRequest.git'
 			},
 			{
-				icon: '/imgs/npm-icon.svg',
+				icon: '/resources/imgs/npm-icon.svg',
 				link: 'https://www.npmjs.com/package/event_request'
 			}
 		],
@@ -50,8 +50,8 @@ module.exports	= [
 			'<br/><br/>' +
 			'It offers a wide array of built in plugins and a wide sort of extendable components. This site is powered by EventRequest!',
 		images: [
-			'/imgs/EventRequest-1.svg',
-			'/imgs/EventRequest-2.png'
+			'/resources/imgs/EventRequest-1.svg',
+			'/resources/imgs/EventRequest-2.png'
 		]
 	},
 	{
@@ -64,11 +64,11 @@ module.exports	= [
 		],
 		links: [
 			{
-				icon: '/imgs/github-icon.svg',
+				icon: '/resources/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/Server.git'
 			},
 			{
-				icon: '/imgs/npm-icon.svg',
+				icon: '/resources/imgs/npm-icon.svg',
 				link: 'https://www.npmjs.com/package/server-emulator'
 			}
 		],
@@ -83,7 +83,7 @@ module.exports	= [
 			'<br/><br/>' +
 			'It acts as a Command Line Interface ( CLI ) and can be booted from anywhere by installing it as a global module.',
 		images: [
-			'/imgs/ServerEmulator-1.png'
+			'/resources/imgs/ServerEmulator-1.png'
 		]
 	},
 	{
@@ -96,11 +96,11 @@ module.exports	= [
 		],
 		links: [
 			{
-				icon: '/imgs/github-icon.svg',
+				icon: '/resources/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/fs-browser.git'
 			},
 			{
-				icon: '/imgs/npm-icon.svg',
+				icon: '/resources/imgs/npm-icon.svg',
 				link: 'https://www.npmjs.com/package/fs-browser'
 			}
 		],
@@ -113,9 +113,9 @@ module.exports	= [
 			'<br/><br/>' +
 			'The module is entirely asynchronous and works in Linux and Windows systems.',
 		images: [
-			'/imgs/fs-browser-1.svg',
-			'/imgs/fs-browser-2.svg',
-			'/imgs/fs-browser-3.svg'
+			'/resources/imgs/fs-browser-1.svg',
+			'/resources/imgs/fs-browser-2.svg',
+			'/resources/imgs/fs-browser-3.svg'
 		]
 	},
 	{
@@ -136,11 +136,11 @@ module.exports	= [
 		],
 		links: [
 			{
-				icon: '/imgs/github-icon.svg',
+				icon: '/resources/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/er_redis_data_server.git'
 			},
 			{
-				icon: '/imgs/npm-icon.svg',
+				icon: '/resources/imgs/npm-icon.svg',
 				link: 'https://www.npmjs.com/package/er_redis_data_server'
 			}
 		],
@@ -151,7 +151,7 @@ module.exports	= [
 		installCommand: 'npm i er_redis_data_server',
 		text: 'er_redis_data_server is a plugin for EventRequest that adds the ability to attach a redis data server. This allows for distributed caching.',
 		images: [
-			'/imgs/er_redis_data_server-1.svg'
+			'/resources/imgs/er_redis_data_server-1.svg'
 		]
 	},
 	{
@@ -172,11 +172,11 @@ module.exports	= [
 		],
 		links: [
 			{
-				icon: '/imgs/github-icon.svg',
+				icon: '/resources/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/er_memcached_data_server.git'
 			},
 			{
-				icon: '/imgs/npm-icon.svg',
+				icon: '/resources/imgs/npm-icon.svg',
 				link: 'https://www.npmjs.com/package/er_memcached_data_server'
 			}
 		],
@@ -187,7 +187,7 @@ module.exports	= [
 		installCommand: 'npm i er_memcached_data_server',
 		text: 'er_memcached_data_server. is a plugin for EventRequest that adds the ability to attach a memcached data server. This allows for distributed caching.',
 		images: [
-			'/imgs/er_memcached_data_server-1.svg'
+			'/resources/imgs/er_memcached_data_server-1.svg'
 		]
 	},
 	{
@@ -201,11 +201,11 @@ module.exports	= [
 		],
 		links: [
 			{
-				icon: '/imgs/github-icon.svg',
+				icon: '/resources/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/ansible-docker.git'
 			},
 			{
-				icon: '/imgs/ansible-galaxy-icon.svg',
+				icon: '/resources/imgs/ansible-galaxy-icon.svg',
 				link: 'https://galaxy.ansible.com/michaelpalacce/docker'
 			},
 		],
@@ -223,11 +223,11 @@ module.exports	= [
 		],
 		links: [
 			{
-				icon: '/imgs/github-icon.svg',
+				icon: '/resources/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/ansible-helm.git'
 			},
 			{
-				icon: '/imgs/ansible-galaxy-icon.svg',
+				icon: '/resources/imgs/ansible-galaxy-icon.svg',
 				link: 'https://galaxy.ansible.com/michaelpalacce/helm'
 			},
 		],
@@ -245,11 +245,11 @@ module.exports	= [
 		],
 		links: [
 			{
-				icon: '/imgs/github-icon.svg',
+				icon: '/resources/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/ansible-kubernetes-preflight.git'
 			},
 			{
-				icon: '/imgs/ansible-galaxy-icon.svg',
+				icon: '/resources/imgs/ansible-galaxy-icon.svg',
 				link: 'https://galaxy.ansible.com/michaelpalacce/kubernetes_preflight'
 			},
 		],
@@ -267,11 +267,11 @@ module.exports	= [
 		],
 		links: [
 			{
-				icon: '/imgs/github-icon.svg',
+				icon: '/resources/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/ansible-kubernetes-cluster.git'
 			},
 			{
-				icon: '/imgs/ansible-galaxy-icon.svg',
+				icon: '/resources/imgs/ansible-galaxy-icon.svg',
 				link: 'https://galaxy.ansible.com/michaelpalacce/kubernetes_cluster'
 			},
 		],
@@ -289,11 +289,11 @@ module.exports	= [
 		],
 		links: [
 			{
-				icon: '/imgs/github-icon.svg',
+				icon: '/resources/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/ansible-kubernetes-master-security.git'
 			},
 			{
-				icon: '/imgs/ansible-galaxy-icon.svg',
+				icon: '/resources/imgs/ansible-galaxy-icon.svg',
 				link: 'https://galaxy.ansible.com/michaelpalacce/kubernetes_master_security'
 			},
 		],
@@ -310,7 +310,7 @@ module.exports	= [
 		],
 		links: [
 			{
-				icon: '/imgs/github-icon.svg',
+				icon: '/resources/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/personal-website-vue.git'
 			}
 		],
