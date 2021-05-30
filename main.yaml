@@ -14,7 +14,7 @@
       - name: Add all to be committed
         command: git add .
 
-      - name: Push to github with the latest version as the commit message
+      - name: Commit to github with the latest version as the commit message
         shell: "git commit -am \"[$(git branch)] Ansible Deploy Version {{ version.stdout }}\""
 
       - name: Push to github
@@ -31,7 +31,7 @@
         changed_when: git_output.stdout.find( 'Already up-to-date.' ) == -1
 
       - name: Ensure we have the latest version of node moduels
-        command: chdir=/home/centos/personal-website-vue npm i --only=prod
+        command: chdir=/home/centos/personal-website-vue npm ci --only=prod
 
       - name: Reload the pm2 god daemon
         command: pm2 reload site
