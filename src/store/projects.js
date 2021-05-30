@@ -33,6 +33,10 @@ module.exports	= [
 			{
 				link: 'https://www.codacy.com/manual/Michaelpalacce/EventRequest?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Michaelpalacce/EventRequest&amp;utm_campaign=Badge_Coverage',
 				badge: 'https://app.codacy.com/project/badge/Coverage/3c843dd2bc454f06b10eb60820dc6d1b'
+			},
+			{
+				badge: 'https://img.shields.io/maintenance/yes/2021',
+				link: 'https://github.com/Michaelpalacce/EventRequest.git'
 			}
 		],
 		links: [
@@ -279,7 +283,7 @@ module.exports	= [
 		text: 'Ansible Role that sets up a kubernetes cluster. Supports multiple stacked masters as well as single master'
 	},
 	{
-		title: 'Ansible Role kubernetes_master_security',
+		title: 'Ansible Role kubernetes master security',
 		installCommand: 'ansible-galaxy install michaelpalacce.kubernetes_master_security',
 		badges: [
 			{

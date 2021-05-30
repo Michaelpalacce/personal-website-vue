@@ -20,16 +20,15 @@
 	<p v-if="showAbilities" class="text-xs text-center mx-auto opacity-50">Name: Technology; Ready: Rating out of 5; Status: Actively learning it or not; Age: Since when; Node: professionally or not</p>
 
 	<TypewriterText class="mt-20 m-5 p-2"
-					v-if="showAbilities"
+					v-if="showAbilities && ! showCertificates"
 					title="sg@website"
 					text="kubectl get cm | awk 'NR>1{print $1}' | xargs kubectl describe cm"
 					@done-typing="showCertificates = true"
 					:doneTypingTimeout="1000"
 					:speed="10"
-					:removeAfter="true"
 	/>
 	<transition name="certificates">
-		<div v-if="showCertificates" class="mt-20">
+		<div v-if="showCertificates" class="mt-20 md:w-4/5 w-full mx-auto" id="certificates">
 			<div class="m-5 p-2 border" v-for="certificate in certificates">
 				<div class="grid grid-cols-2 md:grid-cols-5 mt-5">
 					<span>Name:</span>
@@ -75,6 +74,12 @@ export default {
 	},
 	mounted()
 	{
+		if ( this.$route.hash )
+		{
+			this.showAbilities		= true;
+			this.showCertificates	= true;
+		}
+
 		this.$store.commit( 'animateNavbarText', { text: 'cd ~', remove: true, removeAfter: 200, callback: () => {
 				this.showAbilities	= true;
 
