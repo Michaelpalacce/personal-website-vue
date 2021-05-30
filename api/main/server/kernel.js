@@ -59,7 +59,7 @@ app.apply( app.er_body_parser_json );
 app.apply( app.er_body_parser_raw );
 
 // Add Timeout
-app.apply( app.er_timeout,	{ timeout	: process.env.REQUEST_TIMEOUT } );
+app.apply( app.er_timeout,	{ timeout	: process.env.REQUEST_TIMEOUT || 60000 } );
 
 
 // Add a logger

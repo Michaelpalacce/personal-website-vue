@@ -11,14 +11,19 @@
 
 <script>
 import Navbar	from "./views/Components/Navbar/Navbar";
-import Welcome from "./views/Home/Welcome";
-import Cover from "./views/Components/Cover/Cover";
+import Welcome	from "./views/Home/Welcome";
+import Cover	from "./views/Components/Cover/Cover";
 
 export default {
 	components: {
 		Cover,
 		Welcome,
 		Navbar
+	},
+	mounted() {
+		// Do not use $route, it does not work because hash is always empty
+		if ( window.location.hash )
+			this.$store.commit( 'seenWelcomeScreen' );
 	}
 }
 </script>

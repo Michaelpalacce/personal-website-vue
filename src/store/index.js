@@ -9,6 +9,8 @@ export default createStore({
 		projects		: require( './projects' ),
 		contacts		: require( './contacts' ),
 		abilities		: require( './abilities' ),
+		languages		: require( './languages' ),
+		experiences		: require( './experiences' ),
 		certificates	: require( './certificates' )
 	},
 	mutations: {

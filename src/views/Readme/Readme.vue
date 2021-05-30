@@ -1,6 +1,16 @@
 <template>
+	<div class="mx-20 my-20 grid grid-cols-1 gap-5">
+		<ReadmeHeader href="#abilities" text="Abilities" :command="abilitiesCommand" @done-typing="showAbilities = true"/>
+		<ReadmeHeader href="#languages" text="Languages" :command="languagesCommand" @done-typing="showLanguages = true"/>
+		<ReadmeHeader href="#experience" text="Experience" :command="experienceCommand" @done-typing="showExperience = true"/>
+		<ReadmeHeader href="#certificates" text="Certificates" :command="certificatesCommand" @done-typing="showCertificates = true"/>
+	</div>
+
+	<hr id="abilities"/>
 	<transition name="readme">
-		<div class="text-center my-5" v-if="showAbilities">
+		<div class="text-center m-5" v-if="showAbilities" >
+			<span class="text-center block text-4xl font-semibold my-10">Abilities:</span>
+
 			<div class="grid grid-cols-4 sm:grid-cols-5">
 				<p @click="sortByName" class="cursor-pointer text-blue-500">NAME</p>
 				<p @click="sortByReady" class="cursor-pointer text-blue-500">READY</p>
@@ -19,16 +29,65 @@
 	</transition>
 	<p v-if="showAbilities" class="text-xs text-center mx-auto opacity-50">Name: Technology; Ready: Rating out of 5; Status: Actively learning it or not; Age: Since when; Node: professionally or not</p>
 
-	<TypewriterText class="mt-20 m-5 p-2"
-					v-if="showAbilities && ! showCertificates"
-					title="sg@website"
-					text="kubectl get cm | awk 'NR>1{print $1}' | xargs kubectl describe cm"
-					@done-typing="showCertificates = true"
-					:doneTypingTimeout="1000"
-					:speed="10"
-	/>
+	<hr id="languages">
+	<transition name="languages">
+		<div class="m-5" v-if="showLanguages">
+			<span class="text-center block text-4xl font-semibold my-10">Languages:</span>
+			<li v-for="language in languages" class="text-2xl font-medium">{{ language }}</li>
+		</div>
+	</transition>
+
+	<hr id="experience">
+	<transition name="experience">
+		<div class="m-5 text-center" v-if="showExperience">
+			<span class="block text-4xl font-semibold my-10">Experience:</span>
+
+			<div class="hidden lg:flex">
+				<p class="w-2/12">LAST SEEN</p>
+				<p class="w-2/12">TYPE</p>
+				<p class="w-1/12">REASON</p>
+				<p class="w-2/12">OBJECT</p>
+				<p class="w-5/12">MESSAGE</p>
+			</div>
+
+			<div class="lg:flex mb-5" v-for="experience in experiences">
+<!--				Desktop-->
+				<div class="hidden lg:flex w-full">
+					<p class="w-2/12">{{ experience.lastSeen }}</p>
+					<p class="w-2/12">{{ experience.type }}</p>
+					<p class="w-1/12">{{ experience.reason }}</p>
+					<p class="w-2/12">{{ experience.object }}</p>
+					<p class="w-5/12">{{ experience.message }}</p>
+				</div>
+
+<!--				Mobile Design-->
+				<div class="block lg:hidden w-full">
+					<div class="flex my-2">
+						<span class="w-1/4">LAST SEEN:</span> <p class="w-3/4">{{ experience.lastSeen }}</p>
+					</div>
+					<div class="flex my-2">
+						<span class="w-1/4">TYPE:</span> <p class="w-3/4">{{ experience.type }}</p>
+					</div>
+					<div class="flex my-2">
+						<span class="w-1/4">REASON:</span> <p class="w-3/4">{{ experience.reason }}</p>
+					</div>
+					<div class="flex my-2">
+						<span class="w-1/4">OBJECT:</span> <p class="w-3/4">{{ experience.object }}</p>
+					</div>
+					<div class="flex my-2">
+						<span class="w-1/4">MESSAGE:</span> <p class="w-3/4">{{ experience.message }}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</transition>
+	<p v-if="showExperience" class="text-xs text-center mx-auto opacity-50">Last Seen: Working duration; Type: Position; Reason: Work/Internship/Course; Object: Employer/Location; Message: What did I do</p>
+
+	<hr id="certificates">
 	<transition name="certificates">
-		<div v-if="showCertificates" class="mt-20 md:w-4/5 w-full mx-auto" id="certificates">
+		<div v-if="showCertificates" class="m-5 md:w-4/5 w-full mx-auto">
+			<span class="text-center block text-4xl font-semibold my-10">Certificates:</span>
+
 			<div class="m-5 p-2 border" v-for="certificate in certificates">
 				<div class="grid grid-cols-2 md:grid-cols-5 mt-5">
 					<span>Name:</span>
@@ -60,15 +119,24 @@
 
 <script>
 import TypewriterText from "../Components/Effects/TypewriterText";
+import ReadmeHeader from "./ReadmeHeader";
 export default {
 	name: 'Readme',
-	components: {TypewriterText},
+	components: {ReadmeHeader, TypewriterText},
 	data: function ()
 	{
 		return {
 			showAbilities: false,
+			showLanguages: false,
+			showExperience: false,
 			showCertificates: false,
+			abilitiesCommand: 'kubectl get po -n readme',
+			languagesCommand: 'cat /etc/default/locale',
+			experienceCommand: 'kubectl get events -n work-history',
+			certificatesCommand: 'kubectl get cm | awk \'NR>1{print $1}\' | xargs kubectl describe cm',
 			abilities: this.$store.state.abilities,
+			languages: this.$store.state.languages,
+			experiences: this.$store.state.experiences,
 			certificates: this.$store.state.certificates
 		};
 	},
@@ -78,13 +146,13 @@ export default {
 		{
 			this.showAbilities		= true;
 			this.showCertificates	= true;
+			this.showExperience		= true;
+			this.showLanguages		= true;
 		}
 
 		this.$store.commit( 'animateNavbarText', { text: 'cd ~', remove: true, removeAfter: 200, callback: () => {
-				this.showAbilities	= true;
-
 				this.$store.commit( 'changeNavbarPath', '~' )
-				this.$store.commit( 'animateNavbarText', { text: 'kubectl get po -n readme && cat legend.txt', speed: 20 } );
+				this.$store.commit( 'animateNavbarText', { text: `${this.abilitiesCommand} && cat legend.txt`, speed: 20 } );
 			}
 		});
 	},
@@ -137,6 +205,26 @@ export default {
 
 .certificates-enter-from,
 .certificates-leave-to {
+	opacity: 0;
+}
+
+.languages-enter-active,
+.languages-leave-active {
+	transition: opacity 1s ease;
+}
+
+.languages-enter-from,
+.languages-leave-to {
+	opacity: 0;
+}
+
+.experience-enter-active,
+.experience-leave-active {
+	transition: opacity 1s ease;
+}
+
+.experience-enter-from,
+.experience-leave-to {
 	opacity: 0;
 }
 </style>

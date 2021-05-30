@@ -48,7 +48,7 @@ module.exports	= [
 			},
 			{
 				title: 'Year taken',
-				text: '2012'
+				text: '2011'
 			}
 		]
 	}
