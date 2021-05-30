@@ -1,0 +1,44 @@
+- hosts: 127.0.0.1
+  connection: local
+  tasks:
+      - name: Remove old resources
+        shell: rm -rf resources/css && rm -rf resources/js
+
+      - name: Get version name
+        command: cat public/version
+        register: version
+
+      - name: Build latest version
+        command: npm run build
+
+      - name: Add all to be committed
+        command: git add .
+
+      - name: Push to github with the latest version as the commit message
+        shell: "git commit -am \"[$(git branch)] Ansible Deploy Version {{ version.stdout }}\""
+
+      - name: Push to github
+        command: git push
+        register: git_output
+        changed_when: git_output.stdout.find( 'Everything up-to-date.' ) == -1
+
+- hosts: server
+  become: true
+  tasks:
+      - name: Pull latest
+        command: chdir=/home/centos/personal-website-vue git pull
+        register: git_output
+        changed_when: git_output.stdout.find( 'Already up-to-date.' ) == -1
+
+      - name: Ensure we have the latest version of node moduels
+        command: chdir=/home/centos/personal-website-vue npm i --only=prod
+
+      - name: Reload the pm2 god daemon
+        command: pm2 reload site
+
+      - name: Check if everything is running
+        shell: pm2 status site
+        register: pm2_output
+        until: pm2_output.stdout.find( 'online' ) != -1
+        delay: 2
+        retries: 5

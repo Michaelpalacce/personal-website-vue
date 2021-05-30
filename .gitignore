@@ -1,3 +1,5 @@
 cache
 env.js
 /logs/
+.idea
+/node_modules/
