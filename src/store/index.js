@@ -7,7 +7,9 @@ export default createStore({
 		navbarPath		: '',
 		navbarTimeout	: null,
 		projects		: require( './projects' ),
-		contacts		: require( './contacts' )
+		contacts		: require( './contacts' ),
+		abilities		: require( './abilities' ),
+		certificates	: require( './certificates' )
 	},
 	mutations: {
 		seenWelcomeScreen( state ){ state.welcomeScreen		= localStorage.welcomeScreen	= 1; },

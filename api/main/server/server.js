@@ -30,7 +30,7 @@ if ( process.env.ENV !== 'development' )
 
 	redirectApp.add(( event ) => {
 		event.logger = {};
-		event.redirect( 'https://stefangenov.site' + event.path, 301 );
+		event.redirect( 'https://' + event.getRequestHeader( 'host' ) + event.path, 301 );
 	});
 
 	const redirectServer	= http.createServer( redirectApp.attach() );

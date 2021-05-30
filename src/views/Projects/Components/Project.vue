@@ -5,7 +5,7 @@
 						:text="`git clone ${link} .`"
 						:speed="10"
 						@done-typing="show = true"
-						v-if="show === false"
+						:removeAfter="true"
 		/>
 
 		<transition name="fade">

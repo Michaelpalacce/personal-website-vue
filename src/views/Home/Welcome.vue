@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<TypewriterText class="mx-5" :title="`sg@website: /${$route.name} $`" />
+		<TypewriterText class="mx-5" :title="`sg@website: /${$route.name} $ ssh -i ssh.pem user@$(dig +short ${hostname})`" />
 		<TypewriterText class="mx-5" :text="'The authenticity of host \'127.0.0.1 (127.0.0.1)\' can\'t be established.'" :chunks="3"/>
 		<TypewriterText class="mx-5" :text="'ECDSA key fingerprint is SHA256:12ca17b49af2289436f303e01.'" :chunks="3"/>
 		<TypewriterText class="mx-5 inline-block" :text="'Are you sure you want to continue connecting (yes/no/[fingerprint])?'" :chunks="3"/>
@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import LinkComponent from "../Components/LinkComponent";
-import TypewriterText from "../Components/Effects/TypewriterText";
+import LinkComponent	from "../Components/LinkComponent";
+import TypewriterText	from "../Components/Effects/TypewriterText";
 
 export default {
 	name: 'Welcome',
@@ -22,7 +22,8 @@ export default {
 		return {
 			selection: '',
 			answeredNo: false,
-			yesAnswers: ['yes', 'ye', 'yas', 'y']
+			yesAnswers: ['yes', 'ye', 'yas', 'y'],
+			hostname: window.location.host
 		}
 	},
 	mounted()

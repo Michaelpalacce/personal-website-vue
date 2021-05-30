@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div v-if="show">
 		{{ title }} {{ displayText }}
 	</div>
 </template>
@@ -11,7 +11,8 @@ export default {
 		return {
 			displayText	: '',
 			textIndex	: 0,
-			timeout		: null
+			timeout		: null,
+			show		: true
 		};
 	},
 	/**
@@ -54,6 +55,8 @@ export default {
 			{
 				this.timeout	= setTimeout(()=>{
 					this.$emit( 'done-typing' );
+					if ( this.removeAfter )
+						this.show	= false;
 				}, this.doneTypingTimeout );
 			}
 		}
@@ -78,6 +81,10 @@ export default {
 		doneTypingTimeout: {
 			type: Number,
 			default: 500
+		},
+		removeAfter: {
+			type: Boolean,
+			default: false
 		}
 	},
 }

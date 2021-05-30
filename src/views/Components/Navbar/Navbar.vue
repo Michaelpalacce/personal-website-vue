@@ -2,7 +2,7 @@
 	<div class="border-b p-4 text-lg">
 		<!-- Desktop menu -->
 		<div class="sm:block hidden">
-			<LinkComponent class="sm:inline-block truncate" :text="`sg@website: ${$store.state.navbarPath} $ ${$store.state.navbarText}`" :blink="true"/>
+			<p class="sm:block font-semibold truncate my-2">sg@website: {{ $store.state.navbarPath }} $ {{ $store.state.navbarText }}</p>
 
 			<div class="max-w-7xl flex justify-between sm:items-stretch sm:justify-start ">
 				<div class="flex">
@@ -16,9 +16,7 @@
 
 		<!-- Mobile menu, show/hide based on menu state. -->
 		<div class="sm:hidden">
-			<div class="flex truncate">
-				<LinkComponent class="inline-block truncate" :text="`sg@website: ${$store.state.navbarPath} $ ${$store.state.navbarText}`" :blink="true"/>
-			</div>
+			<p class="font-semibold truncate my-2">sg@website: {{ $store.state.navbarPath }} $ {{ $store.state.navbarText }}</p>
 
 			<button class="w-full hamburger hamburger--elastic p-2" type="button" @click="mobileCollapsed = ! mobileCollapsed">
 			<span class="hamburger-box text-center">
@@ -39,9 +37,10 @@
 <script>
 
 import LinkComponent from "../LinkComponent";
+import TypewriterText from "../Effects/TypewriterText";
 export default {
 	name: 'Navbar',
-	components: { LinkComponent },
+	components: {TypewriterText, LinkComponent },
 	data: () => {
 		return {
 			mobileCollapsed: true
