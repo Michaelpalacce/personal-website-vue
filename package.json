@@ -7,14 +7,15 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "axios": "^0.21.1",
     "event_request": "^31.1.0",
-    "pm2": "^4.5.6",
+    "pm2": "^4.5.6"
+  },
+    "devDependencies": {
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
-    "vuex": "^4.0.0-0"
-  },
-  "devDependencies": {
+    "vuex": "^4.0.0-0",
+    "axios": "^0.21.1",
+
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",

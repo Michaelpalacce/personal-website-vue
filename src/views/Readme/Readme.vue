@@ -11,7 +11,7 @@ export default {
 	{
 		this.$store.commit( 'animateNavbarText', { text: 'cd ~', remove: true, removeAfter: 200, callback: () => {
 				this.$store.commit( 'changeNavbarPath', '~' )
-				this.$store.commit( 'animateNavbarText', { text: 'cat README.md' });
+				this.$store.commit( 'animateNavbarText', { text: 'kubectl config --set-context --current --namespace=readme', speed: 10 } );
 			}
 		});
 	}
