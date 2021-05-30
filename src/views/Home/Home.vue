@@ -5,7 +5,7 @@
 
 	<transition name="whoami">
 		<div v-if="whoami">
-			<div class="text-blue-500 text-xl text-center mt-20 tracking-wider">
+			<div class="text-blue-500 text-base text-center mt-20 tracking-wider">
 				&lt;name&gt;
 				<span class="hidden sm:inline-block text-white text-xl mx-3">My name is</span>
 				<span class="text-white text-2xl sm:text-3xl">Stefan Genov</span>

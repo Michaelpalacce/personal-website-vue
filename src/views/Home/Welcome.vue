@@ -9,6 +9,7 @@
 		<TypewriterText class="mx-5" :text="'Retry in 5 second...'" :chunks="10" v-if="answeredNo"/>
 		<LinkComponent class="sm:hidden cursor-pointer" text="Yes" @click="onClick( 'y' )" v-if="answeredNo === false"/>
 		<LinkComponent class="sm:hidden cursor-pointer" text="No" @click="onClick( 'n' )" v-if="answeredNo === false"/>
+		<span class="sm:hidden opacity-60 text-xs absolute bottom-0">Site is better viewed on a desktop resolution, even tho there is a mobile design, some things may be missing or they may not be visible</span>
 	</div>
 </template>
 
