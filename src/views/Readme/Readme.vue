@@ -4,12 +4,13 @@
 		<ReadmeHeader href="#languages" text="Languages" :command="languagesCommand" @done-typing="showLanguages = true"/>
 		<ReadmeHeader href="#experience" text="Experience" :command="experienceCommand" @done-typing="showExperience = true"/>
 		<ReadmeHeader href="#certificates" text="Certificates" :command="certificatesCommand" @done-typing="showCertificates = true"/>
+		<ReadmeHeader href="/CV" text="Curriculum vitae" :command="cvCommand"/>
 	</div>
 
 	<hr id="abilities"/>
 	<transition name="readme">
-		<div class="text-center m-5" v-if="showAbilities" >
-			<span class="text-center block text-4xl font-semibold my-10">Abilities:</span>
+		<div class="text-center sm:text-left m-5" v-if="showAbilities" >
+			<span class="block text-4xl text-center font-semibold my-10">Abilities:</span>
 
 			<div class="grid grid-cols-4 sm:grid-cols-5">
 				<p @click="sortByName" class="cursor-pointer text-blue-500">NAME</p>
@@ -39,8 +40,8 @@
 
 	<hr id="experience">
 	<transition name="experience">
-		<div class="m-5 text-center" v-if="showExperience">
-			<span class="block text-4xl font-semibold my-10">Experience:</span>
+		<div class="m-5 text-center sm:text-left" v-if="showExperience">
+			<span class="block text-4xl text-center font-semibold my-10">Experience:</span>
 
 			<div class="hidden lg:flex">
 				<p class="w-2/12">LAST SEEN</p>
@@ -51,33 +52,13 @@
 			</div>
 
 			<div class="lg:flex mb-5" v-for="experience in experiences">
-<!--				Desktop-->
-				<div class="hidden lg:flex w-full">
-					<p class="w-2/12">{{ experience.lastSeen }}</p>
-					<p class="w-2/12">{{ experience.type }}</p>
-					<p class="w-1/12">{{ experience.reason }}</p>
-					<p class="w-2/12">{{ experience.object }}</p>
-					<p class="w-5/12">{{ experience.message }}</p>
-				</div>
-
-<!--				Mobile Design-->
-				<div class="block lg:hidden w-full">
-					<div class="flex my-2">
-						<span class="w-1/4">LAST SEEN:</span> <p class="w-3/4">{{ experience.lastSeen }}</p>
-					</div>
-					<div class="flex my-2">
-						<span class="w-1/4">TYPE:</span> <p class="w-3/4">{{ experience.type }}</p>
-					</div>
-					<div class="flex my-2">
-						<span class="w-1/4">REASON:</span> <p class="w-3/4">{{ experience.reason }}</p>
-					</div>
-					<div class="flex my-2">
-						<span class="w-1/4">OBJECT:</span> <p class="w-3/4">{{ experience.object }}</p>
-					</div>
-					<div class="flex my-2">
-						<span class="w-1/4">MESSAGE:</span> <p class="w-3/4">{{ experience.message }}</p>
-					</div>
-				</div>
+				<ReadmeExperienceSection
+					:lastSeen="experience.lastSeen"
+					:message="experience.message"
+					:type="experience.type"
+					:object="experience.object"
+					:reason="experience.reason"
+				/>
 			</div>
 		</div>
 	</transition>
@@ -120,9 +101,10 @@
 <script>
 import TypewriterText from "../Components/Effects/TypewriterText";
 import ReadmeHeader from "./ReadmeHeader";
+import ReadmeExperienceSection from "./ReadmeExperienceSection";
 export default {
 	name: 'Readme',
-	components: {ReadmeHeader, TypewriterText},
+	components: {ReadmeExperienceSection, ReadmeHeader, TypewriterText},
 	data: function ()
 	{
 		return {
@@ -134,6 +116,7 @@ export default {
 			languagesCommand: 'cat /etc/default/locale',
 			experienceCommand: 'kubectl get events -n work-history',
 			certificatesCommand: 'kubectl get cm | awk \'NR>1{print $1}\' | xargs kubectl describe cm',
+			cvCommand: `wget ${window.location.host}/CV`,
 			abilities: this.$store.state.abilities,
 			languages: this.$store.state.languages,
 			experiences: this.$store.state.experiences,

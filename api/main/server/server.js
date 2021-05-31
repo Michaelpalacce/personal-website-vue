@@ -6,6 +6,19 @@ const path				= require( 'path' );
 const fs				= require( 'fs' );
 const PROJECT_ROOT		= path.parse( require.main.filename ).dir;
 
+// Improve this by improving the static plugin in EventRequest
+// CV
+app.get( '/version', ( event )=>{
+	event.setResponseHeader( 'Content-Type', 'text/plain' );
+	fs.createReadStream( `${PROJECT_ROOT}/dist/version` ).pipe( event.response );
+});
+
+// CV
+app.get( '/CV', ( event )=>{
+	event.setResponseHeader( 'Content-Type', 'application/pdf' );
+	fs.createReadStream( `${PROJECT_ROOT}/dist/CV.pdf` ).pipe( event.response );
+});
+
 // Frontend
 app.get(( event )=>{
 	event.setResponseHeader( 'Content-Type', 'text/html' );
