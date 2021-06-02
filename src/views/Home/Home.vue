@@ -20,21 +20,26 @@
 		</div>
 	</transition>
 
-	<transition name="whois">
+	<transition-group name="whois">
 		<div class="grid grid-cols-5 gap-y-20 mt-20" v-if="whois">
 			<a v-for="contact in contacts" :href="contact.link" class="h-10 w-10 sm:h-14 sm:w-14 mx-auto">
 				<img :src="contact.image" alt="" class="h-full">
 				<p class="mt-2 text-center text-xs sm:text-base">{{ contact.text }}</p>
 			</a>
 		</div>
-	</transition>
+
+		<CopyableText class="text-center mt-20 block" v-if="whois" textColor="text-yellow-500" text="stefantigro@gmail.com"/>
+	</transition-group>
+
 </template>
 
 <script>
 import LinkComponent from "../Components/LinkComponent";
+import CopyableText from "../Components/Effects/CopyableText";
 export default {
 	name: 'Home',
 	components: {
+		CopyableText,
 		LinkComponent
 	},
 	data: function ()

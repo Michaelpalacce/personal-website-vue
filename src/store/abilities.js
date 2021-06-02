@@ -111,4 +111,11 @@ module.exports	= [
 		age: '2020',
 		node: 'both'
 	},
+	{
+		name: 'Jenkins',
+		ready: '1/5',
+		status: 'Running',
+		age: '2021',
+		node: 'amateur'
+	},
 ];
