@@ -6,7 +6,7 @@ module.exports	= [
 		labels: [
 			{
 				key: 'type',
-				value: 'certificate'
+				value: 'certificate, course'
 			},
 			{
 				key: 'link',
@@ -19,6 +19,10 @@ module.exports	= [
 			{
 				title: 'Note',
 				text: 'Thank you Mumshad Mannambeth!'
+			},
+			{
+				title: 'Course Length',
+				text: '18 hours'
 			},
 			{
 				title: 'Year taken',
@@ -51,5 +55,35 @@ module.exports	= [
 				text: '2011'
 			}
 		]
-	}
+	},
+	{
+		name: 'Jenkins From Zero To Hero',
+		namespace: 'learning',
+		labels: [
+			{
+				key: 'type',
+				value: 'certificate, course'
+			},
+			{
+				key: 'link',
+				value: 'https://www.udemy.com/course/jenkins-from-zero-to-hero/',
+				link: true,
+				linkName: 'Udemy'
+			},
+		],
+		data: [
+			{
+				title: 'Status',
+				text: 'In Progress'
+			},
+			{
+				title: 'Course Length',
+				text: '10.5 hours'
+			},
+			{
+				title: 'Progress',
+				text: '25%'
+			}
+		]
+	},
 ];
