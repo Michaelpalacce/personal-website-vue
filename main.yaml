@@ -1,5 +1,6 @@
 - hosts: 127.0.0.1
   connection: local
+  tags: build
   tasks:
       - name: Remove old resources
         shell: rm -rf resources/css && rm -rf resources/js
@@ -16,6 +17,7 @@
 
       - name: Commit to github with the latest version as the commit message
         shell: "git commit -am \"[$(git branch)] Ansible Deploy Version {{ version.stdout }}\""
+        ignore_errors: yes
 
       - name: Push to github
         command: git push
@@ -24,6 +26,7 @@
 
 - hosts: server
   become: true
+  tags: deploy
   tasks:
       - name: Pull latest
         command: chdir=/home/centos/personal-website-vue git pull
