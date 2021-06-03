@@ -217,6 +217,29 @@ module.exports	= [
 		text: 'Ansible Role that installs Docker on Ubuntu machines.'
 	},
 	{
+		title: 'Ansible Role docker-compose',
+		installCommand: 'ansible-galaxy install michaelpalacce.docker-compose',
+		badges: [
+			{
+				badge: 'https://img.shields.io/maintenance/yes/2021',
+				link: 'https://github.com/Michaelpalacce/ansible-docker-compose.git'
+			}
+		],
+		links: [
+			{
+				icon: '/resources/imgs/github-icon.svg',
+				link: 'https://github.com/Michaelpalacce/ansible-docker-compose.git'
+			},
+			{
+				icon: '/resources/imgs/ansible-galaxy-icon.svg',
+				link: 'https://galaxy.ansible.com/michaelpalacce/docker_compose'
+			},
+		],
+		link: 'https://github.com/Michaelpalacce/ansible-docker-compose.git',
+		text: 'Ansible Role that installs a specific user-defined version of docker-compose. This role also creates a symlink for you, ' +
+			'so you can easily use docker-compose. You should install docker before installing docker-compose ( you could use <a href="#Ansible%20Role%20docker" class="text-blue-500">Ansible Docker role</a> )'
+	},
+	{
 		title: 'Ansible Role helm',
 		installCommand: 'ansible-galaxy install michaelpalacce.helm',
 		badges: [

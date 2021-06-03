@@ -34,8 +34,8 @@
 </template>
 
 <script>
-import LinkComponent from "../Components/LinkComponent";
-import CopyableText from "../Components/Effects/CopyableText";
+import LinkComponent	from "../Components/LinkComponent";
+import CopyableText		from "../Components/Effects/CopyableText";
 export default {
 	name: 'Home',
 	components: {
