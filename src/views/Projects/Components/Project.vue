@@ -18,6 +18,16 @@
 				</a>
 
 				<CopyableText v-if="installCommand" :text="installCommand" textColor="text-yellow-500" class="text-sm"/>
+
+				<div class="grid grid-cols-5 mx-auto md:w-3/4 mt-5">
+					<div v-for="technology in technologies">
+						<a :href="technology.link">
+							<img :src="technology.content" alt="" class="w-16 h-16 mx-auto" v-if="technology.isImg">
+							<p v-else class="w-full mt-4 text-red-600">{{ technology.content }}</p>
+						</a>
+					</div>
+				</div>
+
 				<div class="md:flex mt-10">
 					<div class="w-full" :class="{ 'md:w-5/12': images.length !== 0 }">
 						<span v-html="text"></span>
@@ -65,6 +75,7 @@ export default {
 			nodeModule: this.project.nodeModule || {},
 			links: this.project.links || [],
 			badges: this.project.badges || [],
+			technologies: this.project.technologies || [],
 			installCommand: this.project.installCommand
 		};
 	},

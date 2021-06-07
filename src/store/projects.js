@@ -5,6 +5,13 @@ module.exports	= [
 			version: '12.x'
 		},
 		installCommand: 'npm i event_request',
+		technologies: [
+			{
+				isImg: true,
+				content: '/resources/imgs/technologies/node-js-icon.svg',
+				link: 'https://nodejs.org/'
+			}
+		],
 		badges: [
 			{
 				link: 'https://github.com/Michaelpalacce/EventRequest/actions?query=workflow%3Alinux-12.x',
@@ -60,6 +67,23 @@ module.exports	= [
 	},
 	{
 		title: 'ServerEmulator',
+		technologies: [
+			{
+				isImg: true,
+				content: '/resources/imgs/technologies/node-js-icon.svg',
+				link: 'https://nodejs.org/'
+			},
+			{
+				isImg: true,
+				content: '/resources/imgs/technologies/vuejs-logo.svg',
+				link: 'https://vuejs.org/'
+			},
+			{
+				isImg: false,
+				content: 'EventRequest',
+				link: '#EventRequest'
+			}
+		],
 		badges: [
 			{
 				badge: 'https://img.shields.io/maintenance/yes/2021',
@@ -92,6 +116,18 @@ module.exports	= [
 	},
 	{
 		title: 'FsBrowser',
+		technologies: [
+			{
+				isImg: true,
+				content: '/resources/imgs/technologies/node-js-icon.svg',
+				link: 'https://nodejs.org/'
+			},
+			{
+				isImg: false,
+				content: 'EventRequest',
+				link: '#EventRequest'
+			}
+		],
 		badges: [
 			{
 				badge: 'https://img.shields.io/maintenance/yes/2021',
@@ -124,6 +160,18 @@ module.exports	= [
 	},
 	{
 		title: 'Redis DataServer',
+		technologies: [
+			{
+				isImg: true,
+				content: '/resources/imgs/technologies/node-js-icon.svg',
+				link: 'https://nodejs.org/'
+			},
+			{
+				isImg: false,
+				content: 'EventRequest',
+				link: '#EventRequest'
+			}
+		],
 		badges: [
 			{
 				badge: 'https://travis-ci.com/Michaelpalacce/er_redis_data_server.svg?branch=master',
@@ -160,6 +208,18 @@ module.exports	= [
 	},
 	{
 		title: 'Memcached DataServer',
+		technologies: [
+			{
+				isImg: true,
+				content: '/resources/imgs/technologies/node-js-icon.svg',
+				link: 'https://nodejs.org/'
+			},
+			{
+				isImg: false,
+				content: 'EventRequest',
+				link: '#EventRequest'
+			}
+		],
 		badges: [
 			{
 				badge: 'https://travis-ci.com/Michaelpalacce/er_memcached_data_server.svg?branch=master',
@@ -197,6 +257,13 @@ module.exports	= [
 	{
 		title: 'Ansible Role docker',
 		installCommand: 'ansible-galaxy install michaelpalacce.docker',
+		technologies: [
+			{
+				isImg: true,
+				content: '/resources/imgs/technologies/ansible-logo.svg',
+				link: 'https://www.ansible.com/'
+			}
+		],
 		badges: [
 			{
 				badge: 'https://img.shields.io/maintenance/yes/2021',
@@ -219,6 +286,13 @@ module.exports	= [
 	{
 		title: 'Ansible Role docker-compose',
 		installCommand: 'ansible-galaxy install michaelpalacce.docker-compose',
+		technologies: [
+			{
+				isImg: true,
+				content: '/resources/imgs/technologies/ansible-logo.svg',
+				link: 'https://www.ansible.com/'
+			}
+		],
 		badges: [
 			{
 				badge: 'https://img.shields.io/maintenance/yes/2021',
@@ -242,6 +316,13 @@ module.exports	= [
 	{
 		title: 'Ansible Role helm',
 		installCommand: 'ansible-galaxy install michaelpalacce.helm',
+		technologies: [
+			{
+				isImg: true,
+				content: '/resources/imgs/technologies/ansible-logo.svg',
+				link: 'https://www.ansible.com/'
+			}
+		],
 		badges: [
 			{
 				badge: 'https://img.shields.io/maintenance/yes/2021',
@@ -264,6 +345,13 @@ module.exports	= [
 	{
 		title: 'Ansible Role kubernetes_preflight',
 		installCommand: 'ansible-galaxy install michaelpalacce.kubernetes_preflight',
+		technologies: [
+			{
+				isImg: true,
+				content: '/resources/imgs/technologies/ansible-logo.svg',
+				link: 'https://www.ansible.com/'
+			}
+		],
 		badges: [
 			{
 				badge: 'https://img.shields.io/maintenance/yes/2021',
@@ -286,6 +374,13 @@ module.exports	= [
 	{
 		title: 'Ansible Role kubernetes_cluster',
 		installCommand: 'ansible-galaxy install michaelpalacce.kubernetes_cluster',
+		technologies: [
+			{
+				isImg: true,
+				content: '/resources/imgs/technologies/ansible-logo.svg',
+				link: 'https://www.ansible.com/'
+			}
+		],
 		badges: [
 			{
 				badge: 'https://img.shields.io/maintenance/yes/2021',
@@ -308,6 +403,13 @@ module.exports	= [
 	{
 		title: 'Ansible Role kubernetes master security',
 		installCommand: 'ansible-galaxy install michaelpalacce.kubernetes_master_security',
+		technologies: [
+			{
+				isImg: true,
+				content: '/resources/imgs/technologies/ansible-logo.svg',
+				link: 'https://www.ansible.com/'
+			}
+		],
 		badges: [
 			{
 				badge: 'https://img.shields.io/maintenance/yes/2021',
@@ -329,6 +431,23 @@ module.exports	= [
 	},
 	{
 		title: 'Website',
+		technologies: [
+			{
+				isImg: true,
+				content: '/resources/imgs/technologies/node-js-icon.svg',
+				link: 'https://nodejs.org/'
+			},
+			{
+				isImg: true,
+				content: '/resources/imgs/technologies/vuejs-logo.svg',
+				link: 'https://vuejs.org/'
+			},
+			{
+				isImg: false,
+				content: 'EventRequest',
+				link: '#EventRequest'
+			}
+		],
 		badges: [
 			{
 				badge: 'https://img.shields.io/maintenance/yes/2021',
