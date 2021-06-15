@@ -1,13 +1,13 @@
 module.exports	= [
 	{
-		lastSeen: '01/2017 - 07/2017',
+		lastSeen: '01/2016 - 07/2016',
 		type: 'Full Stack Developer',
 		reason: 'Internship',
 		object: 'Programista',
 		message: 'Student Internship. Worked with PHP. Built numerous little websites. I was promoted as a PHP team lead at the time of the student\'s for performing well.'
 	},
 	{
-		lastSeen: '07/2017 - Current',
+		lastSeen: '07/2016 - Current',
 		type: 'PHP Developer',
 		reason: 'Work',
 		object: 'EngimaSoft Ltd.',
