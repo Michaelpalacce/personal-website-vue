@@ -54,7 +54,7 @@ export default {
 	{
 		this.$store.commit( 'animateNavbarText', { text: 'cd ~', remove: true, removeAfter: 500, callback: () => {
 				this.whoami	= true;
-				this.$store.commit( 'changeNavbarPath', '~' )
+				this.$store.commit( 'changeNavbarPath', '~' );
 				this.$store.commit( 'animateNavbarText', { text: 'whoami', remove: true, removeAfter: 500, callback: () => {
 						this.whois	= true;
 						this.$store.commit( 'animateNavbarText', { text: 'whois stefangenov.site' } );

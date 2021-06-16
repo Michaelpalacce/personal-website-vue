@@ -9,6 +9,7 @@
 					<LinkComponent href="/" text="/home"/>
 					<LinkComponent href="/projects" text="/projects" :text-color="'text-yellow-500'"/>
 					<LinkComponent href="/readme" text="/README.md" :text-color="'text-blue-500'"/>
+					<LinkComponent href="/login" text="sudo su" :text-color="'text-green-500'"/>
 					<LinkComponent class="cursor-pointer" @click="exit" text="exit" :text-color="'text-red-600'"/>
 				</div>
 			</div>
@@ -28,6 +29,7 @@
 				<LinkComponent class="block" href="/" text="/home"/>
 				<LinkComponent class="block" href="/projects" text="/projects" :text-color="'text-yellow-500'"/>
 				<LinkComponent class="block" href="/readme" text="/README.md" :text-color="'text-blue-500'"/>
+				<LinkComponent class="block" href="/login" text="sudo su" :text-color="'text-green-500'"/>
 				<LinkComponent class="block cursor-pointer" @click="exit" text="exit" :text-color="'text-red-600'"/>
 			</div>
 		</div>
@@ -35,9 +37,10 @@
 </template>
 
 <script>
+import LinkComponent	from "../LinkComponent";
+import TypewriterText	from "../Effects/TypewriterText";
+import communicator		from "@/app/main/communicator";
 
-import LinkComponent from "../LinkComponent";
-import TypewriterText from "../Effects/TypewriterText";
 export default {
 	name: 'Navbar',
 	components: {TypewriterText, LinkComponent },
@@ -54,8 +57,10 @@ export default {
 		 *
 		 * @return	void
 		 */
-		exit()
+		async exit()
 		{
+			await communicator.logout();
+
 			this.emitter.emit( 'cover' );
 			setTimeout(() => { this.$store.commit( 'unseenWelcomeScreen' ); }, 250);
 		}

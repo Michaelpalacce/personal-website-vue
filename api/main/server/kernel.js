@@ -18,10 +18,12 @@ app.apply( app.er_cors, {
 		'User-Agent',
 		'Access-Control-Request-Method',
 		'Access-Control-Request-Headers',
+		'token',
 		'DNT',
 		'sec-ch-ua',
 		'sec-ch-ua-mobile'
 	],
+	exposedHeaders: ['token'],
 	credentials: true
 });
 
@@ -61,10 +63,10 @@ app.apply( app.er_body_parser_raw );
 // Add Timeout
 app.apply( app.er_timeout,	{ timeout	: process.env.REQUEST_TIMEOUT || 60000 } );
 
-
 // Add a logger
 app.apply( app.er_logger,	{ logger } );
 
+const hasSSL	= process.env.SSL_KEY_PATH && process.env.SSL_CERT_PATHl;
 // Add a user cookie session
-app.apply( app.er_session, { isCookieSession: true, isSecureCookie: true, sessionKey: 'token' } );
+app.apply( app.er_session, { isCookieSession: true, isSecureCookie: hasSSL, sessionKey: 'token' } );
 
