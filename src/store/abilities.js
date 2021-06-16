@@ -91,7 +91,7 @@ module.exports	= [
 		node: 'professionally'
 	},
 	{
-		name: 'Atlassian Bamboo + Stash',
+		name: 'Atlassian Products',
 		ready: '4/5',
 		status: 'Running',
 		age: '2016',
@@ -113,9 +113,16 @@ module.exports	= [
 	},
 	{
 		name: 'Jenkins',
-		ready: '1/5',
+		ready: '2/5',
 		status: 'Running',
 		age: '2021',
 		node: 'amateur'
 	},
+	{
+		name: 'Typescript',
+		ready: '2/5',
+		status: 'Running',
+		age: '2021',
+		node: 'amateur'
+	}
 ];
