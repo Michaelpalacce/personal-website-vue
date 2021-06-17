@@ -1,14 +1,10 @@
 'use strict';
 
-const { App, Server }		= require( 'event_request' );
-const app					= App();
-const path					= require( 'path' );
-const fs					= require( 'fs' );
-const PROJECT_ROOT			= path.parse( require.main.filename ).dir;
-
-const securityController	= require( '../security/security' );
-
-app.add( '/api', securityController );
+const { App, Server }	= require( 'event_request' );
+const app				= App();
+const path				= require( 'path' );
+const fs				= require( 'fs' );
+const PROJECT_ROOT		= path.parse( require.main.filename ).dir;
 
 // Improve this by improving the static plugin in EventRequest
 // CV

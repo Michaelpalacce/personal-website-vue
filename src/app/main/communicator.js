@@ -8,20 +8,13 @@ import axios	from 'axios';
 class ApiCommunicator
 {
 	/**
-	 * @details	The APP_ADDRESS is very important for the CORS headers, so this must be set correctly or it will fail
-	 */
-	constructor()
-	{
-	}
-
-	/**
 	 * @brief	Checks if there is a token in the localStorage
 	 *
 	 * @return	{Boolean}
 	 */
-	loggedIn()
+	isLoggedIn()
 	{
-		return localStorage.loggedIn == 1;
+		return parseInt( localStorage.loggedIn ) === 1;
 	}
 
 	/**
@@ -59,7 +52,24 @@ class ApiCommunicator
 			{ withCredentials: true }
 		).catch(() => {});
 
-		localStorage.loggedIn	= 0;
+		localStorage.removeItem( 'loggedIn' );
+
+		return response;
+	}
+
+	/**
+	 * @brief	Fetches the amount of realtime users
+	 *
+	 * @return	{Promise<AxiosResponse<any>>}
+	 */
+	async getRealtimeUsers()
+	{
+		const response	= await axios.get( `/api/realtimeUsers`, { withCredentials: true } ).catch( ( error ) => {
+			return error;
+		});
+
+		if ( response.message )
+			throw response;
 
 		return response;
 	}

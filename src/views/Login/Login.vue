@@ -1,10 +1,24 @@
 <template>
 	<div class="mx-5 my-5 ">
 		<TypewriterText class="inline-block" :title="`sg@website: /root $ `" text="su -p " :speed="25" />
-		<input ref="username" type="text" class="ml-5 inline-block w-1/12 bg-transparent outline-none" @keyup.enter.native="submitUsername" v-model="username" :readonly="usernameSubmitted">
+		<input ref="username"
+				type="text"
+				class="ml-5 inline-block w-2/12 bg-transparent outline-none"
+				autocomplete="off"
+				@keyup.enter.native="submitUsername"
+				v-model="username"
+				:readonly="usernameSubmitted"
+		>
 		<div v-if="usernameSubmitted">
 			<TypewriterText class="inline-block" text="Password: " :speed="25"/>
-			<input ref="password" type="text" class="ml-5 inline-block w-1/12 bg-transparent outline-none" @keyup.enter.native="signIn" v-model="password" :readonly="passwordSubmitted">
+			<input ref="password"
+					type="text"
+					class="ml-5 inline-block w-2/12 bg-transparent outline-none opacity-0"
+					autocomplete="off"
+					@keyup.enter.native="signIn"
+					v-model="password"
+					:readonly="passwordSubmitted"
+			>
 		</div>
 		<TypewriterText :text="errorMessage" v-if="errorMessage"/>
 	</div>
@@ -27,8 +41,8 @@ export default {
 		};
 	},
 	mounted() {
-		if ( communicator.loggedIn() )
-			this.$router.push( { name: 'home' } );
+		if ( communicator.isLoggedIn() )
+			return this.$router.push( { name: 'admin' } );
 
 		this.$store.commit( 'animateNavbarText', { text: 'cd ~', remove: true, speed: 25, removeAfter: 500, callback: () => {
 				this.$store.commit( 'changeNavbarPath', '~' );
@@ -49,7 +63,7 @@ export default {
 			this.passwordSubmitted	= true;
 
 			communicator.login( this.username, this.password ).then(( response )=>{
-				this.$router.push( { name: 'home' } );
+				this.$router.push( { name: 'admin' } );
 			}).catch(( error ) => {
 				this.errorMessage	= 'su: Authentication failure';
 			});

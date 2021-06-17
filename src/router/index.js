@@ -3,6 +3,7 @@ import Home									from '@/views/Home/Home'
 import Projects								from '@/views/Projects/Projects'
 import Readme								from "@/views/Readme/Readme";
 import Login								from "@/views/Login/Login";
+import Admin								from "@/views/Admin/Admin";
 
 const routes = [
 	{
@@ -25,6 +26,11 @@ const routes = [
 		name: 'login',
 		component: Login
 	},
+	{
+		path: '/admin',
+		name: 'admin',
+		component: Admin
+	}
 ]
 
 const router	= createRouter({
