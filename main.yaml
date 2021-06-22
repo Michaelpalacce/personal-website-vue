@@ -9,6 +9,9 @@
         command: cat public/version
         register: version
 
+      - name: Install all deps
+        command: npm i
+
       - name: Build latest version
         command: npm run build
 
