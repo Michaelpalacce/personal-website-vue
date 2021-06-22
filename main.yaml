@@ -19,17 +19,17 @@
   connection: local
   tags: git
   tasks:
-      -   name: Add all to be committed
-          command: git add .
+      - name: Add all to be committed
+        command: git add .
 
-      -   name: Commit to github with the latest version as the commit message
-          shell: "git commit -am \"[$(git branch)] Ansible Deploy Version {{ version.stdout }}\""
-          ignore_errors: yes
+      - name: Commit to github with the latest version as the commit message
+        shell: "git commit -am \"[$(git branch)] Ansible Deploy Version {{ version.stdout }}\""
+        ignore_errors: yes
 
-      -   name: Push to github
-          command: git push
-          register: git_output
-          changed_when: git_output.stdout.find( 'Everything up-to-date.' ) == -1
+      - name: Push to github
+        command: git push
+        register: git_output
+        changed_when: git_output.stdout.find( 'Everything up-to-date.' ) == -1
 
 - hosts: server
   become: true
