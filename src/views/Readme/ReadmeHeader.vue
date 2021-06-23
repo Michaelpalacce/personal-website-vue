@@ -17,8 +17,8 @@
 import TypewriterText	from "../Components/Effects/TypewriterText";
 
 export default {
-	name: "ReadmeHeader",
-	components: {TypewriterText},
+	name: 'ReadmeHeader',
+	components: { TypewriterText },
 	props: {
 		href: {
 			type: String,

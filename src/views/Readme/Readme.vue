@@ -10,25 +10,37 @@
 	<hr id="abilities"/>
 	<transition name="readme">
 		<div class="text-center sm:text-left m-5" v-if="showAbilities" >
-			<span class="block text-4xl text-center font-semibold my-10">Abilities:</span>
+			<span class="block text-4xl text-center font-semibold mt-10">Abilities:</span>
+			<p v-if="showAbilities" class="text-xs text-center mx-auto opacity-50">Name: Technology; Ready: Rating out of 5; Status: Actively learning it or not; Age: Since when; Node: professionally or not</p>
 
-			<div class="grid grid-cols-4 sm:grid-cols-5">
-				<p @click="sortByName" class="cursor-pointer text-blue-500">NAME</p>
-				<p @click="sortByReady" class="cursor-pointer text-blue-500">READY</p>
-				<p>STATUS</p>
-				<p>AGE</p>
-				<p class="hidden sm:inline-block">NODE</p>
-			</div>
-			<div v-for="ability in abilities" class="grid grid-cols-4 sm:grid-cols-5 my-2">
-				<p class="truncate">{{ ability.name }}</p>
-				<p class="truncate">{{ ability.ready }}</p>
-				<p class="truncate">{{ ability.status }}</p>
-				<p class="truncate">{{ ability.age }}</p>
-				<p class="truncate hidden sm:inline-block">{{ ability.node }}</p>
+			<div v-for="ability in abilities">
+				<span class="block text-xl text-center font-semibold mt-10">{{ ability.name }}</span>
+				<p class="text-blue-500 cursor-pointer hover:text-blue-300 text-center mx-auto" @click="ability.shown = !ability.shown">
+					<TypewriterText title="sg@website: " :text="ability.command" class="text-xs md:text-base inline-block" />
+					<span class="inline-block ml-2 chevron"><svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" /></svg></span>
+				</p>
+
+				<transition name="ability">
+					<div v-if="ability.shown">
+						<div class="grid grid-cols-4 sm:grid-cols-5">
+							<p @click="sortByName( ability.name )" class="cursor-pointer text-blue-500">NAME</p>
+							<p @click="sortByReady( ability.name )" class="cursor-pointer text-blue-500">READY</p>
+							<p>STATUS</p>
+							<p>AGE</p>
+							<p class="hidden sm:inline-block">NODE</p>
+						</div>
+						<div v-for="ability in ability.abilities" class="grid grid-cols-4 sm:grid-cols-5 my-2">
+							<p class="truncate">{{ ability.name }}</p>
+							<p class="truncate">{{ ability.ready }}</p>
+							<p class="truncate">{{ ability.status }}</p>
+							<p class="truncate">{{ ability.age }}</p>
+							<p class="truncate hidden sm:inline-block">{{ ability.node }}</p>
+						</div>
+					</div>
+				</transition>
 			</div>
 		</div>
 	</transition>
-	<p v-if="showAbilities" class="text-xs text-center mx-auto opacity-50">Name: Technology; Ready: Rating out of 5; Status: Actively learning it or not; Age: Since when; Node: professionally or not</p>
 
 	<hr id="languages">
 	<transition name="languages">
@@ -112,7 +124,7 @@ export default {
 			showLanguages: false,
 			showExperience: false,
 			showCertificates: false,
-			abilitiesCommand: 'kubectl get po -n readme',
+			abilitiesCommand: './fetchAbilities.sh',
 			languagesCommand: 'cat /etc/default/locale',
 			experienceCommand: 'kubectl get events -n work-history',
 			certificatesCommand: 'kubectl get cm | awk \'NR>1{print $1}\' | xargs kubectl describe cm',
@@ -135,35 +147,51 @@ export default {
 
 		this.$store.commit( 'animateNavbarText', { text: 'cd ~', remove: true, removeAfter: 200, callback: () => {
 				this.$store.commit( 'changeNavbarPath', '~' )
-				this.$store.commit( 'animateNavbarText', { text: `${this.abilitiesCommand} && cat legend.txt`, speed: 20 } );
+				this.$store.commit( 'animateNavbarText', { text: `cat legend.txt && ${this.abilitiesCommand}`, speed: 20 } );
 			}
 		});
 	},
 	methods:{
 		/**
 		 * @brief	Sorts abilities by how well I know them
+		 *
+		 * @param	{String} abilityName
+		 *
+		 * @return	void
 		 */
-		sortByReady()
+		sortByReady( abilityName )
 		{
-			this.abilities.sort(( first, second ) => {
-				const firstValue	= first.ready.split( '/' )[0];
-				const secondValue	= second.ready.split( '/' )[0];
+			this.abilities.map(( ability ) => {
+				if ( ability.name === abilityName )
+					return ability.abilities.sort(( first, second ) => {
+						const firstValue	= first.ready.split( '/' )[0];
+						const secondValue	= second.ready.split( '/' )[0];
 
-				return secondValue - firstValue;
+						return secondValue - firstValue;
+					});
+
+				return ability;
 			});
 		},
 		/**
 		 * @brief	Sorts abilities by alphabetical order
 		 *
+		 * @param	{String} abilityName
+		 *
 		 * @return	void
 		 */
-		sortByName()
+		sortByName( abilityName )
 		{
-			this.abilities.sort(( first, second ) => {
-				const firstName		= first.name;
-				const secondName	= second.name;
+			this.abilities.map(( ability ) => {
+				if ( ability.name === abilityName )
+					return ability.abilities.sort(( first, second ) => {
+						const firstName		= first.name;
+						const secondName	= second.name;
 
-				return firstName > secondName ? 1 : secondName > firstName ? -1 : 0;
+						return firstName > secondName ? 1 : secondName > firstName ? -1 : 0;
+					});
+
+				return ability;
 			});
 		},
 	}
@@ -209,5 +237,30 @@ export default {
 .experience-enter-from,
 .experience-leave-to {
 	opacity: 0;
+}
+
+.ability-enter-active,
+.ability-leave-active {
+	transition: opacity .25s ease;
+}
+
+.ability-enter-from,
+.ability-leave-to {
+	opacity: 0;
+}
+
+@keyframes slide {
+	0%,
+	100% {
+		transform: translate(0, 0);
+	}
+
+	50% {
+		transform: translate(0, 5px);
+	}
+}
+
+.chevron{
+	animation: slide 1s linear infinite;
 }
 </style>

@@ -73,16 +73,16 @@ module.exports	= [
 		],
 		data: [
 			{
-				title: 'Status',
-				text: 'In Progress'
-			},
-			{
 				title: 'Course Length',
 				text: '10.5 hours'
 			},
 			{
-				title: 'Progress',
-				text: '75%'
+				title: 'Note',
+				text: 'Thank you Ricardo Andre Gonzalez Gomez!'
+			},
+			{
+				title: 'Year taken',
+				text: '2021'
 			}
 		]
 	},
