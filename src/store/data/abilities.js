@@ -113,7 +113,7 @@ module.exports	= [
 	},
 	{
 		name: 'Jenkins',
-		ready: '2/5',
+		ready: '3/5',
 		status: 'Running',
 		age: '2021',
 		node: 'amateur'

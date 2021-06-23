@@ -6,12 +6,12 @@ export default createStore({
 		navbarText		: '',
 		navbarPath		: '',
 		navbarTimeout	: null,
-		projects		: require( './projects' ),
-		contacts		: require( './contacts' ),
-		abilities		: require( './abilities' ),
-		languages		: require( './languages' ),
-		experiences		: require( './experiences' ),
-		certificates	: require( './certificates' )
+		projects		: require( './data/projects' ),
+		contacts		: require( './data/contacts' ),
+		abilities		: require( './data/abilities' ),
+		languages		: require( './data/languages' ),
+		experiences		: require( './data/experiences' ),
+		certificates	: require( './data/certificates' )
 	},
 	mutations: {
 		seenWelcomeScreen( state ){ state.welcomeScreen		= localStorage.welcomeScreen	= 1; },

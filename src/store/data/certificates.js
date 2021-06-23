@@ -82,7 +82,7 @@ module.exports	= [
 			},
 			{
 				title: 'Progress',
-				text: '25%'
+				text: '75%'
 			}
 		]
 	},
