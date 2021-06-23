@@ -5,10 +5,6 @@
       - name: Remove old resources
         shell: rm -rf resources/css && rm -rf resources/js
 
-      - name: Get version name
-        command: cat public/version
-        register: version
-
       - name: Install all deps
         command: npm i
 
@@ -21,6 +17,10 @@
   tasks:
       - name: Add all to be committed
         command: git add .
+
+      - name: Get version name
+        command: cat public/version
+        register: version
 
       - name: Commit to github with the latest version as the commit message
         shell: "git commit -am \"[$(git branch)] Ansible Deploy Version {{ version.stdout }}\""
