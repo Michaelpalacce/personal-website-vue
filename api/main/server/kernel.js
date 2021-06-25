@@ -70,3 +70,4 @@ const hasSSL	= process.env.SSL_KEY_PATH && process.env.SSL_CERT_PATHl;
 // Add a user cookie session
 app.apply( app.er_session, { isCookieSession: true, isSecureCookie: hasSSL, sessionKey: 'token' } );
 
+require( '../../controllers' );
