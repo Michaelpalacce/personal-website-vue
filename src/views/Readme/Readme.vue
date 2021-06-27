@@ -147,7 +147,7 @@ export default {
 
 		this.$store.commit( 'animateNavbarText', { text: 'cd ~', remove: true, removeAfter: 200, callback: () => {
 				this.$store.commit( 'changeNavbarPath', '~' )
-				this.$store.commit( 'animateNavbarText', { text: `cat legend.txt && ${this.abilitiesCommand}`, speed: 20 } );
+				this.$store.commit( 'animateNavbarText', { text: `cat README.md && ${this.abilitiesCommand}`, speed: 20 } );
 			}
 		});
 	},

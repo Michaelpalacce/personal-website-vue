@@ -1,7 +1,6 @@
 'use strict';
 
 const app					= require( 'event_request' )();
-const blogRouter			= require( './blog/controller/contoller' );
 const securityController	= require( '../api/main/security/security' );
 const metricsController		= require( '../api/main/analytics/metrics' );
 
@@ -11,8 +10,6 @@ const PROJECT_ROOT			= path.parse( require.main.filename ).dir;
 
 require( '../api/main/analytics/analytics' );
 app.add( '/api', securityController );
-
-app.add( '/api', blogRouter );
 app.add( '/api', metricsController );
 
 // Improve this by improving the static plugin in EventRequest

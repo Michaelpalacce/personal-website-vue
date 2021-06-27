@@ -4,6 +4,7 @@ import Projects								from '@/views/Projects/Projects'
 import Readme								from "@/views/Readme/Readme";
 import Login								from "@/views/Login/Login";
 import Admin								from "@/views/Admin/Admin";
+import Blog									from "@/views/Blog/Blog";
 
 const routes = [
 	{
@@ -25,6 +26,11 @@ const routes = [
 		path: '/login',
 		name: 'login',
 		component: Login
+	},
+	{
+		path: '/blog',
+		name: 'blog',
+		component: Blog
 	},
 	{
 		path: '/admin',

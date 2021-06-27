@@ -7,16 +7,16 @@
 			</svg>
 		</p>
 
-		<div class="mt-24 h-full block sm:flex editor w-full">
-			<textarea
-					class="p-2 mx-auto rounded-lg h-full text-black inline-block resize-none w-full sm:w-5/12 bg-gray-200 border-r border-black"
-					v-model="blogHtml"
-			></textarea>
-			<div
-				v-html="blogHtml"
-				class="p-2 mx-auto rounded-lg inline-block w-full sm:w-5/12 h-full border border-white overflow-y-scroll"
-			></div>
-		</div>
+<!--		<div class="mt-24 h-full block lg:flex editor w-full">-->
+<!--			<textarea-->
+<!--					class="p-2 mx-auto rounded-lg h-full text-black inline-block resize-none w-full lg:w-5/12 bg-gray-200 border-r border-black"-->
+<!--					v-model="blogHtml"-->
+<!--			></textarea>-->
+<!--			<div-->
+<!--				v-html="blogHtml"-->
+<!--				class="p-2 mx-auto rounded-lg inline-block w-full lg:w-5/12 h-full border border-white overflow-y-scroll"-->
+<!--			></div>-->
+<!--		</div>-->
 	</div>
 </template>
 
