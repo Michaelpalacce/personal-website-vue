@@ -26,6 +26,10 @@ module.exports	= [
 				badge: 'https://github.com/Michaelpalacce/EventRequest/workflows/linux-15.x/badge.svg'
 			},
 			{
+				link: 'https://github.com/Michaelpalacce/EventRequest/actions?query=workflow%3Alinux-16.x',
+				badge: 'https://github.com/Michaelpalacce/EventRequest/workflows/linux-16.x/badge.svg'
+			},
+			{
 				link: 'https://github.com/Michaelpalacce/EventRequest/actions?query=workflow%3Awindows-12.x',
 				badge: 'https://github.com/Michaelpalacce/EventRequest/workflows/windows-12.x/badge.svg'
 			},
@@ -36,6 +40,10 @@ module.exports	= [
 			{
 				link: 'https://github.com/Michaelpalacce/EventRequest/actions?query=workflow%3Awindows-15.x',
 				badge: 'https://github.com/Michaelpalacce/EventRequest/workflows/windows-15.x/badge.svg'
+			},
+			{
+				link: 'https://github.com/Michaelpalacce/EventRequest/actions?query=workflow%3Awindows-16.x',
+				badge: 'https://github.com/Michaelpalacce/EventRequest/workflows/windows-16.x/badge.svg'
 			},
 			{
 				link: 'https://www.codacy.com/manual/Michaelpalacce/EventRequest?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Michaelpalacce/EventRequest&amp;utm_campaign=Badge_Coverage',
