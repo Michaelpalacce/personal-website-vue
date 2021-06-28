@@ -9,7 +9,7 @@
 					<LinkComponent href="/" text="/home/sg"/>
 					<LinkComponent href="/projects" text="~/projects" :text-color="'text-yellow-500'"/>
 					<LinkComponent href="/readme" text="~/README.md" :text-color="'text-blue-500'"/>
-					<LinkComponent href="/blog" text="~/Documents" :text-color="'text-purple-400'"/>
+					<LinkComponent href="/blogs" text="~/Documents" :text-color="'text-purple-400'"/>
 					<LinkComponent href="/login" text="sudo su" :text-color="'text-green-500'"/>
 					<LinkComponent class="cursor-pointer" @click="exit" text="exit" :text-color="'text-red-600'"/>
 				</div>
@@ -30,7 +30,7 @@
 				<LinkComponent class="block" href="/" text="/home/sg"/>
 				<LinkComponent class="block" href="/projects" text="~/projects" :text-color="'text-yellow-500'"/>
 				<LinkComponent class="block" href="/readme" text="~/README.md" :text-color="'text-blue-500'"/>
-				<LinkComponent class="block" href="/blog" text="~/Documents" :text-color="'text-purple-500'"/>
+				<LinkComponent class="block" href="/blogs" text="~/Documents" :text-color="'text-purple-500'"/>
 				<LinkComponent class="block" href="/login" text="sudo su" :text-color="'text-green-500'"/>
 				<LinkComponent class="block cursor-pointer" @click="exit" text="exit" :text-color="'text-red-600'"/>
 			</div>

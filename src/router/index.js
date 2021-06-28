@@ -4,6 +4,7 @@ import Projects								from '@/views/Projects/Projects'
 import Readme								from "@/views/Readme/Readme";
 import Login								from "@/views/Login/Login";
 import Admin								from "@/views/Admin/Admin";
+import Blogs								from "@/views/Blog/Blogs";
 import Blog									from "@/views/Blog/Blog";
 
 const routes = [
@@ -28,7 +29,12 @@ const routes = [
 		component: Login
 	},
 	{
-		path: '/blog',
+		path: '/blogs',
+		name: 'blogs',
+		component: Blogs
+	},
+	{
+		path: '/blogs/:blogId',
 		name: 'blog',
 		component: Blog
 	},

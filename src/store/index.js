@@ -1,5 +1,29 @@
 import { createStore }	from 'vuex'
 
+/**
+ * @brief	Formats a Date object
+ *
+ * @param	{Date} date
+ *
+ * @return	{String}
+ */
+function formatDate( date )
+{
+	let hours	= date.getHours();
+	let minutes	= date.getMinutes();
+	minutes		= minutes < 10 ? '0' + minutes : minutes;
+
+	return date.getDate()
+		+ "/"
+		+ ( date.getMonth() + 1 )
+		+ "/"
+		+ date.getFullYear()
+		+ "  "
+		+ hours
+		+ ':'
+		+ minutes;
+}
+
 export default createStore({
 	state: {
 		welcomeScreen	: localStorage.welcomeScreen || 0,
@@ -11,11 +35,37 @@ export default createStore({
 		abilities		: require( './data/abilities' ),
 		languages		: require( './data/languages' ),
 		experiences		: require( './data/experiences' ),
-		certificates	: require( './data/certificates' )
+		certificates	: require( './data/certificates' ),
+		blogs			: []
 	},
 	mutations: {
 		seenWelcomeScreen( state ){ state.welcomeScreen		= localStorage.welcomeScreen	= 1; },
 		unseenWelcomeScreen( state ){ state.welcomeScreen	= localStorage.welcomeScreen	= 0; },
+
+		/**
+		 * @brief	Populate the blogs with the given data
+		 *
+		 * @param	{Object} state
+		 * @param	{Object} data
+		 *
+		 * @return	void
+		 */
+		populateBlogs( state, data )
+		{
+			state.blogs	= data.map(( element ) => {
+				element.formattedDate	= formatDate( new Date( element.date ) );
+				element.content			= '';
+
+				return element;
+			});
+		},
+
+		populateBlog( state, data )
+		{
+			for ( const blog of state.blogs )
+				if ( blog.encodedTitle === data.encodedTitle )
+					blog.content	= data.content;
+		},
 
 		/**
 		 * @brief	Sets the navbar text and cleans up any timeouts

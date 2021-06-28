@@ -255,6 +255,57 @@ module.exports	= [
 		]
 	},
 	{
+		title: 'Docker Cassandra',
+		installCommand: 'docker pull stefangenov/cassandra:3.11',
+		technologies: [
+			{
+				isImg: true,
+				content: '/resources/imgs/technologies/docker.png',
+				link: 'https://hub.docker.com/'
+			}
+		],
+		badges: [],
+		links: [
+			{
+				icon: '/resources/imgs/github-icon.svg',
+				link: 'https://github.com/Michaelpalacce/Docker/tree/master/cassandra'
+			},
+			{
+				icon: '/resources/imgs/technologies/docker.png',
+				link: 'https://hub.docker.com/repository/docker/stefangenov/cassandra'
+			},
+		],
+		link: 'https://github.com/Michaelpalacce/Docker.git',
+		text: 'Cassandra installation with lucene index plugin.' +
+			' Contains 2 ready probes that can be used to check if the node/seed is up and running.'
+	},
+	{
+		title: 'Docker PHP',
+		installCommand: 'docker pull stefangenov/php:7.2',
+		technologies: [
+			{
+				isImg: true,
+				content: '/resources/imgs/technologies/docker.png',
+				link: 'https://hub.docker.com/'
+			}
+		],
+		badges: [],
+		links: [
+			{
+				icon: '/resources/imgs/github-icon.svg',
+				link: 'https://github.com/Michaelpalacce/Docker/tree/master/php/7.2'
+			},
+			{
+				icon: '/resources/imgs/technologies/docker.png',
+				link: 'https://hub.docker.com/repository/docker/stefangenov/php'
+			},
+		],
+		link: 'https://github.com/Michaelpalacce/Docker.git',
+		text: 'A php7.2-fpm installation based on alpine linux.' +
+			' Includes a bunch of configurable Environment Variables. ' +
+			'Contains phpunit, composer, nodejs, cassandra php driver and git installed by default.'
+	},
+	{
 		title: 'Ansible Role docker',
 		installCommand: 'ansible-galaxy install michaelpalacce.docker',
 		technologies: [
@@ -341,57 +392,6 @@ module.exports	= [
 		],
 		link: 'https://github.com/Michaelpalacce/ansible-helm.git',
 		text: 'Ansible Role that installs Helm, the kubernetes package manager on Ubuntu machines.'
-	},
-	{
-		title: 'Docker Cassandra',
-		installCommand: 'docker pull stefangenov/cassandra:3.11',
-		technologies: [
-			{
-				isImg: true,
-				content: '/resources/imgs/technologies/docker.png',
-				link: 'https://hub.docker.com/'
-			}
-		],
-		badges: [],
-		links: [
-			{
-				icon: '/resources/imgs/github-icon.svg',
-				link: 'https://github.com/Michaelpalacce/Docker/tree/master/cassandra'
-			},
-			{
-				icon: '/resources/imgs/technologies/docker.png',
-				link: 'https://hub.docker.com/repository/docker/stefangenov/cassandra'
-			},
-		],
-		link: 'https://github.com/Michaelpalacce/Docker.git',
-		text: 'Cassandra installation with lucene index plugin.' +
-			' Contains 2 ready probes that can be used to check if the node/seed is up and running.'
-	},
-	{
-		title: 'Docker PHP',
-		installCommand: 'docker pull stefangenov/php:7.2',
-		technologies: [
-			{
-				isImg: true,
-				content: '/resources/imgs/technologies/docker.png',
-				link: 'https://hub.docker.com/'
-			}
-		],
-		badges: [],
-		links: [
-			{
-				icon: '/resources/imgs/github-icon.svg',
-				link: 'https://github.com/Michaelpalacce/Docker/tree/master/php/7.2'
-			},
-			{
-				icon: '/resources/imgs/technologies/docker.png',
-				link: 'https://hub.docker.com/repository/docker/stefangenov/php'
-			},
-		],
-		link: 'https://github.com/Michaelpalacce/Docker.git',
-		text: 'A php7.2-fpm installation based on alpine linux.' +
-			' Includes a bunch of configurable Environment Variables. ' +
-			'Contains phpunit, composer, nodejs, cassandra php driver and git installed by default.'
 	},
 	{
 		title: 'Ansible Role kubernetes_preflight',

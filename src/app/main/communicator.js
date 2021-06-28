@@ -75,6 +75,42 @@ class ApiCommunicator
 	}
 
 	/**
+	 * @brief	Fetches all the blogs' titles and dates
+	 *
+	 * @return	{Promise<AxiosResponse<any>>}
+	 */
+	async getAllBlogs()
+	{
+		const response	= await axios.get( `/api/blogs` ).catch( ( error ) => {
+			return error;
+		});
+
+		if ( response.message )
+			throw response;
+
+		return response;
+	}
+
+	/**
+	 * @brief	Fetches the given blog's content
+	 *
+	 * @param	{String} encodedBlogTitle
+	 *
+	 * @return	{Promise<AxiosResponse<any>>}
+	 */
+	async getBlogContents( encodedBlogTitle )
+	{
+		const response	= await axios.get( `/api/blogs/${encodedBlogTitle}` ).catch( ( error ) => {
+			return error;
+		});
+
+		if ( response.message )
+			throw response;
+
+		return response;
+	}
+
+	/**
 	 * @brief	Returns either an error response or the actual response if it was 2xx
 	 *
 	 * @param	{Object} response
