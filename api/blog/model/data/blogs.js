@@ -1,7 +1,7 @@
 module.exports	= [
 	{
 		title	: 'PLACEHOLDER -> WORK IN PROGRESS',
-		date	: 1624872459000,
+		date	: '28/6/2021',
 		content	: 'There is no content really. This is just a placeholder text and some LOREM IPSUM!.<br>' +
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu arcu mauris. Vivamus placerat, ante ' +
 			'in convallis cursus, sem erat dictum ipsum, ut accumsan ligula enim ac sapien. Sed ultrices iaculis erat ' +

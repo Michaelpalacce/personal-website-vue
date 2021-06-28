@@ -1,28 +1,5 @@
 import { createStore }	from 'vuex'
-
-/**
- * @brief	Formats a Date object
- *
- * @param	{Date} date
- *
- * @return	{String}
- */
-function formatDate( date )
-{
-	let hours	= date.getHours();
-	let minutes	= date.getMinutes();
-	minutes		= minutes < 10 ? '0' + minutes : minutes;
-
-	return date.getDate()
-		+ "/"
-		+ ( date.getMonth() + 1 )
-		+ "/"
-		+ date.getFullYear()
-		+ "  "
-		+ hours
-		+ ':'
-		+ minutes;
-}
+import communicator		from "../app/main/communicator";
 
 export default createStore({
 	state: {
@@ -52,19 +29,21 @@ export default createStore({
 		 */
 		populateBlogs( state, data )
 		{
-			state.blogs	= data.map(( element ) => {
-				element.formattedDate	= formatDate( new Date( element.date ) );
-				element.content			= '';
-
-				return element;
-			});
+			state.blogs	= data;
 		},
 
+		/**
+		 * @brief	Populates a single blog with content data
+		 *
+		 * @param	{Object} state
+		 * @param	{Object} data
+		 *
+		 * @return	void
+		 */
 		populateBlog( state, data )
 		{
-			for ( const blog of state.blogs )
-				if ( blog.encodedTitle === data.encodedTitle )
-					blog.content	= data.content;
+			const blog		= this.getters.getBlog( data.encodedTitle );
+			blog.content	= data.content;
 		},
 
 		/**
@@ -138,7 +117,68 @@ export default createStore({
 		}
 	},
 	actions: {
+		/**
+		 * @brief	Gets a blog
+		 *
+		 * @details	Loads all blogs if not loaded, populates the given blog with blog data and returns the blog
+		 *
+		 * @param	{Function} commit
+		 * @param	{Object} state
+		 * @param	{Function} dispatch
+		 * @param	{Object} getters
+		 * @param	{String} encodedTitle
+		 *
+		 * @return {Promise<Object>}
+		 */
+		async getBlog( { commit, state, dispatch, getters }, encodedTitle )
+		{
+			await dispatch( 'populateBlogs' );
+			const blog	= getters.getBlog( encodedTitle );
 
+			if ( blog === null )
+				return null;
+
+			if ( blog.content !== '' )
+				return blog;
+
+			const blogResponse	= await communicator.getBlogContents( encodedTitle );
+			const content		= blogResponse.data;
+
+			commit( 'populateBlog', { encodedTitle, content } );
+
+			return blog;
+		},
+
+		/**
+		 * @brief	Populates the blogs if needed with title and date data
+		 *
+		 * @param	{Object} state
+		 * @param	{Function} commit
+		 *
+		 * @return	{Promise<void>}
+		 */
+		async populateBlogs( { state, commit } )
+		{
+			if ( state.blogs.length !== 0 )
+				return;
+
+			const blogsResponse	= await communicator.getAllBlogs();
+			const blogs			= blogsResponse.data;
+
+			commit( 'populateBlogs', blogs );
+		}
+	},
+	getters: {
+		/**
+		 * @brief	Gets a given blog by it's encodedBlogTitle
+		 *
+		 * @param	{Object} state
+		 *
+		 * @return	{Function}
+		 */
+		getBlog: ( state ) => ( encodedBlogTitle ) => {
+			return state.blogs.find( blog => blog.encodedTitle === encodedBlogTitle );
+		}
 	},
 	modules: {
 

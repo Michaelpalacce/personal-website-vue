@@ -1,9 +1,37 @@
 <template>
 	<p v-if="error !== ''" class="text-center text-2xl text-red-500 my-5">There was an error: {{ error }}</p>
 
-	<div v-for="blog of displayBlogs" class="my-10 mx-10">
-		<router-link :to="`/blogs/${blog.encodedTitle}`" class="cursor-pointer text-2xl">{{ blog.title }}</router-link>
-		<p class="mt-2 text-sm">{{ blog.formattedDate }}</p>
+	<div class="my-5 mx-10">
+		<span>
+			<span class="text-sm">drw-r--r--</span>
+			<span class="ml-2 text-sm">1</span>
+			<span class="ml-2 text-sm">sg</span>
+			<span class="ml-2 text-sm">sg</span>
+			<span class="ml-2 text-sm">{{ currentDate }}</span>
+			<span class="ml-2 inline-block text-blue-500"> . </span>
+		</span>
+	</div>
+
+	<div class="my-5 mx-10">
+		<span>
+			<span class="text-sm">drw-r--r--</span>
+			<span class="ml-2 text-sm">1</span>
+			<span class="ml-2 text-sm">sg</span>
+			<span class="ml-2 text-sm">sg</span>
+			<span class="ml-2 text-sm">{{ currentDate }}</span>
+			<span class="ml-2 inline-block text-blue-500"> .. </span>
+		</span>
+	</div>
+
+	<div v-for="blog of displayBlogs" class="my-5 mx-10">
+		<span>
+			<span class="text-sm">-rw-r--r--</span>
+			<span class="ml-2 text-xs sm:text-sm">1</span>
+			<span class="ml-2 text-xs sm:text-sm">sg</span>
+			<span class="ml-2 text-xs sm:text-sm">sg</span>
+			<span class="ml-2 text-xs sm:text-sm">{{ blog.date }}</span>
+			<router-link :to="`/blogs/${blog.encodedTitle}`" class="ml-2 inline-block cursor-pointer text-blue-500 text-sm sm:text-base">{{ blog.title }}.blog</router-link>
+		</span>
 	</div>
 
 	<div class="text-center">
@@ -12,8 +40,6 @@
 </template>
 
 <script>
-import BlogsModel	from "./model/blogs";
-
 export default {
 	name: 'Blogs',
 	data: function ()
@@ -22,7 +48,7 @@ export default {
 			error	: '',
 			blogsIndex: 0,
 			blogsChunkSize: 5,
-			blogsModel: new BlogsModel( this.$store )
+			currentDate	: ''
 		};
 	},
 	computed: {
@@ -52,13 +78,28 @@ export default {
 	{
 		this.$store.commit( 'animateNavbarText', { text: 'cd ~/Documents', remove: true, removeAfter: 500, speed: 30, callback: () => {
 				this.$store.commit( 'changeNavbarPath', '~/Documents' );
-				this.$store.commit( 'animateNavbarText', { text: 'cat *.blog', speed: 30 } );
+				this.$store.commit( 'animateNavbarText', { text: 'ls -lah .', speed: 30 } );
 			}
 		});
 
-		await this.blogsModel.populateBlogs().catch( this.showError.bind( this ) );
+		this.currentDate	= this.formatDate( new Date() );
+
+		await this.$store.dispatch( 'populateBlogs' ).catch( this.showError.bind( this ) );
 	},
 	methods: {
+
+		/**
+		 * @brief	Formats a Date object
+		 *
+		 * @param	{Date} date
+		 *
+		 * @return	{String}
+		 */
+		formatDate( date )
+		{
+			return date.getDate() + "/" + ( date.getMonth() + 1 ) + "/" + date.getFullYear()
+		},
+
 		/**
 		 * @brief	Changes the current blogs page
 		 *
@@ -81,7 +122,7 @@ export default {
 		showError( error )
 		{
 			this.error	= error.response.data.error.code;
-		}
+		},
 	}
 }
 </script>

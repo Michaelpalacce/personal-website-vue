@@ -3,7 +3,12 @@
   tags: build
   tasks:
       - name: Remove old resources
-        shell: rm -rf resources/css && rm -rf resources/js
+        file:
+            path: "{{ item }}"
+            state: absent
+        with_items:
+            - resources/css
+            - resources/js
 
       - name: Install all deps
         command: npm i

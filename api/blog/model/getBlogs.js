@@ -1,9 +1,16 @@
+'use strict';
+
 const allBlogs		= require( './data/blogs' );
 
 const blogMetadata	= Buffer.from(
 	JSON.stringify(
 		allBlogs.map(( element ) => {
-			return { title: element.title, date: element.date, encodedTitle: Buffer.from( element.title ).toString( 'base64' ) };
+			return {
+				title: element.title,
+				date: element.date,
+				content: '',
+				encodedTitle: Buffer.from( element.title ).toString( 'base64' )
+			};
 		})
 	)
 );
