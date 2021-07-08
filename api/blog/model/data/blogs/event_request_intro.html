@@ -1,0 +1,79 @@
+<div class="text-center text-4xl text-red-600">Event Request</div>
+
+<p class="mt-5">
+	EventRequest is a web framework that was designed to have zero-dependencies, have 100% test coverage and be as fast as possible.
+</p>
+
+<p class="mt-10 text-3xl font-bold text-red-600">
+	So why do I care about having 0 dependencies?
+</p>
+
+<p class="mt-2">
+	Every time I started a new project I was overwhelmed by the insane amount of dependencies almost every npm package has,
+	some of them more ridiculous than the other. Since the get-go, avoiding this has been a must have, even going to the lengths
+	of not splitting the package into many multiple packages like many other frameworks have done ( and for good reasons ).
+	This has gone so far that when I wanted to implement a redis and memcached data server for EventRequest I had to create
+	2 new packages since memcached and redis were dependencies
+	( <a href="/projects#Redis%20DataServer" class="text-blue-500">Redis</a> & <a href="/projects#Memcached%20DataServer" class="text-blue-500">Memcached</a> ).
+</p>
+
+<p class="mt-10 text-3xl font-bold text-red-600">
+	Tests
+</p>
+
+<p class="mt-5 text-xl font-bold text-red-500">
+	100% test coverage
+</p>
+
+<p class="mt-2">
+	I don't think there is much to talk about here. With the help of <a href="https://www.npmjs.com/package/nyc" class="text-blue-500">NYC</a>
+	EventRequest has reached 100% test coverage. I think every projects should strive to have as much test coverage as possible.
+	As a general policy if a new functionality has been written it is never pushed without fully testing it.
+</p>
+
+<p class="mt-5 text-xl font-bold text-red-500">
+	CI/CD pipeline
+</p>
+
+<p class="mt-2">
+	Github Actions are your friend! If you are developing an open source projects utilizing the power of Github Actions can
+	save you a LOT of headaches just by adding a workflow in: {{PROEJCT_ROOT}}/.github/workflows. Lets create a file called develop.ci.yml and add it
+	there:
+</p>
+<pre><code class="language-yaml overflow-y-scroll h-96">
+	name: develop
+
+	on:
+		push:
+			branches: develop
+		pull_request:
+			branches: develop
+
+	jobs:
+		build:
+			runs-on: ${{ matrix.os }}
+
+			strategy:
+				fail-fast: false
+				matrix:
+					node-version: [12.x, 14.x, 15.x, 16.x]
+					os: [ubuntu-latest, windows-latest]
+
+			steps:
+			- uses: actions/checkout@v2
+			- name: Use Node.js ${{ matrix.node-version }}
+			  uses: actions/setup-node@v1
+			  with:
+				node-version: ${{ matrix.node-version }}
+			- run: npm i
+			- run: npm run build --if-present
+			- run: npm test
+</code></pre>
+
+<p class="mt-2">
+	Now what is happening here? Well the TL;DR is that on every push or Pull Request on the develop branch a Github Action will
+	be triggered that will run 8 total workflows. It will run <pre><code class="code-plain">npm test</code></pre> on a windows and a
+	linux machine for node versions <pre><code class="code-plain">12.x, 14.x, 15.x, 16.x</code></pre>
+</p>
+
+<span class="text-7xl">WORK IN PROGRESS</span>

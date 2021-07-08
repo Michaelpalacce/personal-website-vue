@@ -9,6 +9,7 @@
   "dependencies": {
     "@pm2/io": "^5.0.0",
     "event_request": "^32.1.0",
+    "highlight.js": "^10.7.2",
     "pm2": "^5.1.0"
   },
   "devDependencies": {

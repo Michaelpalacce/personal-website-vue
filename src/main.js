@@ -5,6 +5,7 @@ import store			from './store'
 import mitt				from 'mitt';
 
 import "./assets/styles/main.css";
+import "highlight.js/styles/dracula.css"
 
 const emitter	= mitt();
 const app		= createApp( App );
