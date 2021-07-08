@@ -2,6 +2,7 @@
 
 <p class="mt-5">
 	EventRequest is a web framework that was designed to have zero-dependencies, have 100% test coverage and be as fast as possible.
+	Check it out on <a href="https://www.npmjs.com/package/event_request" class="text-red-500">NPM</a>!
 </p>
 
 <p class="mt-10 text-3xl font-bold text-red-600">
@@ -60,20 +61,149 @@
 					os: [ubuntu-latest, windows-latest]
 
 			steps:
-			- uses: actions/checkout@v2
-			- name: Use Node.js ${{ matrix.node-version }}
-			  uses: actions/setup-node@v1
-			  with:
-				node-version: ${{ matrix.node-version }}
-			- run: npm i
-			- run: npm run build --if-present
-			- run: npm test
+				- uses: actions/checkout@v2
+				- name: Use Node.js ${{ matrix.node-version }}
+				  uses: actions/setup-node@v1
+				  with:
+					node-version: ${{ matrix.node-version }}
+				- run: npm i
+				- run: npm run build --if-present
+				- run: npm test
 </code></pre>
 
+<p class="mt-2 font-bold text-red-500">
+	TL;DR
+</p>
+
 <p class="mt-2">
-	Now what is happening here? Well the TL;DR is that on every push or Pull Request on the develop branch a Github Action will
-	be triggered that will run 8 total workflows. It will run <pre><code class="code-plain">npm test</code></pre> on a windows and a
+	On every push or Pull Request on the develop branch a Github Action will be triggered that will run 8 total
+	workflows. It will run <pre><code class="code-plain">npm test</code></pre> on a windows and a
 	linux machine for node versions <pre><code class="code-plain">12.x, 14.x, 15.x, 16.x</code></pre>
 </p>
 
-<span class="text-7xl">WORK IN PROGRESS</span>
+<p class="mt-2 font-bold text-red-500">
+	In Depth
+</p>
+
+<p class="mt-2">
+	Every workflow start with a name section that will be used by Github to well... name your action. After it we have the
+	conditional section. In the case of either a push or a pull request opened on the develop branch this github action will be triggered.
+	<pre>
+	<code class="language-yaml">
+		name: develop
+		on:
+			push:
+				branches: develop
+			pull_request:
+				branches: develop
+	</code>
+	</pre>
+</p>
+
+<p class="mt-2">
+	<pre>
+	<code class="language-yaml">
+		runs-on: ${{ matrix.os }}
+		strategy:
+			fail-fast: false
+			matrix:
+				node-version: [12.x, 14.x, 15.x, 16.x]
+				os: [ubuntu-latest, windows-latest]
+	</code>
+	</pre>
+	By defining a matrix, it allows us to run this github action multiple times with different parameters. First thing here
+	will be the <span class="bg-gray-600">runs-on</span> which will cause the Github Action to be triggered twice, once with <span class="bg-gray-600">ubuntu-latest</span>
+	and once with <span class="bg-gray-600">windows-latest</span>. Since I want to run tests on both linux and windows,
+	this is good enough for me. The <span class="bg-gray-600">node-version</span> parameter will come in play next.
+
+	<pre>
+	<code class="language-yaml">
+	steps:
+		- uses: actions/checkout@v2
+		- name: Use Node.js ${{ matrix.node-version }}
+		  uses: actions/setup-node@v1
+		  with:
+			node-version: ${{ matrix.node-version }}
+		- run: npm i
+		- run: npm run build --if-present
+		- run: npm test
+	</code>
+	</pre>
+	The steps section define a YAML array of everything we want to do in order. If any of these steps returns a non-zero code
+	then the action will be considered as failed. Since Github Actions has an amazing marketplace
+	of actions and a bunch of native actions, we will use some of them here. Namely the <span class="bg-gray-600">actions/checkout@v2</span>
+	will checkout the project and the <span class="bg-gray-600">actions/setup-node@v1</span> will install NodeJS and NPM.
+	Notice here that we use <span class="bg-gray-600">uses</span> to run specific actions,
+	whereas down a bit we use <span class="bg-gray-600">run</span> which will run commands. Since we want to run
+	tests on all the <span class="bg-gray-600">node-version</span> we've defined, in the second step we use <span class="bg-gray-600">with</span>
+	to pass them.
+</p>
+
+<p class="mt-2">
+	At the end we will have tests that will be ran on windows and linux for node versions 12,14,15,16.
+</p>
+
+<p class="mt-10 text-3xl font-bold text-red-600">
+	Documentation
+</p>
+
+<p class="mt-5">
+	While the documentation is not structured in different pages, I've tried to write as much documentation as possible.
+	Every single component, behaviour, plugin, etc. is documented. All of the documentation can be found in the README.md
+	file in the project. The documentation is planned to be moved in a more organized structure either on Github deployments
+	or perhaps my site.
+</p>
+
+<p class="mt-10 text-3xl font-bold text-red-600">
+	Customization
+</p>
+
+<p class="mt-2">
+	Customization and extensibility have always been the main goal of this web framework. Most of the functionality of the
+	framework is actually in the form of plug-ins that can be added.
+</p>
+
+<p class="mt-2 font-bold text-red-500">
+	Components
+</p>
+
+<p class="mt-2">
+	Generally Components are pieces of the framework that can be used outside of it. Like an in memory cache, validation tools,
+	some security components, etc.
+	For example if you want to use the LeakyBucket implementation of the framework, you can do so:
+	<pre class="m-2"><code class="language-js">const LeakyBucket = require( 'event_request/server/components/rate_limiter/bucket' );</code></pre>
+</p>
+
+<p class="mt-2 font-bold text-red-500">
+	Plugins
+</p>
+
+<p class="mt-2">
+	Plug-ins are components that can be added to the server like: <pre class="m-2"><code class="language-js">server.apply( PluginInterfaceObject ||'pluginId', options )</code></pre>
+	These plugins usually add some form of new functionality to the EventRequest object, or alternatively are responsible
+	for some pre or post processing ( like handling form data or logging ).
+	Some plug-ins are also dependent on other plug-ins, which need to be setup beforehand.
+</p>
+
+<p class="mt-10 text-3xl font-bold text-red-600">
+	Speed
+</p>
+
+<p class="mt-2">
+	The main project of this framework has always been speed. Currently the project is in a state where not many new features
+	are going to be added. Bugfixes are always going to be prioritized but if there are none, then speed is something that
+	is always going to be top priority. The end goal would always be to be as fast as the fastest frameworks and as close to
+	not having a framework boilerplate and slowdown as possible. In the future many of the components, features and plug-ins
+	will be remodelled so they are called only if 100% needed.
+</p>
+
+<p class="mt-2">
+	If your site isn't fast, users will not have the patience to stay, so we need the backend to be lighting fast in everything it is going to do.
+	Speed also means that we can service more clients at once using as little resources as possible.
+</p>
+
+<p class="mt-2">
+	While the base functionality of EventRequest is blazing fast with almost no slowdown compared to a base HTTP server, even
+	with routing implemented on the side of the framework, some of the plug-ins do introduce a significant slowdown, but
+	I am always pushing forward towards improving them.
+</p>
