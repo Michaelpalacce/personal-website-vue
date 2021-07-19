@@ -86,4 +86,34 @@ module.exports	= [
 			}
 		]
 	},
+	{
+		name: 'Understanding TypeScript - 2021 Edition',
+		namespace: 'learning',
+		labels: [
+			{
+				key: 'type',
+				value: 'certificate, course'
+			},
+			{
+				key: 'link',
+				value: 'https://www.udemy.com/course/understanding-typescript/',
+				link: true,
+				linkName: 'Udemy'
+			},
+		],
+		data: [
+			{
+				title: 'Course Length',
+				text: '15 hours'
+			},
+			{
+				title: 'Note',
+				text: 'Thank you Maximilian Schwarzmüller!'
+			},
+			{
+				title: 'Year taken',
+				text: '2021'
+			}
+		]
+	},
 ];

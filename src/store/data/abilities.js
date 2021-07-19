@@ -12,7 +12,7 @@ module.exports	= [
 				node: 'both'
 			},
 			{
-				name: 'NodeJs',
+				name: 'NodeJS',
 				ready: '5/5',
 				status: 'Running',
 				age: '2018',
@@ -34,7 +34,7 @@ module.exports	= [
 			},
 			{
 				name: 'Typescript',
-				ready: '2/5',
+				ready: '3/5',
 				status: 'Running',
 				age: '2021',
 				node: 'amateur'
