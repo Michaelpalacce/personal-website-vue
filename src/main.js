@@ -4,8 +4,9 @@ import router			from './router'
 import store			from './store'
 import mitt				from 'mitt';
 
-import "./assets/styles/main.css";
-import "highlight.js/styles/dracula.css"
+import	"./assets/styles/main.css";
+import	"./assets/styles/load.css";
+import	"highlight.js/styles/dracula.css"
 
 const emitter	= mitt();
 const app		= createApp( App );

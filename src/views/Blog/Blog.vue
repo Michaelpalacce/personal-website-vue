@@ -1,27 +1,34 @@
 <template>
-	<p v-if="error !== ''" class="text-center text-2xl text-red-500 my-5">There was an error: {{ error }}</p>
-	<p class="text-center text-2xl mt-5 mb-1">{{ blogTitle }}</p>
-	<p class="text-center text-sm mb-5">{{ blogTime }}</p>
-	<div v-html="blogContent" class="p-10"></div>
-	<div class="m-10 hidden sm:inline-block">
-		<span class="text-black bg-white">{{ blogEncName }}( END )</span><span class="text-xs ml-2">Press 'q' to go back</span>
-	</div>
+	<Loader ref="loader" class="mx-auto" v-if="blogContent === ''"/>
 
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		class="m-10 inline-block sm:hidden cursor-pointer h-6 w-6"
-		@click="$router.go( -1 )"
-		fill="none" viewBox="0 0 24 24" stroke="currentColor">
-		<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-	</svg>
+	<transition name="loader">
+		<div v-if="blogContent !== ''">
+			<p v-if="error !== ''" class="text-center text-2xl text-red-500 my-5">There was an error: {{ error }}</p>
+			<p class="text-center text-2xl mt-5 mb-1">{{ blogTitle }}</p>
+			<p class="text-center text-sm mb-5">{{ blogTime }}</p>
+			<div v-html="blogContent" class="p-10"></div>
+			<div class="m-10 hidden sm:inline-block">
+				<span class="text-black bg-white">{{ blogEncName }}( END )</span><span class="text-xs ml-2">Press 'q' to go back</span>
+			</div>
+
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				class="m-10 inline-block sm:hidden cursor-pointer h-6 w-6"
+				@click="$router.go( -1 )"
+				fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+			</svg>
+		</div>
+	</transition>
 </template>
 
 <script>
-import hljs from 'highlight.js';
+import hljs		from 'highlight.js';
+import Loader	from "../Components/Loader/Loader";
 
 export default {
 	name: 'Blog',
-
+	components: { Loader },
 	data: function ()
 	{
 		return {
@@ -92,5 +99,13 @@ export default {
 </script>
 
 <style scoped>
+.loader-enter-active,
+.loader-leave-active {
+	transition: opacity .5s ease;
+}
 
+.loader-enter-from,
+.loader-leave-to {
+	opacity: 0;
+}
 </style>
