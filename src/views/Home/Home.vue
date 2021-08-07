@@ -14,7 +14,7 @@
 
 			<div class="text-yellow-500 text-md text-center mt-10 tracking-wider">
 				<span class="hidden sm:inline-block">&lt;profession&gt;</span>
-				<span class="text-base sm:text-xl text-center text-white mx-3"> Software Developer & DevOps </span>
+				<span class="text-base sm:text-xl text-center text-white mx-3"> Software Engineer & DevOps </span>
 				<span class="hidden sm:inline-block">&lt;/profession&gt;</span>
 			</div>
 		</div>
