@@ -5,10 +5,10 @@
 		<p class="w-2/12">{{ type }}</p>
 		<p class="w-1/12">{{ reason }}</p>
 		<p class="w-2/12">{{ object }}</p>
-		<p class="w-5/12">
+		<span class="w-5/12">
 			<p v-html="message" :class="`${toggled ? 'truncate' : ''}`"></p>
 			<span class="text-blue-500 cursor-pointer" @click="toggled = !toggled">{{ toggled ? 'Read More...' : 'Read Less...' }}</span>
-		</p>
+		</span>
 	</div>
 
 	<!--				Mobile Design-->
@@ -27,10 +27,10 @@
 		</div>
 		<div class="flex my-2">
 			<span class="w-1/4">MESSAGE:</span>
-			<p class="w-3/4">
+			<span class="w-3/4">
 				<p v-html="message" :class="`${toggled ? 'truncate' : ''}`"></p>
 				<span class="text-blue-500 cursor-pointer" @click="toggled = !toggled">{{ toggled ? 'Read More...' : 'Read Less...' }}</span>
-			</p>
+			</span>
 		</div>
 	</div>
 </template>

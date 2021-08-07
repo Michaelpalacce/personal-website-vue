@@ -5,7 +5,7 @@
 				type="text"
 				class="ml-5 inline-block w-2/12 bg-transparent outline-none"
 				autocomplete="off"
-				@keyup.enter.native="submitUsername"
+				@keyup.enter="submitUsername"
 				v-model="username"
 				:readonly="usernameSubmitted"
 		>
@@ -15,7 +15,7 @@
 					type="text"
 					class="ml-5 inline-block w-2/12 bg-transparent outline-none opacity-0"
 					autocomplete="off"
-					@keyup.enter.native="signIn"
+					@keyup.enter="signIn"
 					v-model="password"
 					:readonly="passwordSubmitted"
 			>

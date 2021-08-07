@@ -16,7 +16,7 @@ module.exports	= [
 				ready: '5/5',
 				status: 'Running',
 				age: '2018',
-				node: 'amateur'
+				node: 'both'
 			},
 			{
 				name: 'PHP',
@@ -37,7 +37,7 @@ module.exports	= [
 				ready: '3/5',
 				status: 'Running',
 				age: '2021',
-				node: 'amateur'
+				node: 'both'
 			},
 		]
 	},
@@ -62,7 +62,7 @@ module.exports	= [
 		abilities: [
 			{
 				name: 'VueJs',
-				ready: '3.5/5',
+				ready: '4/5',
 				status: 'Running',
 				age: '2021',
 				node: 'amateur'

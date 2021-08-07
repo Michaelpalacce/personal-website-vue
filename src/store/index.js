@@ -123,14 +123,13 @@ export default createStore({
 		 * @details	Loads all blogs if not loaded, populates the given blog with blog data and returns the blog
 		 *
 		 * @param	{Function} commit
-		 * @param	{Object} state
 		 * @param	{Function} dispatch
 		 * @param	{Object} getters
 		 * @param	{String} encodedTitle
 		 *
 		 * @return {Promise<Object>}
 		 */
-		async getBlog( { commit, state, dispatch, getters }, encodedTitle )
+		async getBlog( { commit, dispatch, getters }, encodedTitle )
 		{
 			await dispatch( 'populateBlogs' );
 			const blog	= getters.getBlog( encodedTitle );

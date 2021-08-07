@@ -22,7 +22,7 @@
 
 	<transition-group name="whois">
 		<div class="grid grid-cols-5 gap-y-20 mt-20" v-if="whois">
-			<a v-for="contact in contacts" :href="contact.link" class="h-10 w-10 sm:h-14 sm:w-14 mx-auto">
+			<a v-for="contact in contacts" :href="contact.link" class="h-10 w-10 sm:h-14 sm:w-14 mx-auto" :key="contact.text">
 				<img :src="contact.image" alt="" class="h-full">
 				<p class="mt-2 text-center text-xs sm:text-base">{{ contact.text }}</p>
 			</a>

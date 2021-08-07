@@ -4,7 +4,7 @@
 		<TypewriterText class="mx-5" :text="'The authenticity of host \'127.0.0.1 (127.0.0.1)\' can\'t be established.'" :chunks="3"/>
 		<TypewriterText class="mx-5" :text="'ECDSA key fingerprint is SHA256:12ca17b49af2289436f303e01.'" :chunks="3"/>
 		<TypewriterText class="mx-5 inline-block" :text="'Are you sure you want to continue connecting (yes/no/[fingerprint])?'" :chunks="3"/>
-		<input id="answer" type="text" class="hidden sm:inline-block w-1/12 bg-transparent outline-none" @keyup.enter.native="onEnter" autofocus v-model="selection" v-if="answeredNo === false" >
+		<input id="answer" type="text" class="hidden sm:inline-block w-1/12 bg-transparent outline-none" @keyup.enter="onEnter" autofocus v-model="selection" v-if="answeredNo === false" >
 		<TypewriterText class="mx-5" :text="'Host key verification failed.'" :chunks="10" v-if="answeredNo"/>
 		<TypewriterText class="mx-5" :text="'Retry in 5 second...'" :chunks="10" v-if="answeredNo"/>
 		<LinkComponent class="sm:hidden cursor-pointer" text="Yes" @click="onClick( 'y' )" v-if="answeredNo === false"/>
@@ -19,7 +19,7 @@ import TypewriterText	from "../Components/Effects/TypewriterText";
 
 export default {
 	name: 'Welcome',
-	data: () =>{
+	data: () => {
 		return {
 			selection: '',
 			answeredNo: false,
