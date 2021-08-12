@@ -35,8 +35,8 @@ app.add(( event ) => {
 });
 
 // Serve Static Resources
-app.apply( app.er_static,		{ paths	: ['resources/imgs'] } );
-app.apply( app.er_static,		{ paths	: ['resources/js', 'resources/css'], cache: { cacheControl: 'public', expirationDirectives: { 'max-age': 120 } } } );
+app.apply( app.er_static,		{ paths	: ['resources/js', 'resources/css'] } );
+app.apply( app.er_static,		{ paths	: ['resources/certs', 'resources/imgs'], cache: { cacheControl: 'public', expirationDirectives: { 'max-age': 3600 } } } );
 
 // Attach the cache server
 app.apply( app.er_data_server, { dataServerOptions: { persist: true } } );

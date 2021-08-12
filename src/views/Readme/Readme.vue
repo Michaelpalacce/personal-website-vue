@@ -1,17 +1,17 @@
 <template>
 	<div class="mx-20 my-20 grid grid-cols-1 gap-5">
-		<ReadmeHeader href="#abilities" text="Abilities" :command="abilitiesCommand" @done-typing="showAbilities = true"/>
-		<ReadmeHeader href="#languages" text="Languages" :command="languagesCommand" @done-typing="showLanguages = true"/>
-		<ReadmeHeader href="#experience" text="Experience" :command="experienceCommand" @done-typing="showExperience = true"/>
-		<ReadmeHeader href="#certificates" text="Certificates" :command="certificatesCommand" @done-typing="showCertificates = true"/>
+		<ReadmeHeader href="#abilities" text="Abilities" :command="abilitiesCommand"/>
+		<ReadmeHeader href="#experience" text="Experience" :command="experienceCommand"/>
+		<ReadmeHeader href="#certificates" text="Certificates" :command="certificatesCommand"/>
+		<ReadmeHeader href="#languages" text="Languages" :command="languagesCommand"/>
 		<ReadmeHeader href="/CV" text="Curriculum vitae" :command="cvCommand"/>
 	</div>
 
 	<hr id="abilities"/>
 	<transition name="readme">
-		<div class="text-center sm:text-left m-5" v-if="showAbilities" >
+		<div class="text-center sm:text-left m-5" v-if="show" >
 			<span class="block text-4xl text-center font-semibold mt-10">Abilities:</span>
-			<p v-if="showAbilities" class="text-xs text-center mx-auto opacity-50">Name: Technology; Ready: Rating out of 5; Status: Actively learning it or not; Age: Since when; Node: professionally or not</p>
+			<p v-if="show" class="text-xs text-center mx-auto opacity-50">Name: Technology; Ready: Rating out of 5; Status: Actively learning it or not; Age: Since when; Node: professionally or not</p>
 
 			<div v-for="ability in abilities">
 				<span class="block text-xl text-center font-semibold mt-10">{{ ability.name }}</span>
@@ -42,17 +42,9 @@
 		</div>
 	</transition>
 
-	<hr id="languages">
-	<transition name="languages">
-		<div class="m-5" v-if="showLanguages">
-			<span class="text-center block text-4xl font-semibold my-10">Languages:</span>
-			<li v-for="language in languages" class="text-2xl font-medium">{{ language }}</li>
-		</div>
-	</transition>
-
 	<hr id="experience">
 	<transition name="experience">
-		<div class="m-5 text-center sm:text-left" v-if="showExperience">
+		<div class="m-5 text-center sm:text-left" v-if="show">
 			<span class="block text-4xl text-center font-semibold my-10">Experience:</span>
 
 			<div class="hidden lg:flex">
@@ -74,38 +66,59 @@
 			</div>
 		</div>
 	</transition>
-	<p v-if="showExperience" class="text-xs text-center mx-auto opacity-50">Last Seen: Working duration; Type: Position; Reason: Work/Internship/Course; Object: Employer/Location; Message: What did I do</p>
+	<p v-if="show" class="text-xs text-center mx-auto opacity-50">Last Seen: Working duration; Type: Position; Reason: Work/Internship/Course; Object: Employer/Location; Message: What did I do</p>
 
 	<hr id="certificates">
 	<transition name="certificates">
-		<div v-if="showCertificates" class="m-5 md:w-4/5 w-full mx-auto">
+		<div v-if="show" class="m-5 md:w-4/5 w-full mx-auto">
 			<span class="text-center block text-4xl font-semibold my-10">Certificates:</span>
 
-			<div class="m-5 p-2 border" v-for="certificate in certificates">
-				<div class="grid grid-cols-2 md:grid-cols-5 mt-5">
-					<span>Name:</span>
-					<span> {{ certificate.name }}</span>
-				</div>
-				<div class="grid grid-cols-2 md:grid-cols-5 mt-5">
-					<span>Namespace:</span>
-					<span> {{ certificate.namespace }}</span>
-				</div>
-				<div class="grid grid-cols-2 md:grid-cols-5 mt-5">
-					<span>Labels:</span>
-					<div class="grid grid-cols-1">
-						<p v-for="label in certificate.labels">
-							{{ label.key }}=<span v-if="!label.link">{{ label.value }}</span><a class="text-blue-500" :href="label.value" v-if="label.link === true">{{ label.linkName || label.value }}</a>
-						</p>
-					</div>
-				</div>
-				<p>Data</p>
-				<p>====</p>
-				<div v-for="data in certificate.data" class="mb-10">
-					<p>{{ data.title }}</p>
-					----
-					<p>{{ data.text }}</p>
-				</div>
+			<div class="mx-auto text-center">
+				<input
+					type="text" placeholder="Filter Certificates"
+					class="bg-transparent border-b border-gray border-opacity-75 w-1/2 h-10 outline-none"
+					v-model="certificatesFilter"
+					ref="certificateInput"
+					@keyup="$refs.certificateInput.scrollIntoView( { behavior: 'smooth' } )"
+				>
 			</div>
+			<div class="grid lg:grid-cols-2">
+				<transition-group name="filterCertificates">
+					<div class="m-5 p-2 border" v-for="certificate in filteredCertificates" :key="certificate.name">
+						<div class="grid grid-cols-2 mt-5">
+							<span>Name:</span>
+							<span class="text-red-600"> {{ certificate.name }}</span>
+						</div>
+						<div class="grid grid-cols-2 mt-5">
+							<span>Namespace:</span>
+							<span> {{ certificate.namespace }}</span>
+						</div>
+						<div class="grid grid-cols-2 mt-5">
+							<span>Labels:</span>
+							<div class="grid grid-cols-1">
+								<p v-for="label in certificate.labels" class="mt-1">
+									{{ label.key }}=<span v-if="!label.link">{{ label.value }}</span><a class="text-blue-500" :href="label.value" v-if="label.link === true">{{ label.linkName || label.value }}</a>
+								</p>
+							</div>
+						</div>
+						<p>Data</p>
+						<p>====</p>
+						<div v-for="data in certificate.data" class="mb-5">
+							<p>{{ data.title }}</p>
+							----
+							<p>{{ data.text }}</p>
+						</div>
+					</div>
+				</transition-group>
+			</div>
+		</div>
+	</transition>
+
+	<hr id="languages">
+	<transition name="languages">
+		<div class="m-5 mb-64" v-if="show">
+			<span class="text-center block text-4xl font-semibold my-10">Languages:</span>
+			<li v-for="language in languages" class="text-2xl font-medium">{{ language }}</li>
 		</div>
 	</transition>
 </template>
@@ -120,10 +133,7 @@ export default {
 	data: function ()
 	{
 		return {
-			showAbilities: false,
-			showLanguages: false,
-			showExperience: false,
-			showCertificates: false,
+			show: false,
 			abilitiesCommand: './fetchAbilities.sh',
 			languagesCommand: 'cat /etc/default/locale',
 			experienceCommand: 'kubectl get events -n work-history',
@@ -132,22 +142,19 @@ export default {
 			abilities: this.$store.state.abilities,
 			languages: this.$store.state.languages,
 			experiences: this.$store.state.experiences,
-			certificates: this.$store.state.certificates
+			certificates: this.$store.state.certificates,
+			certificatesFilter: '',
 		};
 	},
 	mounted()
 	{
 		if ( this.$route.hash )
-		{
-			this.showAbilities		= true;
-			this.showCertificates	= true;
-			this.showExperience		= true;
-			this.showLanguages		= true;
-		}
+			this.show	= true;
 
 		this.$store.commit( 'animateNavbarText', { text: 'cd ~', remove: true, removeAfter: 200, callback: () => {
 				this.$store.commit( 'changeNavbarPath', '~' )
 				this.$store.commit( 'animateNavbarText', { text: `cat README.md && ${this.abilitiesCommand}`, speed: 20 } );
+				this.show	= true;
 			}
 		});
 	},
@@ -194,6 +201,22 @@ export default {
 				return ability;
 			});
 		},
+	},
+	computed: {
+		/**
+		 * @brief	Filters certificates according to a filter
+		 *
+		 * @details	Not the best search in the world since it JSON encodes the entire certificate object
+		 * 			Both the certificate object and filter are toLowerCased so we are case insensitive
+		 *
+		 * @return	{Array}
+		 */
+		filteredCertificates()
+		{
+			return this.certificates.filter(( certificate ) => {
+				return JSON.stringify( certificate ).toLowerCase().includes( this.certificatesFilter.toLowerCase() );
+			});
+		}
 	}
 }
 </script>
@@ -216,6 +239,16 @@ export default {
 
 .certificates-enter-from,
 .certificates-leave-to {
+	opacity: 0;
+}
+
+.filterCertificates-enter-active,
+.filterCertificates-leave-active {
+	transition: opacity .25s ease;
+}
+
+.filterCertificates-enter-from,
+.filterCertificates-leave-to {
 	opacity: 0;
 }
 

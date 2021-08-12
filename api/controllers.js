@@ -25,9 +25,16 @@ app.get( '/version', ( event )=>{
 });
 
 // CV
-app.get( '/CV', ( event )=>{
+app.get( '/CV', app.er_cache.cache( { cacheControl: 'public', expirationDirectives: { 'max-age': 3600 } } ), ( event )=>{
 	event.setResponseHeader( 'Content-Type', 'application/pdf' );
 	fs.createReadStream( `${PROJECT_ROOT}/dist/CV.pdf` ).pipe( event.response );
+});
+
+// CV
+app.get( '/robots.txt', ( event )=>{
+	event.setResponseHeader( 'Content-Type', 'text/plain' );
+	const directives	= 'User-Agent: *\nAllow: /';
+	event.send( Buffer.from( directives ) );
 });
 
 // Frontend

@@ -23,14 +23,14 @@ module.exports	= [
 				ready: '5/5',
 				status: 'Running',
 				age: '2014',
-				node: 'professionally'
+				node: 'both'
 			},
 			{
 				name: 'Python',
 				ready: '2/5',
 				status: 'Completed',
 				age: '2017',
-				node: 'amateur'
+				node: 'both'
 			},
 			{
 				name: 'Typescript',
@@ -52,7 +52,14 @@ module.exports	= [
 				status: 'Running',
 				age: '2018',
 				node: 'professionally'
-			}
+			},
+			{
+				name: 'DigitalOcean',
+				ready: '3/5',
+				status: 'Running',
+				age: '2018',
+				node: 'amateur'
+			},
 		]
 	},
 	{
@@ -186,6 +193,69 @@ module.exports	= [
 				age: '2021',
 				node: 'professionally'
 			}
+		]
+	},
+	{
+		name: 'Industry Knowledge',
+		command: 'kubectl get po -n industry-knowledge',
+		shown: false,
+		abilities: [
+			{
+				name: 'GIT',
+				ready: '4/5',
+				status: 'Running',
+				age: '2016',
+				node: 'both'
+			},
+			{
+				name: 'Agile',
+				ready: '4/5',
+				status: 'Running',
+				age: '2016',
+				node: 'professionally'
+			}
+		]
+	},
+	{
+		name: 'Other',
+		command: 'kubectl get po -n misc',
+		shown: false,
+		abilities: [
+			{
+				name: 'Linux',
+				ready: '3.5/5',
+				status: 'Running',
+				age: '2016',
+				node: 'both'
+			},
+		]
+	},
+	{
+		name: 'Testing',
+		command: 'kubectl get po -n tdd',
+		shown: false,
+		abilities: [
+			{
+				name: 'PHPUnit',
+				ready: '5/5',
+				status: 'Running',
+				age: '2016',
+				node: 'professionally'
+			},
+			{
+				name: 'Jest',
+				ready: '2/5',
+				status: 'Running',
+				age: '2018',
+				node: 'amateur'
+			},
+			{
+				name: 'EventRequest Test Suite',
+				ready: '5/5',
+				status: 'Running',
+				age: '2017',
+				node: 'amateur'
+			},
 		]
 	},
 ];
