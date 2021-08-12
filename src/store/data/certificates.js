@@ -18,6 +18,12 @@ module.exports	= [
 				link: true,
 				linkName: 'Udemy'
 			},
+			{
+				key: 'link',
+				value: '/resources/certs/cka-k8s.pdf',
+				link: true,
+				linkName: 'Certificate'
+			},
 		],
 		data: [
 			{
