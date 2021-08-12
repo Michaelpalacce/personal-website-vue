@@ -206,4 +206,154 @@ module.exports	= [
 			}
 		]
 	},
+	{
+		name: 'VMware vSphere 7 Professional: 01 Networking',
+		namespace: 'learning',
+		labels: [
+			{
+				key: 'type',
+				value: 'certificate, course'
+			},
+			{
+				key: 'field',
+				value: 'Virtualization'
+			},
+			{
+				key: 'link',
+				value: 'https://www.linkedin.com/learning/vmware-vsphere-7-professional-01-networking',
+				link: true,
+				linkName: 'LinkedIn-Learning'
+			},
+		],
+		data: [
+			{
+				title: 'Course Length',
+				text: '2h 53m'
+			},
+			{
+				title: 'PROGRESS',
+				text: '10% DONE'
+			},
+		]
+	},
+	{
+		name: 'VMware vSphere 7 Professional: 02 Storage',
+		namespace: 'learning',
+		labels: [
+			{
+				key: 'type',
+				value: 'certificate, course'
+			},
+			{
+				key: 'field',
+				value: 'Virtualization'
+			},
+			{
+				key: 'link',
+				value: 'https://www.linkedin.com/learning/vmware-vsphere-7-professional-02-storage',
+				link: true,
+				linkName: 'LinkedIn-Learning'
+			},
+		],
+		data: [
+			{
+				title: 'Course Length',
+				text: '2h 53m'
+			},
+			{
+				title: 'PROGRESS',
+				text: '0% DONE'
+			},
+		]
+	},
+	{
+		name: 'VMware vSphere 7 Professional: 03 Monitoring Tools',
+		namespace: 'learning',
+		labels: [
+			{
+				key: 'type',
+				value: 'certificate, course'
+			},
+			{
+				key: 'field',
+				value: 'Virtualization'
+			},
+			{
+				key: 'link',
+				value: 'https://www.linkedin.com/learning/vmware-vsphere-7-professional-03-monitoring-tools',
+				link: true,
+				linkName: 'LinkedIn-Learning'
+			},
+		],
+		data: [
+			{
+				title: 'Course Length',
+				text: '57m'
+			},
+			{
+				title: 'PROGRESS',
+				text: '0% DONE'
+			},
+		]
+	},
+	{
+		name: 'Learning Terraform',
+		namespace: 'learning',
+		labels: [
+			{
+				key: 'type',
+				value: 'certificate, course'
+			},
+			{
+				key: 'field',
+				value: 'DevOps, IaC'
+			},
+			{
+				key: 'link',
+				value: 'https://www.linkedin.com/learning/learning-terraform-2',
+				link: true,
+				linkName: 'LinkedIn-Learning'
+			},
+		],
+		data: [
+			{
+				title: 'Course Length',
+				text: '2h 36m'
+			},
+			{
+				title: 'PROGRESS',
+				text: '0% DONE'
+			},
+		]
+	},
+	{
+		name: 'Prepare for the Red Hat Certified Engineer (EX294) Exam',
+		namespace: 'learning',
+		labels: [
+			{
+				key: 'type',
+				value: 'learning path'
+			},
+			{
+				key: 'field',
+				value: 'DevOps'
+			},
+			{
+				key: 'link',
+				value: 'https://www.linkedin.com/learning/paths/prepare-for-the-red-hat-certified-engineer-ex294-exam',
+				link: true,
+				linkName: 'LinkedIn-Learning'
+			},
+		],
+		data: [
+			{
+				title: 'Course Length',
+				text: '5h 55m'
+			},
+			{
+				title: 'PROGRESS',
+				text: '0% DONE'
+			},
+		]
+	},
 ];

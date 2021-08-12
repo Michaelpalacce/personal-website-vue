@@ -126,7 +126,7 @@ module.exports	= [
 		]
 	},
 	{
-		name: 'CI/CD tools',
+		name: 'DevOps tools',
 		command: 'kubectl get po -n ci-cd-tools',
 		shown: false,
 		abilities: [
@@ -164,6 +164,13 @@ module.exports	= [
 				status: 'Running',
 				age: '2021',
 				node: 'amateur'
+			},
+			{
+				name: 'Linux',
+				ready: '3.5/5',
+				status: 'Running',
+				age: '2016',
+				node: 'both'
 			}
 		]
 	},
@@ -201,13 +208,6 @@ module.exports	= [
 		shown: false,
 		abilities: [
 			{
-				name: 'GIT',
-				ready: '4/5',
-				status: 'Running',
-				age: '2016',
-				node: 'both'
-			},
-			{
 				name: 'Agile',
 				ready: '4/5',
 				status: 'Running',
@@ -222,12 +222,12 @@ module.exports	= [
 		shown: false,
 		abilities: [
 			{
-				name: 'Linux',
-				ready: '3.5/5',
+				name: 'GIT',
+				ready: '4/5',
 				status: 'Running',
 				age: '2016',
 				node: 'both'
-			},
+			}
 		]
 	},
 	{
