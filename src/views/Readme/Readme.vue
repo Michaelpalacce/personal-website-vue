@@ -10,10 +10,20 @@
 	<hr id="abilities"/>
 	<transition name="readme">
 		<div class="text-center sm:text-left m-5" v-if="show" >
-			<span class="block text-4xl text-center font-semibold mt-10">Abilities:</span>
-			<p v-if="show" class="text-xs text-center mx-auto opacity-50">Name: Technology; Ready: Rating out of 5; Status: Actively learning it or not; Age: Since when; Node: professionally or not</p>
+			<span class="block text-4xl text-center font-semibold mt-10 mb-2">Abilities:</span>
+			<p v-if="show" class="text-xs text-center mx-auto opacity-50 mb-10">Name: Technology; Ready: Rating out of 5; Status: Actively learning it or not; Age: Since when; Node: professionally or not</p>
 
-			<div v-for="ability in abilities">
+			<div class="mx-auto text-center">
+				<input
+					type="text" placeholder="Filter Abilities"
+					class="bg-transparent border-b border-gray border-opacity-75 w-1/2 h-10 outline-none"
+					v-model="abilitiesFilter"
+					ref="abilitiesInput"
+					@keyup="$refs.abilitiesInput.scrollIntoView( { behavior: 'smooth' } )"
+				>
+			</div>
+
+			<div v-for="ability in filteredAbilities">
 				<span class="block text-xl text-center font-semibold mt-10">{{ ability.name }}</span>
 				<p class="text-blue-500 cursor-pointer hover:text-blue-300 text-center mx-auto" @click="ability.shown = !ability.shown">
 					<TypewriterText title="sg@website: " :text="ability.command" class="text-xs md:text-base inline-block" />
@@ -29,12 +39,12 @@
 							<p>AGE</p>
 							<p class="hidden sm:inline-block">NODE</p>
 						</div>
-						<div v-for="ability in ability.abilities" class="grid grid-cols-4 sm:grid-cols-5 my-2">
-							<p class="truncate">{{ ability.name }}</p>
-							<p class="truncate">{{ ability.ready }}</p>
-							<p class="truncate">{{ ability.status }}</p>
-							<p class="truncate">{{ ability.age }}</p>
-							<p class="truncate hidden sm:inline-block">{{ ability.node }}</p>
+						<div v-for="item in ability.filteredItems" class="grid grid-cols-4 sm:grid-cols-5 my-2">
+							<p class="truncate">{{ item.name }}</p>
+							<p class="truncate">{{ item.ready }}</p>
+							<p class="truncate">{{ item.status }}</p>
+							<p class="truncate">{{ item.age }}</p>
+							<p class="truncate hidden sm:inline-block">{{ item.node }}</p>
 						</div>
 					</div>
 				</transition>
@@ -45,7 +55,8 @@
 	<hr id="experience">
 	<transition name="experience">
 		<div class="m-5 text-center sm:text-left" v-if="show">
-			<span class="block text-4xl text-center font-semibold my-10">Experience:</span>
+			<span class="block text-4xl text-center font-semibold mt-10 mb-2">Experience:</span>
+			<p v-if="show" class="text-xs text-center mx-auto opacity-50 mb-10">Last Seen: Working duration; Type: Position; Reason: Work/Internship/Course; Object: Employer/Location; Message: What did I do</p>
 
 			<div class="hidden lg:flex">
 				<p class="w-2/12">LAST SEEN</p>
@@ -66,7 +77,6 @@
 			</div>
 		</div>
 	</transition>
-	<p v-if="show" class="text-xs text-center mx-auto opacity-50">Last Seen: Working duration; Type: Position; Reason: Work/Internship/Course; Object: Employer/Location; Message: What did I do</p>
 
 	<hr id="certificates">
 	<transition name="certificates">
@@ -144,6 +154,7 @@ export default {
 			experiences: this.$store.state.experiences,
 			certificates: this.$store.state.certificates,
 			certificatesFilter: '',
+			abilitiesFilter: ''
 		};
 	},
 	mounted()
@@ -200,7 +211,7 @@ export default {
 
 				return ability;
 			});
-		},
+		}
 	},
 	computed: {
 		/**
@@ -216,6 +227,31 @@ export default {
 			return this.certificates.filter(( certificate ) => {
 				return JSON.stringify( certificate ).toLowerCase().includes( this.certificatesFilter.toLowerCase() );
 			});
+		},
+
+		/**
+		 * @brief	Filters the abilities according to a filter
+		 *
+		 * @details	Will remove whole sections if they are empty
+		 *
+		 * @return	{Array}
+		 */
+		filteredAbilities()
+		{
+			const filtered	= this.abilities.filter(( ability ) => {
+				ability.filteredItems	= ability.items.filter(( ability ) => {
+					return JSON.stringify( ability ).toLowerCase().includes( this.abilitiesFilter.toLowerCase() )
+				});
+
+				ability.shown	= true;
+
+				return ability.filteredItems.length > 0;
+			});
+
+			if ( this.abilitiesFilter === '' )
+				filtered.map( ( ability, index ) => ability.shown = index === 0 )
+
+			return filtered;
 		}
 	}
 }

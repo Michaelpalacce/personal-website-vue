@@ -216,7 +216,7 @@ module.exports	= [
 			},
 			{
 				key: 'field',
-				value: 'Virtualization'
+				value: 'VMs'
 			},
 			{
 				key: 'link',
@@ -246,7 +246,7 @@ module.exports	= [
 			},
 			{
 				key: 'field',
-				value: 'Virtualization'
+				value: 'VMs'
 			},
 			{
 				key: 'link',
@@ -276,7 +276,7 @@ module.exports	= [
 			},
 			{
 				key: 'field',
-				value: 'Virtualization'
+				value: 'VMs'
 			},
 			{
 				key: 'link',

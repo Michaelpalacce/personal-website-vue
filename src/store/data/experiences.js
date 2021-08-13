@@ -32,7 +32,7 @@ module.exports	= [
 	},
 	{
 		lastSeen: '02/08/2021 - Current',
-		type: 'PS CoE MTS Level 3',
+		type: 'Senior Cloud Automation Developer',
 		reason: 'Work',
 		object: 'VMware',
 		message: 'Helping businesses realize their software and virtualization needs.'

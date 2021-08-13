@@ -6,8 +6,8 @@
 		<p class="w-1/12">{{ reason }}</p>
 		<p class="w-2/12">{{ object }}</p>
 		<span class="w-5/12">
-			<p v-html="message" :class="`${toggled ? 'truncate' : ''}`"></p>
-			<span class="text-blue-500 cursor-pointer" @click="toggled = !toggled">{{ toggled ? 'Read More...' : 'Read Less...' }}</span>
+			<p v-html="message" :class="`${toggled && isTooBig ? 'truncate' : ''}`"></p>
+			<span v-if="isTooBig" class="text-blue-500 cursor-pointer" @click="toggled = !toggled">{{ toggled ? 'Read More...' : 'Read Less...' }}</span>
 		</span>
 	</div>
 
@@ -28,8 +28,8 @@
 		<div class="flex my-2">
 			<span class="w-1/4">MESSAGE:</span>
 			<span class="w-3/4">
-				<p v-html="message" :class="`${toggled ? 'truncate' : ''}`"></p>
-				<span class="text-blue-500 cursor-pointer" @click="toggled = !toggled">{{ toggled ? 'Read More...' : 'Read Less...' }}</span>
+				<p v-html="message" :class="`${toggled && isTooBig ? 'truncate' : ''}`"></p>
+				<span v-if="isTooBig" class="text-blue-500 cursor-pointer" @click="toggled = !toggled">{{ toggled ? 'Read More...' : 'Read Less...' }}</span>
 			</span>
 		</div>
 	</div>
@@ -44,10 +44,15 @@ export default {
 			toggled	: true
 		};
 	},
-	methods: {
-		toggle()
+	computed: {
+		/**
+		 * @brief	Returns if the message is too big to just be displayed
+		 *
+		 * @return	{Boolean}
+		 */
+		isTooBig()
 		{
-
+			return this.message.length > 250;
 		}
 	},
 	props: {

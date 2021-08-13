@@ -3,9 +3,9 @@ module.exports	= [
 		name: 'Languages',
 		command: 'kubectl get po -n languages',
 		shown: true,
-		abilities: [
+		items: [
 			{
-				name: 'JS',
+				name: 'JS/JavaScript',
 				ready: '5/5',
 				status: 'Running',
 				age: '2014',
@@ -33,7 +33,7 @@ module.exports	= [
 				node: 'both'
 			},
 			{
-				name: 'Typescript',
+				name: 'TS/Typescript',
 				ready: '3/5',
 				status: 'Running',
 				age: '2021',
@@ -45,9 +45,9 @@ module.exports	= [
 		name: 'Cloud',
 		command: 'kubectl get po -n cloud',
 		shown: false,
-		abilities: [
+		items: [
 			{
-				name: 'AWS',
+				name: 'AWS/Amazon Web Services',
 				ready: '4/5',
 				status: 'Running',
 				age: '2018',
@@ -66,7 +66,7 @@ module.exports	= [
 		name: 'Frameworks',
 		command: 'kubectl get po -n frameworks',
 		shown: false,
-		abilities: [
+		items: [
 			{
 				name: 'VueJs',
 				ready: '4/5',
@@ -77,9 +77,9 @@ module.exports	= [
 			{
 				name: 'Symfony',
 				ready: '3/5',
-				status: 'Running',
+				status: 'Completed',
 				age: '2016',
-				node: 'amateur'
+				node: 'professionally'
 			},
 			{
 				name: 'KoaJS',
@@ -94,7 +94,7 @@ module.exports	= [
 		name: 'Containers',
 		command: 'kubectl get po -n containers',
 		shown: false,
-		abilities: [
+		items: [
 			{
 				name: 'Docker',
 				ready: '5/5',
@@ -129,7 +129,7 @@ module.exports	= [
 		name: 'DevOps tools',
 		command: 'kubectl get po -n ci-cd-tools',
 		shown: false,
-		abilities: [
+		items: [
 			{
 				name: 'Ansible',
 				ready: '4/5',
@@ -178,7 +178,7 @@ module.exports	= [
 		name: 'Databases',
 		command: 'kubectl get po -n databases',
 		shown: false,
-		abilities: [
+		items: [
 			{
 				name: 'Cassandra DB',
 				ready: '4/5',
@@ -206,7 +206,7 @@ module.exports	= [
 		name: 'Industry Knowledge',
 		command: 'kubectl get po -n industry-knowledge',
 		shown: false,
-		abilities: [
+		items: [
 			{
 				name: 'Agile',
 				ready: '4/5',
@@ -220,7 +220,7 @@ module.exports	= [
 		name: 'Other',
 		command: 'kubectl get po -n misc',
 		shown: false,
-		abilities: [
+		items: [
 			{
 				name: 'GIT',
 				ready: '4/5',
@@ -234,7 +234,7 @@ module.exports	= [
 		name: 'Testing',
 		command: 'kubectl get po -n tdd',
 		shown: false,
-		abilities: [
+		items: [
 			{
 				name: 'PHPUnit',
 				ready: '5/5',
