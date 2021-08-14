@@ -224,15 +224,17 @@ module.exports	= [
 				link: true,
 				linkName: 'LinkedIn-Learning'
 			},
+			{
+				key: 'link',
+				value: '/resources/certs/vsphere-7-01-networking.pdf',
+				link: true,
+				linkName: 'Certificate'
+			},
 		],
 		data: [
 			{
 				title: 'Course Length',
 				text: '2h 53m'
-			},
-			{
-				title: 'PROGRESS',
-				text: '10% DONE'
 			},
 		]
 	},
