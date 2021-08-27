@@ -256,15 +256,17 @@ module.exports	= [
 				link: true,
 				linkName: 'LinkedIn-Learning'
 			},
+			{
+				key: 'link',
+				value: '/resources/certs/vsphere-7-02-storage.pdf',
+				link: true,
+				linkName: 'Certificate'
+			},
 		],
 		data: [
 			{
 				title: 'Course Length',
 				text: '2h 53m'
-			},
-			{
-				title: 'PROGRESS',
-				text: '0% DONE'
 			},
 		]
 	},
@@ -286,15 +288,17 @@ module.exports	= [
 				link: true,
 				linkName: 'LinkedIn-Learning'
 			},
+			{
+				key: 'link',
+				value: '/resources/certs/vsphere-7-03-monitoring.pdf',
+				link: true,
+				linkName: 'Certificate'
+			},
 		],
 		data: [
 			{
 				title: 'Course Length',
 				text: '57m'
-			},
-			{
-				title: 'PROGRESS',
-				text: '0% DONE'
 			},
 		]
 	},
