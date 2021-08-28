@@ -1,4 +1,4 @@
-node( 'nodejs-16.7' ) {
+node( 'nodejs-16' ) {
     stage( 'Fetch repo' ) {
         withCredentials([string(credentialsId: 'github-access-token', variable: 'GITHUBTOKEN')]) {
           sh """
