@@ -149,16 +149,13 @@ export default {
 			experienceCommand: 'kubectl get events -n work-history',
 			certificatesCommand: 'kubectl get cm | awk \'NR>1{print $1}\' | xargs kubectl describe cm',
 			cvCommand: `wget ${window.location.host}/CV`,
-			abilities: this.$store.state.abilities,
 			languages: this.$store.state.languages,
 			experiences: this.$store.state.experiences,
-			certificates: this.$store.state.certificates,
 			certificatesFilter: '',
 			abilitiesFilter: ''
 		};
 	},
-	mounted()
-	{
+	async mounted() {
 		if ( this.$route.hash )
 			this.show	= true;
 
@@ -168,6 +165,9 @@ export default {
 				this.show	= true;
 			}
 		});
+
+		await this.$store.dispatch( 'populateAbilities' ).catch( console.log );
+		await this.$store.dispatch( 'populateCertificates' ).catch( console.log );
 	},
 	methods:{
 		/**
@@ -214,6 +214,9 @@ export default {
 		}
 	},
 	computed: {
+		abilities: function () { return this.$store.state.abilities; },
+		certificates: function () { return this.$store.state.certificates; },
+
 		/**
 		 * @brief	Filters certificates according to a filter
 		 *

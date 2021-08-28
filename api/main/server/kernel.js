@@ -34,6 +34,8 @@ app.add(( event ) => {
 	event.next();
 });
 
+app.apply( app.er_etag, { strong: true } );
+
 // Serve Static Resources
 app.apply( app.er_static,		{ paths	: ['resources/js', 'resources/css'] } );
 app.apply( app.er_static,		{ paths	: ['resources/certs', 'resources/imgs'], cache: { cacheControl: 'public', expirationDirectives: { 'max-age': 3600 } } } );

@@ -14,8 +14,7 @@ const GetBlogsModel	= require( '../model/getBlogs' );
 app.get( '/blogs', ( event ) =>{
 	const model	= new GetBlogsModel();
 
-
-	event.send( model.getBlogs() );
+	event.conditionalSend( model.getBlogs() );
 });
 
 /**
@@ -30,7 +29,7 @@ app.get( '/blogs/:blogName:', ( event ) =>{
 	const model		= new GetBlogsModel();
 	const content	= model.getBlogContent( Buffer.from( event.params.blogName, 'base64' ).toString( 'utf-8' ) );
 
-	event.send( content );
+	event.conditionalSend( content );
 });
 
 module.exports	= app;

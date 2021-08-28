@@ -28,7 +28,7 @@ module.exports	= [
 			{
 				name: 'Python',
 				ready: '2/5',
-				status: 'Completed',
+				status: 'Running',
 				age: '2017',
 				node: 'both'
 			},
@@ -244,10 +244,17 @@ module.exports	= [
 			},
 			{
 				name: 'Jest',
-				ready: '2/5',
+				ready: '3/5',
 				status: 'Running',
 				age: '2018',
 				node: 'amateur'
+			},
+			{
+				name: 'Jasmine',
+				ready: '3/5',
+				status: 'Running',
+				age: '2021',
+				node: 'both'
 			},
 			{
 				name: 'EventRequest Test Suite',

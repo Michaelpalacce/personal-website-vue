@@ -7,12 +7,12 @@ export default createStore({
 		navbarText		: '',
 		navbarPath		: '',
 		navbarTimeout	: null,
-		projects		: require( './data/projects' ),
+		projects		: [],
 		contacts		: require( './data/contacts' ),
-		abilities		: require( './data/abilities' ),
+		abilities		: [],
 		languages		: require( './data/languages' ),
 		experiences		: require( './data/experiences' ),
-		certificates	: require( './data/certificates' ),
+		certificates	: [],
 		blogs			: []
 	},
 	mutations: {
@@ -27,9 +27,44 @@ export default createStore({
 		 *
 		 * @return	void
 		 */
-		populateBlogs( state, data )
-		{
+		populateBlogs( state, data ) {
 			state.blogs	= data;
+		},
+
+		/**
+		 * @brief	Populate the projects with the given data
+		 *
+		 * @param	{Object} state
+		 * @param	{Object} data
+		 *
+		 * @return	void
+		 */
+		populateProjects( state, data ) {
+			state.projects	= data;
+		},
+
+		/**
+		 * @brief	Populate the certificates with the given data
+		 *
+		 * @param	{Object} state
+		 * @param	{Object} data
+		 *
+		 * @return	void
+		 */
+		populateCertificates( state, data ) {
+			state.certificates	= data;
+		},
+
+		/**
+		 * @brief	Populate the abilities with the given data
+		 *
+		 * @param	{Object} state
+		 * @param	{Object} data
+		 *
+		 * @return	void
+		 */
+		populateAbilities( state, data ) {
+			state.abilities	= data;
 		},
 
 		/**
@@ -40,8 +75,7 @@ export default createStore({
 		 *
 		 * @return	void
 		 */
-		populateBlog( state, data )
-		{
+		populateBlog( state, data ) {
 			const blog		= this.getters.getBlog( data.encodedTitle );
 			blog.content	= data.content;
 		},
@@ -54,8 +88,7 @@ export default createStore({
 		 *
 		 * @return	void
 		 */
-		setNavbarText( state, text = '' )
-		{
+		setNavbarText( state, text = '' ) {
 			clearTimeout( state.navbarTimeout );
 			state.navbarText	= text;
 		},
@@ -72,11 +105,11 @@ export default createStore({
 		 * @param	{Number} chunks
 		 * @param	{Boolean} remove
 		 * @param	{Number} removeAfter
+		 * @param	{Function} callback
 		 *
 		 * @return	void
 		 */
-		animateNavbarText( state, { text, speed = 50, chunks = 1, remove = false, removeAfter = 2000, callback = () => {} } )
-		{
+		animateNavbarText( state, { text, speed = 50, chunks = 1, remove = false, removeAfter = 2000, callback = () => {} } ) {
 			const animateText	= ( index = 0 ) => {
 				if ( text.length !== state.navbarText.length )
 				{
@@ -111,8 +144,7 @@ export default createStore({
 		 *
 		 * @return	void
 		 */
-		changeNavbarPath( state, path )
-		{
+		changeNavbarPath( state, path ) {
 			state.navbarPath	= path;
 		}
 	},
@@ -165,6 +197,63 @@ export default createStore({
 			const blogs			= blogsResponse.data;
 
 			commit( 'populateBlogs', blogs );
+		},
+
+		/**
+		 * @brief	Populates the certificates
+		 *
+		 * @param	{Object} state
+		 * @param	{Function} commit
+		 *
+		 * @return	{Promise<void>}
+		 */
+		async populateCertificates( { state, commit } )
+		{
+			if ( state.certificates.length !== 0 )
+				return;
+
+			const certificatesResponse	= await communicator.getAllCertificates();
+			const certificates			= certificatesResponse.data;
+
+			commit( 'populateCertificates', certificates );
+		},
+
+		/**
+		 * @brief	Populates the projects if needed
+		 *
+		 * @param	{Object} state
+		 * @param	{Function} commit
+		 *
+		 * @return	{Promise<void>}
+		 */
+		async populateProjects( { state, commit } )
+		{
+			if ( state.projects.length !== 0 )
+				return;
+
+			const projectsResponse	= await communicator.getAllProjects();
+			const projects			= projectsResponse.data;
+
+			commit( 'populateProjects', projects );
+		},
+
+		/**
+		 * @brief	Populates the abilities if needed
+		 *
+		 * @param	{Object} state
+		 * @param	{Function} commit
+		 *
+		 * @return	{Promise<void>}
+		 */
+		async populateAbilities( { state, commit } )
+		{
+			if ( state.abilities.length !== 0 )
+				return;
+
+			const abilitiesResponse	= await communicator.getAllAbilities();
+			const abilities			= abilitiesResponse.data;
+
+			commit( 'populateAbilities', abilities );
 		}
 	},
 	getters: {

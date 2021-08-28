@@ -310,8 +310,8 @@ module.exports	= [
 		],
 		link: 'https://github.com/Michaelpalacce/Docker.git',
 		text: 'Jenkins Inbound Agent for AMD64 and ARM64 processors based on the'
-				+ ' alpine linux with NodeJS 16.7, git and openssh installed. When you Run it in Kubernetes, make sure not to '
-				+ 'pass any arguments and not to overwrite the command.'
+			+ ' alpine linux with NodeJS 16.7, git and openssh installed. When you Run it in Kubernetes, make sure not to '
+			+ 'pass any arguments and not to overwrite the command.'
 	},
 	{
 		title: 'Docker PHP',

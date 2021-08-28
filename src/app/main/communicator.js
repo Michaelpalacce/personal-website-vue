@@ -75,6 +75,40 @@ class ApiCommunicator
 	}
 
 	/**
+	 * @brief	Fetches all the projects
+	 *
+	 * @return	{Promise<AxiosResponse<any>>}
+	 */
+	async getAllProjects()
+	{
+		const response	= await axios.get( `/api/projects` ).catch( ( error ) => {
+			return error;
+		});
+
+		if ( response.message )
+			throw response;
+
+		return response;
+	}
+
+	/**
+	 * @brief	Fetches all the abilities
+	 *
+	 * @return	{Promise<AxiosResponse<any>>}
+	 */
+	async getAllAbilities()
+	{
+		const response	= await axios.get( `/api/abilities` ).catch( ( error ) => {
+			return error;
+		});
+
+		if ( response.message )
+			throw response;
+
+		return response;
+	}
+
+	/**
 	 * @brief	Fetches all the blogs' titles and dates
 	 *
 	 * @return	{Promise<AxiosResponse<any>>}
@@ -82,6 +116,23 @@ class ApiCommunicator
 	async getAllBlogs()
 	{
 		const response	= await axios.get( `/api/blogs` ).catch( ( error ) => {
+			return error;
+		});
+
+		if ( response.message )
+			throw response;
+
+		return response;
+	}
+
+	/**
+	 * @brief	Fetches all the certificates
+	 *
+	 * @return	{Promise<AxiosResponse<any>>}
+	 */
+	async getAllCertificates()
+	{
+		const response	= await axios.get( `/api/certificates` ).catch( ( error ) => {
 			return error;
 		});
 
