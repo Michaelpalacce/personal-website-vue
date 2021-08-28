@@ -288,6 +288,32 @@ module.exports	= [
 			' Contains 2 ready probes that can be used to check if the node/seed is up and running.'
 	},
 	{
+		title: 'Docker Jenkins Inbound Agent NodeJS',
+		installCommand: 'docker pull stefangenov/jenkins-agent-node',
+		technologies: [
+			{
+				isImg: true,
+				content: '/resources/imgs/technologies/docker.png',
+				link: 'https://hub.docker.com/'
+			}
+		],
+		badges: [],
+		links: [
+			{
+				icon: '/resources/imgs/github-icon.svg',
+				link: 'https://github.com/Michaelpalacce/Docker/tree/master/jenkins'
+			},
+			{
+				icon: '/resources/imgs/technologies/docker.png',
+				link: 'https://hub.docker.com/repository/docker/stefangenov/jenkins-agent-node'
+			},
+		],
+		link: 'https://github.com/Michaelpalacce/Docker.git',
+		text: 'Jenkins Inbound Agent for AMD64 and ARM64 processors based on the'
+				+ ' alpine linux with NodeJS 16.7, git and openssh installed. When you Run it in Kubernetes, make sure not to '
+				+ 'pass any arguments and not to overwrite the command.'
+	},
+	{
 		title: 'Docker PHP',
 		installCommand: 'docker pull stefangenov/php:7.2',
 		technologies: [
