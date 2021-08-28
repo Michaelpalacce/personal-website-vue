@@ -1,10 +1,4 @@
 node( 'nodejs-16.7' ) {
-    stage( 'Install git' ) {
-          sh """
-            apk add git
-          """
-    }
-
     stage( 'Fetch repo' ) {
         withCredentials([string(credentialsId: 'github-access-token', variable: 'GITHUBTOKEN')]) {
           sh """
@@ -23,15 +17,27 @@ node( 'nodejs-16.7' ) {
       """
     }
 
+    stage('Commit') {
+     try{
+           sh """
+            cd website
+            git config --global user.email "stefantigro@gmail.com"
+            git config --global user.name "Stefan Genov"
+            git add .
+            git commit -am "[jenkins-ci-cd] Auto build"
+          """
+     }
+     catch( exc ) {}
+    }
+
     stage('Push') {
-      sh """
-        cd website
-        git config --global user.email "stefantigro@gmail.com"
-        git config --global user.name "Stefan Genov"
-        git add .
-        git commit -am "[jenkins-ci-cd] Auto build"
-        git push --set-upstream origin master
-      """
+      try {
+          sh """
+            cd website
+            git push --set-upstream origin master
+          """
+      }
+      catch( exc ){}
     }
 }
 
