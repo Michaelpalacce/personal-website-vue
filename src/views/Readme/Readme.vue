@@ -81,7 +81,7 @@
 	<hr id="certificates">
 	<transition name="certificates">
 		<div v-if="show" class="m-5 md:w-4/5 w-full mx-auto">
-			<span class="text-center block text-4xl font-semibold my-10">Certificates:</span>
+			<span class="text-center block text-4xl font-semibold my-10">Certificates && Courses:</span>
 
 			<div class="mx-auto text-center">
 				<input
