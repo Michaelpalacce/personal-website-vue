@@ -50,9 +50,21 @@ pipeline {
 	}
 
 	stages {
+		stage( 'Fetch repo' ) {
+			steps {
+				withCredentials([string(credentialsId: 'github-access-token', variable: 'GITHUBTOKEN')]) {
+					sh """
+						git clone https://github.com/Michaelpalacce/personal-website-vue.git website
+						cd website
+						git remote set-url origin https://$GITHUBTOKEN@github.com/Michaelpalacce/personal-website-vue.git
+					"""
+				}
+			}
+		}
 		stage('Build') {
 			steps {
 			  sh """
+				cd website
 				npm ci
 				npm run build
 			  """
@@ -63,15 +75,13 @@ pipeline {
 			steps {
 				script {
 					try {
-						withCredentials([string(credentialsId: 'github-access-token', variable: 'GITHUBTOKEN')]) {
-							sh """
-								git remote set-url origin https://$GITHUBTOKEN@github.com/Michaelpalacce/personal-website-vue.git
-								git config --global user.email "stefantigro@gmail.com"
-								git config --global user.name "Stefan Genov"
-								git add .
-								git commit -am "[jenkins-ci-cd] Auto build"
-							"""
-						}
+						sh """
+							cd website
+							git config --global user.email "stefantigro@gmail.com"
+							git config --global user.name "Stefan Genov"
+							git add .
+							git commit -am "[jenkins-ci-cd] Auto build"
+						"""
 					}
 					catch(exc){}
 				}
@@ -81,6 +91,7 @@ pipeline {
 		stage('Push') {
 			steps {
 				sh """
+					cd website
 					git push --set-upstream origin master
 				"""
 			}
