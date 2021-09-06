@@ -119,7 +119,9 @@ module.exports	= [
 			'<br/><br/>' +
 			'It acts as a Command Line Interface ( CLI ) and can be booted from anywhere by installing it as a global module.',
 		images: [
-			'/resources/imgs/ServerEmulator-1.png'
+			'/resources/imgs/ServerEmulator-2.png',
+			'/resources/imgs/ServerEmulator-3.png',
+			'/resources/imgs/ServerEmulator-4.png'
 		]
 	},
 	{
@@ -338,6 +340,30 @@ module.exports	= [
 		text: 'A php7.2-fpm installation based on alpine linux.' +
 			' Includes a bunch of configurable Environment Variables. ' +
 			'Contains phpunit, composer, nodejs, cassandra php driver and git installed by default.'
+	},
+	{
+		title: 'Docker rsync',
+		installCommand: 'docker pull stefangenov/rsync:alpine',
+		technologies: [
+			{
+				isImg: true,
+				content: '/resources/imgs/technologies/docker.png',
+				link: 'https://hub.docker.com/'
+			}
+		],
+		badges: [],
+		links: [
+			{
+				icon: '/resources/imgs/github-icon.svg',
+				link: 'https://github.com/Michaelpalacce/Docker/tree/master/rsync'
+			},
+			{
+				icon: '/resources/imgs/technologies/docker.png',
+				link: 'https://hub.docker.com/repository/docker/stefangenov/rsync'
+			},
+		],
+		link: 'https://github.com/Michaelpalacce/Docker.git',
+		text: 'A Simple Docker image with rsync installed'
 	},
 	{
 		title: 'Ansible Role docker',
