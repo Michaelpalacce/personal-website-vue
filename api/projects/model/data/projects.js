@@ -390,6 +390,30 @@ module.exports	= [
 		text: 'A Simple Docker image with rsync installed'
 	},
 	{
+		title: 'Docker awscli',
+		installCommand: 'docker pull stefangenov/awscli:alpine',
+		technologies: [
+			{
+				isImg: true,
+				content: '/resources/imgs/technologies/docker.png',
+				link: 'https://hub.docker.com/'
+			}
+		],
+		badges: [],
+		links: [
+			{
+				icon: '/resources/imgs/github-icon.svg',
+				link: 'https://github.com/Michaelpalacce/Docker/tree/master/awscli'
+			},
+			{
+				icon: '/resources/imgs/technologies/docker.png',
+				link: 'https://hub.docker.com/repository/docker/stefangenov/awscli'
+			},
+		],
+		link: 'https://github.com/Michaelpalacce/Docker.git',
+		text: 'A Simple Docker image with awscli installed. You can easily configure the awscli with environment variables.'
+	},
+	{
 		title: 'Ansible Role docker',
 		installCommand: 'ansible-galaxy install michaelpalacce.docker',
 		technologies: [
