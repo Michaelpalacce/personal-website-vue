@@ -8,7 +8,7 @@ module.exports	= [
 		technologies: [
 			{
 				isImg: true,
-				content: '/resources/imgs/technologies/node-js-icon.svg',
+				content: '/imgs/technologies/node-js-icon.svg',
 				link: 'https://nodejs.org/'
 			}
 		],
@@ -56,11 +56,11 @@ module.exports	= [
 		],
 		links: [
 			{
-				icon: '/resources/imgs/github-icon.svg',
+				icon: '/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/EventRequest.git'
 			},
 			{
-				icon: '/resources/imgs/npm-icon.svg',
+				icon: '/imgs/npm-icon.svg',
 				link: 'https://www.npmjs.com/package/event_request'
 			}
 		],
@@ -69,8 +69,8 @@ module.exports	= [
 			'<br/><br/>' +
 			'It offers a wide array of built in plugins and a wide sort of extendable components. This site is powered by EventRequest!',
 		images: [
-			'/resources/imgs/EventRequest-1.svg',
-			'/resources/imgs/EventRequest-2.png'
+			'/imgs/EventRequest-1.svg',
+			'/imgs/EventRequest-2.png'
 		]
 	},
 	{
@@ -78,12 +78,12 @@ module.exports	= [
 		technologies: [
 			{
 				isImg: true,
-				content: '/resources/imgs/technologies/node-js-icon.svg',
+				content: '/imgs/technologies/node-js-icon.svg',
 				link: 'https://nodejs.org/'
 			},
 			{
 				isImg: true,
-				content: '/resources/imgs/technologies/vuejs-logo.svg',
+				content: '/imgs/technologies/vuejs-logo.svg',
 				link: 'https://vuejs.org/'
 			},
 			{
@@ -100,11 +100,11 @@ module.exports	= [
 		],
 		links: [
 			{
-				icon: '/resources/imgs/github-icon.svg',
+				icon: '/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/Server.git'
 			},
 			{
-				icon: '/resources/imgs/npm-icon.svg',
+				icon: '/imgs/npm-icon.svg',
 				link: 'https://www.npmjs.com/package/server-emulator'
 			}
 		],
@@ -119,9 +119,9 @@ module.exports	= [
 			'<br/><br/>' +
 			'It acts as a Command Line Interface ( CLI ) and can be booted from anywhere by installing it as a global module.',
 		images: [
-			'/resources/imgs/ServerEmulator-2.png',
-			'/resources/imgs/ServerEmulator-3.png',
-			'/resources/imgs/ServerEmulator-4.png'
+			'/imgs/ServerEmulator-2.png',
+			'/imgs/ServerEmulator-3.png',
+			'/imgs/ServerEmulator-4.png'
 		]
 	},
 	{
@@ -129,7 +129,7 @@ module.exports	= [
 		technologies: [
 			{
 				isImg: true,
-				content: '/resources/imgs/technologies/node-js-icon.svg',
+				content: '/imgs/technologies/node-js-icon.svg',
 				link: 'https://nodejs.org/'
 			},
 			{
@@ -146,11 +146,11 @@ module.exports	= [
 		],
 		links: [
 			{
-				icon: '/resources/imgs/github-icon.svg',
+				icon: '/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/fs-browser.git'
 			},
 			{
-				icon: '/resources/imgs/npm-icon.svg',
+				icon: '/imgs/npm-icon.svg',
 				link: 'https://www.npmjs.com/package/fs-browser'
 			}
 		],
@@ -163,9 +163,9 @@ module.exports	= [
 			'<br/><br/>' +
 			'The module is entirely asynchronous and works in Linux and Windows systems.',
 		images: [
-			'/resources/imgs/fs-browser-1.svg',
-			'/resources/imgs/fs-browser-2.svg',
-			'/resources/imgs/fs-browser-3.svg'
+			'/imgs/fs-browser-1.svg',
+			'/imgs/fs-browser-2.svg',
+			'/imgs/fs-browser-3.svg'
 		]
 	},
 	{
@@ -173,7 +173,7 @@ module.exports	= [
 		technologies: [
 			{
 				isImg: true,
-				content: '/resources/imgs/technologies/node-js-icon.svg',
+				content: '/imgs/technologies/node-js-icon.svg',
 				link: 'https://nodejs.org/'
 			},
 			{
@@ -198,11 +198,11 @@ module.exports	= [
 		],
 		links: [
 			{
-				icon: '/resources/imgs/github-icon.svg',
+				icon: '/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/er_redis_data_server.git'
 			},
 			{
-				icon: '/resources/imgs/npm-icon.svg',
+				icon: '/imgs/npm-icon.svg',
 				link: 'https://www.npmjs.com/package/er_redis_data_server'
 			}
 		],
@@ -213,7 +213,7 @@ module.exports	= [
 		installCommand: 'npm i er_redis_data_server',
 		text: 'er_redis_data_server is a plugin for EventRequest that adds the ability to attach a redis data server. This allows for distributed caching.',
 		images: [
-			'/resources/imgs/er_redis_data_server-1.svg'
+			'/imgs/er_redis_data_server-1.svg'
 		]
 	},
 	{
@@ -221,7 +221,7 @@ module.exports	= [
 		technologies: [
 			{
 				isImg: true,
-				content: '/resources/imgs/technologies/node-js-icon.svg',
+				content: '/imgs/technologies/node-js-icon.svg',
 				link: 'https://nodejs.org/'
 			},
 			{
@@ -246,11 +246,11 @@ module.exports	= [
 		],
 		links: [
 			{
-				icon: '/resources/imgs/github-icon.svg',
+				icon: '/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/er_memcached_data_server.git'
 			},
 			{
-				icon: '/resources/imgs/npm-icon.svg',
+				icon: '/imgs/npm-icon.svg',
 				link: 'https://www.npmjs.com/package/er_memcached_data_server'
 			}
 		],
@@ -261,7 +261,7 @@ module.exports	= [
 		installCommand: 'npm i er_memcached_data_server',
 		text: 'er_memcached_data_server. is a plugin for EventRequest that adds the ability to attach a memcached data server. This allows for distributed caching.',
 		images: [
-			'/resources/imgs/er_memcached_data_server-1.svg'
+			'/imgs/er_memcached_data_server-1.svg'
 		]
 	},
 	{
@@ -270,18 +270,18 @@ module.exports	= [
 		technologies: [
 			{
 				isImg: true,
-				content: '/resources/imgs/technologies/docker.png',
+				content: '/imgs/technologies/docker.png',
 				link: 'https://hub.docker.com/'
 			}
 		],
 		badges: [],
 		links: [
 			{
-				icon: '/resources/imgs/github-icon.svg',
+				icon: '/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/Docker/tree/master/cassandra'
 			},
 			{
-				icon: '/resources/imgs/technologies/docker.png',
+				icon: '/imgs/technologies/docker.png',
 				link: 'https://hub.docker.com/repository/docker/stefangenov/cassandra'
 			},
 		],
@@ -295,18 +295,18 @@ module.exports	= [
 		technologies: [
 			{
 				isImg: true,
-				content: '/resources/imgs/technologies/docker.png',
+				content: '/imgs/technologies/docker.png',
 				link: 'https://hub.docker.com/'
 			}
 		],
 		badges: [],
 		links: [
 			{
-				icon: '/resources/imgs/github-icon.svg',
+				icon: '/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/Docker/tree/master/jenkins'
 			},
 			{
-				icon: '/resources/imgs/technologies/docker.png',
+				icon: '/imgs/technologies/docker.png',
 				link: 'https://hub.docker.com/repository/docker/stefangenov/jenkins-agent'
 			},
 		],
@@ -320,18 +320,18 @@ module.exports	= [
 		technologies: [
 			{
 				isImg: true,
-				content: '/resources/imgs/technologies/docker.png',
+				content: '/imgs/technologies/docker.png',
 				link: 'https://hub.docker.com/'
 			}
 		],
 		badges: [],
 		links: [
 			{
-				icon: '/resources/imgs/github-icon.svg',
+				icon: '/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/Docker/tree/master/jenkins'
 			},
 			{
-				icon: '/resources/imgs/technologies/docker.png',
+				icon: '/imgs/technologies/docker.png',
 				link: 'https://hub.docker.com/repository/docker/stefangenov/jenkins-agent'
 			},
 		],
@@ -345,18 +345,18 @@ module.exports	= [
 		technologies: [
 			{
 				isImg: true,
-				content: '/resources/imgs/technologies/docker.png',
+				content: '/imgs/technologies/docker.png',
 				link: 'https://hub.docker.com/'
 			}
 		],
 		badges: [],
 		links: [
 			{
-				icon: '/resources/imgs/github-icon.svg',
+				icon: '/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/Docker/tree/master/php/7.2'
 			},
 			{
-				icon: '/resources/imgs/technologies/docker.png',
+				icon: '/imgs/technologies/docker.png',
 				link: 'https://hub.docker.com/repository/docker/stefangenov/php'
 			},
 		],
@@ -371,18 +371,18 @@ module.exports	= [
 		technologies: [
 			{
 				isImg: true,
-				content: '/resources/imgs/technologies/docker.png',
+				content: '/imgs/technologies/docker.png',
 				link: 'https://hub.docker.com/'
 			}
 		],
 		badges: [],
 		links: [
 			{
-				icon: '/resources/imgs/github-icon.svg',
+				icon: '/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/Docker/tree/master/rsync'
 			},
 			{
-				icon: '/resources/imgs/technologies/docker.png',
+				icon: '/imgs/technologies/docker.png',
 				link: 'https://hub.docker.com/repository/docker/stefangenov/rsync'
 			},
 		],
@@ -395,18 +395,18 @@ module.exports	= [
 		technologies: [
 			{
 				isImg: true,
-				content: '/resources/imgs/technologies/docker.png',
+				content: '/imgs/technologies/docker.png',
 				link: 'https://hub.docker.com/'
 			}
 		],
 		badges: [],
 		links: [
 			{
-				icon: '/resources/imgs/github-icon.svg',
+				icon: '/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/Docker/tree/master/awscli'
 			},
 			{
-				icon: '/resources/imgs/technologies/docker.png',
+				icon: '/imgs/technologies/docker.png',
 				link: 'https://hub.docker.com/repository/docker/stefangenov/awscli'
 			},
 		],
@@ -419,7 +419,7 @@ module.exports	= [
 		technologies: [
 			{
 				isImg: true,
-				content: '/resources/imgs/technologies/ansible-logo.svg',
+				content: '/imgs/technologies/ansible-logo.svg',
 				link: 'https://www.ansible.com/'
 			}
 		],
@@ -431,11 +431,11 @@ module.exports	= [
 		],
 		links: [
 			{
-				icon: '/resources/imgs/github-icon.svg',
+				icon: '/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/ansible-docker.git'
 			},
 			{
-				icon: '/resources/imgs/ansible-galaxy-icon.svg',
+				icon: '/imgs/ansible-galaxy-icon.svg',
 				link: 'https://galaxy.ansible.com/michaelpalacce/docker'
 			},
 		],
@@ -448,7 +448,7 @@ module.exports	= [
 		technologies: [
 			{
 				isImg: true,
-				content: '/resources/imgs/technologies/ansible-logo.svg',
+				content: '/imgs/technologies/ansible-logo.svg',
 				link: 'https://www.ansible.com/'
 			}
 		],
@@ -460,11 +460,11 @@ module.exports	= [
 		],
 		links: [
 			{
-				icon: '/resources/imgs/github-icon.svg',
+				icon: '/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/ansible-docker-compose.git'
 			},
 			{
-				icon: '/resources/imgs/ansible-galaxy-icon.svg',
+				icon: '/imgs/ansible-galaxy-icon.svg',
 				link: 'https://galaxy.ansible.com/michaelpalacce/docker_compose'
 			},
 		],
@@ -478,7 +478,7 @@ module.exports	= [
 		technologies: [
 			{
 				isImg: true,
-				content: '/resources/imgs/technologies/ansible-logo.svg',
+				content: '/imgs/technologies/ansible-logo.svg',
 				link: 'https://www.ansible.com/'
 			}
 		],
@@ -490,11 +490,11 @@ module.exports	= [
 		],
 		links: [
 			{
-				icon: '/resources/imgs/github-icon.svg',
+				icon: '/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/ansible-helm.git'
 			},
 			{
-				icon: '/resources/imgs/ansible-galaxy-icon.svg',
+				icon: '/imgs/ansible-galaxy-icon.svg',
 				link: 'https://galaxy.ansible.com/michaelpalacce/helm'
 			},
 		],
@@ -507,7 +507,7 @@ module.exports	= [
 		technologies: [
 			{
 				isImg: true,
-				content: '/resources/imgs/technologies/ansible-logo.svg',
+				content: '/imgs/technologies/ansible-logo.svg',
 				link: 'https://www.ansible.com/'
 			}
 		],
@@ -519,11 +519,11 @@ module.exports	= [
 		],
 		links: [
 			{
-				icon: '/resources/imgs/github-icon.svg',
+				icon: '/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/ansible-kubernetes-preflight.git'
 			},
 			{
-				icon: '/resources/imgs/ansible-galaxy-icon.svg',
+				icon: '/imgs/ansible-galaxy-icon.svg',
 				link: 'https://galaxy.ansible.com/michaelpalacce/kubernetes_preflight'
 			},
 		],
@@ -536,7 +536,7 @@ module.exports	= [
 		technologies: [
 			{
 				isImg: true,
-				content: '/resources/imgs/technologies/ansible-logo.svg',
+				content: '/imgs/technologies/ansible-logo.svg',
 				link: 'https://www.ansible.com/'
 			}
 		],
@@ -548,11 +548,11 @@ module.exports	= [
 		],
 		links: [
 			{
-				icon: '/resources/imgs/github-icon.svg',
+				icon: '/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/ansible-kubernetes-cluster.git'
 			},
 			{
-				icon: '/resources/imgs/ansible-galaxy-icon.svg',
+				icon: '/imgs/ansible-galaxy-icon.svg',
 				link: 'https://galaxy.ansible.com/michaelpalacce/kubernetes_cluster'
 			},
 		],
@@ -565,7 +565,7 @@ module.exports	= [
 		technologies: [
 			{
 				isImg: true,
-				content: '/resources/imgs/technologies/ansible-logo.svg',
+				content: '/imgs/technologies/ansible-logo.svg',
 				link: 'https://www.ansible.com/'
 			}
 		],
@@ -577,11 +577,11 @@ module.exports	= [
 		],
 		links: [
 			{
-				icon: '/resources/imgs/github-icon.svg',
+				icon: '/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/ansible-kubernetes-master-security.git'
 			},
 			{
-				icon: '/resources/imgs/ansible-galaxy-icon.svg',
+				icon: '/imgs/ansible-galaxy-icon.svg',
 				link: 'https://galaxy.ansible.com/michaelpalacce/kubernetes_master_security'
 			},
 		],
@@ -593,12 +593,12 @@ module.exports	= [
 		technologies: [
 			{
 				isImg: true,
-				content: '/resources/imgs/technologies/node-js-icon.svg',
+				content: '/imgs/technologies/node-js-icon.svg',
 				link: 'https://nodejs.org/'
 			},
 			{
 				isImg: true,
-				content: '/resources/imgs/technologies/vuejs-logo.svg',
+				content: '/imgs/technologies/vuejs-logo.svg',
 				link: 'https://vuejs.org/'
 			},
 			{
@@ -615,7 +615,7 @@ module.exports	= [
 		],
 		links: [
 			{
-				icon: '/resources/imgs/github-icon.svg',
+				icon: '/imgs/github-icon.svg',
 				link: 'https://github.com/Michaelpalacce/personal-website-vue.git'
 			}
 		],

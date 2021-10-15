@@ -20,7 +20,7 @@ module.exports	= [
 			},
 			{
 				key: 'link',
-				value: '/resources/certs/cka-k8s.pdf',
+				value: '/certs/cka-k8s.pdf',
 				link: true,
 				linkName: 'Certificate'
 			},
@@ -130,7 +130,7 @@ module.exports	= [
 			},
 			{
 				key: 'link',
-				value: '/resources/certs/typescript-object-oriented-programming.pdf',
+				value: '/certs/typescript-object-oriented-programming.pdf',
 				link: true,
 				linkName: 'Certificate'
 			}
@@ -162,7 +162,7 @@ module.exports	= [
 			},
 			{
 				key: 'link',
-				value: '/resources/certs/visual_studio_productivity.pdf',
+				value: '/certs/visual_studio_productivity.pdf',
 				link: true,
 				linkName: 'Certificate'
 			},
@@ -194,7 +194,7 @@ module.exports	= [
 			},
 			{
 				key: 'link',
-				value: '/resources/certs/devops_foundations.pdf',
+				value: '/certs/devops_foundations.pdf',
 				link: true,
 				linkName: 'Certificate'
 			},
@@ -226,7 +226,7 @@ module.exports	= [
 			},
 			{
 				key: 'link',
-				value: '/resources/certs/vsphere-7-01-networking.pdf',
+				value: '/certs/vsphere-7-01-networking.pdf',
 				link: true,
 				linkName: 'Certificate'
 			},
@@ -258,7 +258,7 @@ module.exports	= [
 			},
 			{
 				key: 'link',
-				value: '/resources/certs/vsphere-7-02-storage.pdf',
+				value: '/certs/vsphere-7-02-storage.pdf',
 				link: true,
 				linkName: 'Certificate'
 			},
@@ -290,7 +290,7 @@ module.exports	= [
 			},
 			{
 				key: 'link',
-				value: '/resources/certs/vsphere-7-03-monitoring.pdf',
+				value: '/certs/vsphere-7-03-monitoring.pdf',
 				link: true,
 				linkName: 'Certificate'
 			},

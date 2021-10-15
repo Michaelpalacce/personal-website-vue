@@ -21,24 +21,13 @@ app.add( '/api', readmeController );
 app.add( '/api', securityController );
 app.add( '/api', metricsController );
 
-// Improve this by improving the static plugin in EventRequest
-// CV
-app.get( '/version', ( event )=>{
-	event.setResponseHeader( 'Content-Type', 'text/plain' );
-	fs.createReadStream( `${PROJECT_ROOT}/dist/version` ).pipe( event.response );
-});
+// Serve Static Resources
+app.apply( app.er_static,		{ paths	: ['dist'], cache: { cacheControl: 'public', expirationDirectives: { 'max-age': 3600 } } } );
 
 // CV
 app.get( '/CV', app.er_cache.cache( { cacheControl: 'public', expirationDirectives: { 'max-age': 3600 } } ), ( event )=>{
 	event.setResponseHeader( 'Content-Type', 'application/pdf' );
 	fs.createReadStream( `${PROJECT_ROOT}/dist/CV.pdf` ).pipe( event.response );
-});
-
-// CV
-app.get( '/robots.txt', ( event )=>{
-	event.setResponseHeader( 'Content-Type', 'text/plain' );
-	const directives	= 'User-Agent: *\nAllow: /';
-	event.send( Buffer.from( directives ) );
 });
 
 // Frontend
