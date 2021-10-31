@@ -34,10 +34,17 @@ module.exports	= [
 			},
 			{
 				name: 'TS/Typescript',
-				ready: '3/5',
+				ready: '4/5',
 				status: 'Running',
 				age: '2021',
 				node: 'both'
+			},
+			{
+				name: 'Java',
+				ready: '3/5',
+				status: 'Running',
+				age: '2021',
+				node: 'professionally'
 			},
 		]
 	},
@@ -262,6 +269,20 @@ module.exports	= [
 				status: 'Running',
 				age: '2017',
 				node: 'amateur'
+			},
+			{
+				name: 'Junit',
+				ready: '3/5',
+				status: 'Running',
+				age: '2021',
+				node: 'professionally'
+			},
+			{
+				name: 'Mockito',
+				ready: '3/5',
+				status: 'Running',
+				age: '2021',
+				node: 'professionally'
 			},
 		]
 	},
