@@ -1,0 +1,112 @@
+<p class="mt-5">
+	The last few months I have gotten myself into HomeLabbing. Started off by purchasing 2 Raspberry PI 4s 8GB, and ended up
+	with a new router, 2 more Raspberry PIs and 4 SSDs with enclosures. It's been a long journey, a lot of optimizations, improvements
+	issues, issues and more issues. There is still a LOT of work to do but I have gotten to a point where I am pretty satisfied
+	with what I have to share. At the end of the blog, if you feel like you want to give it a try, you can head on to my
+	github repo and get some ideas.
+</p>
+
+<div class=" mt-10 text-center text-4xl text-blue-400 font-bold">
+	<a href="https://github.com/Michaelpalacce/HomeLab" class="text-blue-400">GITHUB REPO</a>
+</div>
+
+<div class=" mt-10 text-center text-4xl text-blue-600 font-bold">My Current setup</div>
+<img src="/imgs/blogs/11.2021/Homelab.png" alt="Homelab" class="content-center mx-auto">
+
+<div class=" mt-10 text-center text-4xl text-blue-600 font-bold">Why a raspberry PI?</div>
+
+<p>
+	It's cheap, energy efficient and has a small footprint. It will be slow, you will have to create images specifically for
+	arm if you are using docker, and some times things just won't work as you want them to, but that is ok. If I need something beefier
+	and more reliable I will end up spending way more than I currently have for the Pis, not to mention the size and energy bill.
+</p>
+
+<div class=" mt-10 text-center text-4xl text-blue-600 font-bold">Starting off</div>
+
+<p>
+	Initially while starting off I had 2 Raspberry pis and decided to setup K8S on them with Longhorn as a CSI driver and
+	calico as a CNI ( after failing to setup flannel for 24 hours ) and after a while I finally managed to get my first
+	service up and running ( grafana-prometheus monitoring suite ). Things worked... for whole 10 minutes. I've already made several mistakes
+	without even knowing it. So lets start listing all of them.
+</p>
+
+
+<div class=" mt-5 text-center text-xl text-blue-500 font-bold">SD Cards</div>
+<p>
+	Now since I do not have a NAS or other form of Storage that my kubernetes cluster can utilize I decided giving
+	<a href="https://longhorn.io/" class="text-blue-400">Longhorn.io</a> a shot. Now Longhorn ... has it's issues but
+	overall is amazing. It is very fast, supports replication, backups and has good disaster recovery. Problem was my setup...
+	Longhorn had to use SLOW sd cards to read data and in some cases send it over to the other node, as it is distributed.
+	This resulted in my services having to wait <span class="text-red-500" title="A REALLY LONG TIME">A LONG TIME</span> for IO.
+	This was not OK. The solution to this was SSDs. But the issues do not stop here :).
+</p>
+
+<div class=" mt-5 text-center text-xl text-blue-500 font-bold">SSDs and enclosures</div>
+
+<p>
+	Now I want to start by saying, yes I know there is such a thing as an external SSD. Why did I not use it?
+</p>
+<p>
+	So anyway, SSDs and enclosures. I ended up purchasing 2 Kingston A400s 240GB SSDs with 2 SSD enclosures. Now the SSDs were absolutely fine,
+	problem was the enclosures. Turns out there is a thing called TRIM and UASP. They are kind of connected but essentially the
+	issue was that the some SSD enclosures ( and SSDs for that matter ) don't follow the UASP protocols correctly, resulting in it essentially not working on Raspberry Pis.
+	Booting up that should have taken a few seconds, ended up taking around 20 minutes, and the OS after would be insanely slow.
+	This... SUCKS... it took me 2 days to figure it out, but essentially the steps for it are documented on my HomeLab
+	<a href="https://github.com/Michaelpalacce/HomeLab#my-ssd-drive-has-uas-and-its-not-letting-me-boot" class="text-blue-400">github page</a>.
+</p>
+
+<div class=" mt-5 text-center text-xl text-blue-500 font-bold">Networking... issues continue</div>
+<p>
+	Now me being a noob my idea was ... so what if it's wifi connected to my 5Ghz wifi, hidden in the storage that essentially
+	has 1/5 bars of signal? Well... shocker there is an issue. I ended up buying a second router like my main one and creating
+	a mesh system using Asus's AI-Mesh system and connected my raspberry pis in it with a Gigabit connection.
+	Now FINALLY they were connected with a gigabit connection between each other, reading from and writing to SSDs. We finally got the speeds we wanted!
+	WRONG!
+</p>
+
+<div class=" mt-5 text-center text-xl text-blue-500 font-bold">K8S Sucks! Long live K3S</div>
+<p>
+	K8s is great, problem with it is that it is meant to run on enterprise grade servers and a raspberry pi is not that.
+	It ended up eating too WAY TOO MANY resources, that my setup did not have then. K3s on the other hand is essentially the same
+	as K8S with a lighter footprint. I ended up having to take down my entire infrastructure and redoing everything.
+	And finally we are done. Sorta...
+</p>
+
+<div class=" mt-5 text-center text-xl text-blue-500 font-bold">K3S and Longhorn overhead</div>
+
+<p>
+	Having an orchestrator with all the fancy probes to check if services are running and distributed storage is great...
+	except when it is not. The performance overhead was immense and it was way more than my 2 PIs could handle. CPU was capped almost all the time
+	and I could barely control my cluster as I had to use my master/control-plane node. In the end I had to get 2 more Raspberry PIs. Finally I had enough
+	power to do what I want
+</p>
+
+<div class="mt-10 text-center text-4xl text-blue-600 font-bold">What now?</div>
+
+<p>
+	HomeLabbing and self-hosting is not efficient. It is scary. It is hard. Issues arise all the time. You do not save money. It's expensive when starting.
+	You do not save time. You have to setup backups. You are responsible for your data corrupting ( it did happen once yes ). But it is hella fun.
+	The things you can learn just by spinning up a Linux server and having to configure it is immense. It is challenging, but when it works
+	it feels good. You learn things all the time, you get better at solving issues. Nothing beats hands on experience.
+	It's a hobby like any other!
+</p>
+
+<div class=" mt-10 text-center text-4xl text-blue-600 font-bold">Benefits?</div>
+<p>
+	There are a lot of them. Taking control of your data. Hosting software that you cannot find online due to it being open source
+	and offered as is most cases. Learning. It's fun!
+</p>
+
+<div class=" mt-5 text-center text-4xl text-blue-600 font-bold">Should I do it too?</div>
+
+<p>
+	If you are asking yourself this question then... no. Don't do it. I would personally suggest it to everyone but
+	I don't think many will listen. After all... why do you want to self-host? I started off doing this to learn and to
+	have a media server that I can use to provide entertainment to my family.
+</p>
+
+<p>
+	There is an exception tho. I would say if you are a SysAdmin or a DevOps dude, then yeah go ahead! You really should do this.
+</p>
+
+

@@ -6,15 +6,13 @@ const abilitiesMetadata	= Buffer.from( JSON.stringify( allAbilities ) );
 /**
  * @brief	Model responsible for getting all the Abilities
  */
-class Abilities
-{
+class Abilities {
 	/**
 	 * @brief	Returns a buffer with all the Abilities
 	 *
 	 * @return	{Buffer}
 	 */
-	getAbilities()
-	{
+	getAbilities() {
 		return abilitiesMetadata;
 	}
 }

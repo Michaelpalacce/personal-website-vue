@@ -41,7 +41,7 @@ module.exports	= [
 			},
 			{
 				name: 'Java',
-				ready: '3/5',
+				ready: '3.5/5',
 				status: 'Running',
 				age: '2021',
 				node: 'professionally'
@@ -111,7 +111,7 @@ module.exports	= [
 			},
 			{
 				name: 'K8S',
-				ready: '4/5',
+				ready: '5/5',
 				status: 'Running',
 				age: '2020',
 				node: 'both'
@@ -146,7 +146,7 @@ module.exports	= [
 			},
 			{
 				name: 'Jenkins',
-				ready: '3/5',
+				ready: '3.5/5',
 				status: 'Running',
 				age: '2021',
 				node: 'amateur'
@@ -174,7 +174,7 @@ module.exports	= [
 			},
 			{
 				name: 'Linux',
-				ready: '3.5/5',
+				ready: '4/5',
 				status: 'Running',
 				age: '2016',
 				node: 'both'

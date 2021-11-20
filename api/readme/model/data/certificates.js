@@ -1,5 +1,4 @@
 module.exports	= [
-
 	{
 		name: 'K8S CKA Mastery Course',
 		namespace: 'learning',

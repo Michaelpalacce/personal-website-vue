@@ -19,15 +19,6 @@
 
 				<CopyableText v-if="installCommand" :text="installCommand" textColor="text-yellow-500" class="text-sm"/>
 
-				<div class="grid grid-cols-5 mx-auto md:w-3/4 mt-5">
-					<div v-for="technology in technologies">
-						<a :href="technology.link">
-							<img :src="technology.content" alt="" class="w-16 h-16 mx-auto" v-if="technology.isImg">
-							<p v-else class="w-full mt-4 text-red-600">{{ technology.content }}</p>
-						</a>
-					</div>
-				</div>
-
 				<div class="md:flex mt-10">
 					<div class="w-full" :class="{ 'md:w-5/12': images.length !== 0 }">
 						<span v-html="text"></span>
@@ -40,8 +31,32 @@
 							<a v-for="badge in badges" :href="badge.link" class="mx-auto"><img :src="badge.badge" :alt="badge.link"></a>
 						</div>
 
-						<div v-if="links.length > 0"  class="flex mt-5">
-							<a v-for="link in links" :href="link.link" class="w-20 h-20 mx-auto">
+						<div class="grid gap-2 gap-y-2 mt-5"
+							 :class="`${images.length > 0 ? 'grid-cols-3' : 'md:grid-cols-5 grid-cols-3 '}`"
+						>
+							<button class="bg-transparent hover:bg-blue-500 font-semibold text-white w-20 rounded"
+								@click="showTech = ! showTech"
+							>
+								Tech
+							</button>
+							<div v-for="technology in technologies" :class="{ invisible: ! showTech }">
+								<a :href="technology.link">
+									<img :src="technology.content" alt="" class="w-16 h-16 mx-auto" v-if="technology.isImg">
+									<p v-else class="w-full mt-4 text-red-600">{{ technology.content }}</p>
+								</a>
+							</div>
+						</div>
+
+						<div v-if="links.length > 0"
+							 class="grid gap-2 gap-y-2 mt-5"
+							 :class="`${images.length > 0 ? 'grid-cols-3' : 'md:grid-cols-5 grid-cols-3 '}`"
+						>
+							<button class="bg-transparent hover:bg-blue-500 font-semibold text-white w-20 rounded"
+									@click="showLinks = ! showLinks"
+							>
+								Links
+							</button>
+							<a v-for="link in links" :href="link.link" class="w-16 h-16 mx-auto" :class="{ invisible: ! showLinks }">
 								<img :src="link.icon" alt="" class="h-full">
 							</a>
 						</div>
@@ -67,6 +82,8 @@ export default {
 	{
 		return {
 			show: false,
+			showTech: false,
+			showLinks: false,
 			title: this.project.title,
 			link: this.project.link,
 			linkToPage: window.location.origin + window.location.pathname	+ '#' + encodeURIComponent( this.project.title ),

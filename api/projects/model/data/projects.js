@@ -104,6 +104,10 @@ module.exports	= [
 				link: 'https://github.com/Michaelpalacce/Server.git'
 			},
 			{
+				icon: '/imgs/technologies/docker.png',
+				link: 'https://hub.docker.com/repository/docker/stefangenov/server'
+			},
+			{
 				icon: '/imgs/npm-icon.svg',
 				link: 'https://www.npmjs.com/package/server-emulator'
 			}
@@ -123,6 +127,24 @@ module.exports	= [
 			'/imgs/ServerEmulator-3.png',
 			'/imgs/ServerEmulator-4.png'
 		]
+	},
+	{
+		title: 'HomeLab',
+		technologies: [
+			{
+				isImg: true,
+				content: '/imgs/technologies/k8s.png',
+				link: 'https://kubernetes.io/'
+			}
+		],
+		links: [
+			{
+				icon: '/imgs/github-icon.svg',
+				link: 'https://github.com/Michaelpalacce/HomeLab.git'
+			}
+		],
+		link: 'https://github.com/Michaelpalacce/HomeLab.git',
+		text: 'Contains my entire HomeLab architecture on K8S and all my setup scripts',
 	},
 	{
 		title: 'FsBrowser',
@@ -315,31 +337,6 @@ module.exports	= [
 			+ ' alpine linux with NodeJS 16.7, git and openssh installed. There are different tags with different NodeJS versions supported'
 	},
 	{
-		title: 'Docker Jenkins Inbound Agent with Docker',
-		installCommand: 'docker pull stefangenov/jenkins-agent:docker',
-		technologies: [
-			{
-				isImg: true,
-				content: '/imgs/technologies/docker.png',
-				link: 'https://hub.docker.com/'
-			}
-		],
-		badges: [],
-		links: [
-			{
-				icon: '/imgs/github-icon.svg',
-				link: 'https://github.com/Michaelpalacce/Docker/tree/master/jenkins'
-			},
-			{
-				icon: '/imgs/technologies/docker.png',
-				link: 'https://hub.docker.com/repository/docker/stefangenov/jenkins-agent'
-			},
-		],
-		link: 'https://github.com/Michaelpalacce/Docker.git',
-		text: 'Jenkins Inbound Agent with Docker installed AMD64 and ARM64 processors. This agent can be used to' +
-			' build Docker images and potentially push them to DockerHub or a local repository.'
-	},
-	{
 		title: 'Docker PHP',
 		installCommand: 'docker pull stefangenov/php:7.2',
 		technologies: [
@@ -412,6 +409,102 @@ module.exports	= [
 		],
 		link: 'https://github.com/Michaelpalacce/Docker.git',
 		text: 'A Simple Docker image with awscli installed. You can easily configure the awscli with environment variables.'
+	},
+	{
+		title: 'Docker Dashy',
+		installCommand: 'docker pull stefangenov/dashy',
+		technologies: [
+			{
+				isImg: true,
+				content: '/imgs/technologies/docker.png',
+				link: 'https://hub.docker.com/'
+			}
+		],
+		badges: [],
+		links: [
+			{
+				icon: '/imgs/github-icon.svg',
+				link: 'https://github.com/Michaelpalacce/Docker'
+			},
+			{
+				icon: '/imgs/technologies/docker.png',
+				link: 'https://hub.docker.com/repository/docker/stefangenov/dashy'
+			},
+		],
+		link: 'https://github.com/Michaelpalacce/Docker.git',
+		text: 'Installs a dashy image with a bunch of extra icons added. Also has an arm build, which the original does not have.'
+	},
+	{
+		title: 'Docker Homer',
+		installCommand: 'docker pull stefangenov/homer',
+		technologies: [
+			{
+				isImg: true,
+				content: '/imgs/technologies/docker.png',
+				link: 'https://hub.docker.com/'
+			}
+		],
+		badges: [],
+		links: [
+			{
+				icon: '/imgs/github-icon.svg',
+				link: 'https://github.com/Michaelpalacce/Docker'
+			},
+			{
+				icon: '/imgs/technologies/docker.png',
+				link: 'https://hub.docker.com/repository/docker/stefangenov/homer'
+			},
+		],
+		link: 'https://github.com/Michaelpalacce/Docker.git',
+		text: 'Installs a homer image with a bunch of extra icons added. Also has an arm build, which the original does not have.'
+	},
+	{
+		title: 'Docker Diagrams',
+		installCommand: 'docker pull stefangenov/diagrams',
+		technologies: [
+			{
+				isImg: true,
+				content: '/imgs/technologies/docker.png',
+				link: 'https://hub.docker.com/'
+			}
+		],
+		badges: [],
+		links: [
+			{
+				icon: '/imgs/github-icon.svg',
+				link: 'https://github.com/Michaelpalacce/Docker'
+			},
+			{
+				icon: '/imgs/technologies/docker.png',
+				link: 'https://hub.docker.com/repository/docker/stefangenov/diagrams'
+			},
+		],
+		link: 'https://github.com/Michaelpalacce/Docker.git',
+		text: 'A docker diagrams image. Copy of the original but added an arm build'
+	},
+	{
+		title: 'Docker Wallabag',
+		installCommand: 'docker pull stefangenov/wallabag',
+		technologies: [
+			{
+				isImg: true,
+				content: '/imgs/technologies/docker.png',
+				link: 'https://hub.docker.com/'
+			}
+		],
+		badges: [],
+		links: [
+			{
+				icon: '/imgs/github-icon.svg',
+				link: 'https://github.com/Michaelpalacce/Docker'
+			},
+			{
+				icon: '/imgs/technologies/docker.png',
+				link: 'https://hub.docker.com/repository/docker/stefangenov/wallabag'
+			},
+		],
+		link: 'https://github.com/Michaelpalacce/Docker.git',
+		text: 'A docker wallabag image. Copy of the original but added an arm build'
 	},
 	{
 		title: 'Ansible Role docker',

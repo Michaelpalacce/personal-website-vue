@@ -6,15 +6,13 @@ const certificatesMetadata	= Buffer.from( JSON.stringify( allCertificates ) );
 /**
  * @brief	Model responsible for getting all the Certificates
  */
-class Certificates
-{
+class Certificates {
 	/**
 	 * @brief	Returns a buffer with all the Certificates
 	 *
 	 * @return	{Buffer}
 	 */
-	getCertificates()
-	{
+	getCertificates() {
 		return certificatesMetadata;
 	}
 }
