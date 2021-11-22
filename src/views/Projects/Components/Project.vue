@@ -34,7 +34,7 @@
 						<div class="grid gap-2 gap-y-2 mt-5"
 							 :class="`${images.length > 0 ? 'grid-cols-3' : 'md:grid-cols-5 grid-cols-3 '}`"
 						>
-							<button class="bg-transparent hover:bg-blue-500 font-semibold text-white w-20 rounded"
+							<button class="bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white w-20 rounded"
 								@click="showTech = ! showTech"
 							>
 								Tech
@@ -51,7 +51,7 @@
 							 class="grid gap-2 gap-y-2 mt-5"
 							 :class="`${images.length > 0 ? 'grid-cols-3' : 'md:grid-cols-5 grid-cols-3 '}`"
 						>
-							<button class="bg-transparent hover:bg-blue-500 font-semibold text-white w-20 rounded"
+							<button class="bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white w-20 rounded"
 									@click="showLinks = ! showLinks"
 							>
 								Links

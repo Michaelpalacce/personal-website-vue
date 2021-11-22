@@ -3,9 +3,9 @@ const path	= require( 'path' );
 
 module.exports	= [
 	{
-		title	: 'Getting started with a HomeLab!',
+		title	: 'My Homelab',
 		date	: '20/11/2021',
-		content	: fs.readFileSync( path.join( __dirname, './blogs/11.2021/homelab_intro.html' ) )
+		content	: fs.readFileSync( path.join( __dirname, './blogs/11.2021/my_homelab.html' ) )
 	},
 	{
 		title	: 'EventRequest a All-you-need, Zero-Dependency, Fast, Web Framework',
