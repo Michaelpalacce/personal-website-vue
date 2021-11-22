@@ -34,12 +34,7 @@
 						<div class="grid gap-2 gap-y-2 mt-5"
 							 :class="`${images.length > 0 ? 'grid-cols-3' : 'md:grid-cols-5 grid-cols-3 '}`"
 						>
-							<button class="bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white w-20 rounded"
-								@click="showTech = ! showTech"
-							>
-								Tech
-							</button>
-							<div v-for="technology in technologies" :class="{ invisible: ! showTech }">
+							<div v-for="technology in technologies">
 								<a :href="technology.link">
 									<img :src="technology.content" alt="" class="w-16 h-16 mx-auto" v-if="technology.isImg">
 									<p v-else class="w-full mt-4 text-red-600">{{ technology.content }}</p>
@@ -51,7 +46,7 @@
 							 class="grid gap-2 gap-y-2 mt-5"
 							 :class="`${images.length > 0 ? 'grid-cols-3' : 'md:grid-cols-5 grid-cols-3 '}`"
 						>
-							<button class="bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white w-20 rounded"
+							<button class="bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white w-20 rounded mx-auto"
 									@click="showLinks = ! showLinks"
 							>
 								Links
@@ -82,7 +77,6 @@ export default {
 	{
 		return {
 			show: false,
-			showTech: false,
 			showLinks: false,
 			title: this.project.title,
 			link: this.project.link,
