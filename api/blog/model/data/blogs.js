@@ -3,6 +3,11 @@ const path	= require( 'path' );
 
 module.exports	= [
 	{
+		title	: 'Dealing with orphaned pods',
+		date	: '22/12/2021',
+		content	: fs.readFileSync( path.join( __dirname, './blogs/12.2021/orphaned_pods.html' ) )
+	},
+	{
 		title	: 'My Homelab',
 		date	: '20/11/2021',
 		content	: fs.readFileSync( path.join( __dirname, './blogs/11.2021/my_homelab.html' ) )

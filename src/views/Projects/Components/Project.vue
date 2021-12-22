@@ -31,27 +31,27 @@
 							<a v-for="badge in badges" :href="badge.link" class="mx-auto"><img :src="badge.badge" :alt="badge.link"></a>
 						</div>
 
-						<div class="grid gap-2 gap-y-2 mt-5"
-							 :class="`${images.length > 0 ? 'grid-cols-3' : 'md:grid-cols-5 grid-cols-3 '}`"
-						>
-							<div v-for="technology in technologies">
-								<a :href="technology.link">
-									<img :src="technology.content" alt="" class="w-16 h-16 mx-auto" v-if="technology.isImg">
-									<p v-else class="w-full mt-4 text-red-600">{{ technology.content }}</p>
-								</a>
-							</div>
-						</div>
+<!--						<div class="grid gap-2 gap-y-2 mt-5"-->
+<!--							 :class="`${images.length > 0 ? 'grid-cols-3' : 'md:grid-cols-5 grid-cols-3 '}`"-->
+<!--						>-->
+<!--							<div v-for="technology in technologies">-->
+<!--								<a :href="technology.link">-->
+<!--									<img :src="technology.content" alt="" class="w-16 h-16 mx-auto" v-if="technology.isImg">-->
+<!--									<p v-else class="w-full mt-4 text-red-600">{{ technology.content }}</p>-->
+<!--								</a>-->
+<!--							</div>-->
+<!--						</div>-->
 
 						<div v-if="links.length > 0"
 							 class="grid gap-2 gap-y-2 mt-5"
 							 :class="`${images.length > 0 ? 'grid-cols-3' : 'md:grid-cols-5 grid-cols-3 '}`"
 						>
-							<button class="bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white w-20 rounded mx-auto"
-									@click="showLinks = ! showLinks"
-							>
-								Links
-							</button>
-							<a v-for="link in links" :href="link.link" class="w-16 h-16 mx-auto" :class="{ invisible: ! showLinks }">
+<!--							<button class="bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white w-20 rounded mx-auto"-->
+<!--									@click="showLinks = ! showLinks"-->
+<!--							>-->
+<!--								Links-->
+<!--							</button>-->
+							<a v-for="link in links" :href="link.link" class="w-16 h-16 mx-auto" >
 								<img :src="link.icon" alt="" class="h-full">
 							</a>
 						</div>
@@ -86,7 +86,7 @@ export default {
 			nodeModule: this.project.nodeModule || {},
 			links: this.project.links || [],
 			badges: this.project.badges || [],
-			technologies: this.project.technologies || [],
+			// technologies: this.project.technologies || [],
 			installCommand: this.project.installCommand
 		};
 	},

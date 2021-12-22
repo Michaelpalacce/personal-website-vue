@@ -1,0 +1,55 @@
+<p class="mt-5">
+	When working with kubernetes and containers you may end up force deleting a pod. While kubernetes does say it's a bad
+	idea chances are you've probably ignored it. After a while you may notice a spike in CPU usage. The perpetrator according to
+	top, ps would be udisksd.
+</p>
+
+<div class=" mt-10 text-center text-4xl text-blue-600 font-bold">What is happening?</div>
+
+<p class="mt-5">Essentially if you start tailing the syslog-s <span class="text-blue-400">tail -f /var/log/syslog</span>,
+you will notice that there are a whole lot of errors like this:</p>
+
+
+<pre><code class="my-2 language-plaintext">k3s[471]: E1102 15:11:01.933125     471 kubelet_volumes.go:245] "There were many similar errors. Turn up verbosity to see them." err="orphaned pod \"5a5fd1bf-bc3c-4600-88d3-321701d3d95a\" found, but error not a directory occurred when trying to remove the volumes dir" numErrs=2</code></pre>
+
+<p>
+	In my case I am using containerd and k3s so that's why you may see an error related to those two.
+</p>
+
+<div class=" mt-10 text-center text-4xl text-blue-600 font-bold">How to resolve this?</div>
+
+<p class="mt-5">
+	In order to clear this error, chances are you will need to manually delete the volume dir located at:
+</p>
+
+<pre><code class="my-2 language-plaintext">/var/lib/kubelet/pods/POD_NAME</code></pre>
+
+<p>
+	If you want to do this automatically here is a python script that tails these logs and deletes the volume dir automatically
+	when it detects an error message that contains the orphaned pod message.
+</p>
+
+<pre><code class="my-2 language-python">
+import subprocess
+import select
+import re
+import shutil
+
+f = subprocess.Popen(['tail', '-F', '/var/log/syslog'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+p = select.poll()
+p.register(f.stdout)
+
+while True:
+    if p.poll(1):
+        line = f.stdout.readline().decode('utf-8')
+        result = re.search('orphaned pod \\\\"([0-9a-zA-Z-]*)\\\\"', line)
+        if result:
+            toDelete = '/var/lib/kubelet/pods/' + result.group(1)
+            try:
+                shutil.rmtree(toDelete)
+                print(toDelete + " was deleted")
+            except:
+                print(toDelete + " could not be deleted")
+</code></pre>
+
+<p>This can be run by putting it on the machine that has the orphaned pods issue and running it with python3.</p>
