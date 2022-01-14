@@ -1,6 +1,6 @@
 # Master Server
 [server]
-stefangenov.site
+18.130.198.239
 
 #Variables for all the servers
 [server:vars]

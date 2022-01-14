@@ -7,11 +7,12 @@
             path: "{{ item }}"
             state: absent
         with_items:
-            - resources/css
-            - resources/js
+            - dist
+            - logs
+            - node_modules
 
       - name: Install all deps
-        command: npm i
+        command: npm ci
 
       - name: Build latest version
         command: npm run build
@@ -20,10 +21,23 @@
   become: true
   tags: deploy
   tasks:
-      - name: Pull latest
-        command: chdir=/home/centos/personal-website-vue git pull
-        register: git_output
-        changed_when: git_output.stdout.find( 'Already up-to-date.' ) == -1
+      - name: Upload Latest
+        copy:
+          src: "{{ item }}"
+          dest: /home/centos/personal-website-vue
+        with_items:
+            - ./api
+            - ./public
+            - ./dist
+            - ./src
+            - ./ecosystem.config.js
+            - ./favicon.ico
+            - ./index.js
+            - ./package.json
+            - ./package-lock.json
+            - ./postcss.config.js
+            - ./tailwind.config.js
+            - ./vue.config.js
 
       - name: Ensure we have the latest version of node moduels
         command: chdir=/home/centos/personal-website-vue npm ci --only=prod
