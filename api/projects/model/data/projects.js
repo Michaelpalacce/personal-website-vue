@@ -424,15 +424,15 @@ module.exports	= [
 		links: [
 			{
 				icon: '/imgs/github-icon.svg',
-				link: 'https://github.com/Michaelpalacce/Docker'
+				link: 'https://github.com/Michaelpalacce/docker-dashy'
 			},
 			{
 				icon: '/imgs/technologies/docker.png',
 				link: 'https://hub.docker.com/repository/docker/stefangenov/dashy'
 			},
 		],
-		link: 'https://github.com/Michaelpalacce/Docker.git',
-		text: 'Installs a dashy image with a bunch of extra icons added. Also has an arm build, which the original does not have.'
+		link: 'https://github.com/Michaelpalacce/docker-dashy',
+		text: 'Installs a dashy image with a bunch of extra icons added. Also has an arm build, which the original does not have. Built and published with Github Actions!'
 	},
 	{
 		title: 'Docker Homer',
@@ -472,15 +472,15 @@ module.exports	= [
 		links: [
 			{
 				icon: '/imgs/github-icon.svg',
-				link: 'https://github.com/Michaelpalacce/Docker'
+				link: 'https://github.com/Michaelpalacce/docker-diagrams'
 			},
 			{
 				icon: '/imgs/technologies/docker.png',
 				link: 'https://hub.docker.com/repository/docker/stefangenov/diagrams'
 			},
 		],
-		link: 'https://github.com/Michaelpalacce/Docker.git',
-		text: 'A docker diagrams image. Copy of the original but added an arm build'
+		link: 'https://github.com/Michaelpalacce/docker-diagrams',
+		text: 'A docker diagrams image. Copy of the original but added an arm build. Built and published with Github Actions!'
 	},
 	{
 		title: 'Docker Wallabag',
@@ -496,15 +496,15 @@ module.exports	= [
 		links: [
 			{
 				icon: '/imgs/github-icon.svg',
-				link: 'https://github.com/Michaelpalacce/Docker'
+				link: 'https://github.com/Michaelpalacce/docker-wallabag'
 			},
 			{
 				icon: '/imgs/technologies/docker.png',
 				link: 'https://hub.docker.com/repository/docker/stefangenov/wallabag'
 			},
 		],
-		link: 'https://github.com/Michaelpalacce/Docker.git',
-		text: 'A docker wallabag image. Copy of the original but added an arm build'
+		link: 'https://github.com/Michaelpalacce/docker-wallabag',
+		text: 'A docker wallabag image. Copy of the original but added an arm build. Built and published with Github Actions'
 	},
 	{
 		title: 'Ansible Role docker',
