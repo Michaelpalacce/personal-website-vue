@@ -129,6 +129,50 @@ module.exports	= [
 		]
 	},
 	{
+		title: 'SimpleSecrets',
+		technologies: [
+			{
+				isImg: true,
+				content: '/imgs/technologies/node-js-icon.svg',
+				link: 'https://nodejs.org/'
+			},
+			{
+				isImg: true,
+				content: '/imgs/technologies/vuejs-logo.svg',
+				link: 'https://vuejs.org/'
+			},
+			{
+				isImg: false,
+				content: 'EventRequest',
+				link: '#EventRequest'
+			}
+		],
+		badges: [
+			{
+				badge: 'https://img.shields.io/maintenance/yes/2022',
+				link: 'https://github.com/Michaelpalacce/SimpleSecrets.git'
+			}
+		],
+		links: [
+			{
+				icon: '/imgs/github-icon.svg',
+				link: 'https://github.com/Michaelpalacce/SimpleSecrets.git'
+			},
+			{
+				icon: '/imgs/technologies/docker.png',
+				link: 'https://hub.docker.com/repository/docker/stefangenov/simplesecrets'
+			},
+		],
+		link: 'https://github.com/Michaelpalacce/SimpleSecrets.git',
+		text: 'K8S Secrets manager! A very lightweight secrets manager operator that gets installed in your cluster. Supports encryption.',
+		images: [
+			'/imgs/projects/simplesecrets/example-1.png',
+			'/imgs/projects/simplesecrets/example-2.png',
+			'/imgs/projects/simplesecrets/example-3.png',
+			'/imgs/projects/simplesecrets/example-4.png',
+		]
+	},
+	{
 		title: 'HomeLab',
 		technologies: [
 			{

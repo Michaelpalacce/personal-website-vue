@@ -9,7 +9,6 @@
         with_items:
             - dist
             - logs
-            - node_modules
 
       - name: Install all deps
         command: npm ci
