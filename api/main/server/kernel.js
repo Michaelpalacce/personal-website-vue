@@ -37,7 +37,7 @@ app.add(( event ) => {
 app.apply( app.er_etag, { strong: true } );
 
 // Attach the cache server
-app.apply( app.er_data_server, { dataServerOptions: { persist: true } } );
+app.apply( app.er_data_server, { dataServerOptions: { persist: true, persistPath: path.join( process.env.DATA_PATH, "cache" ) } } );
 
 // Rate Limit the request
 app.apply( app.er_rate_limits,	{ rules:

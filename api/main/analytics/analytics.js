@@ -8,7 +8,7 @@ const metricsDataServer	= new DataServerMap({
 	useBigMap: true,
 	persistInterval: 60,
 	persist: true,
-	persistPath: path.join( process.env.METRICS_PATH || os.tmpdir(), '.stefangenov.site.metrics' )
+	persistPath: path.join( process.env.DATA_PATH || os.tmpdir(), '.stefangenov.site.metrics' )
 });
 
 const metrics			= {
