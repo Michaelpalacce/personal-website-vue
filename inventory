@@ -1,9 +1,0 @@
-# Master Server
-[server]
-18.130.198.239
-
-#Variables for all the servers
-[server:vars]
-ansible_user=centos
-ansible_ssh_private_key_file=/ssh/website/site.pem
-ansible_ssh_common_args='-o StrictHostKeyChecking=no'

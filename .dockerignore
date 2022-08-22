@@ -1,0 +1,7 @@
+cache
+env.js
+dist
+/logs/
+.idea
+/node_modules/
+.git

@@ -64,7 +64,7 @@ app.apply( app.er_timeout,	{ timeout	: process.env.REQUEST_TIMEOUT || 60000 } );
 // Add a logger
 app.apply( app.er_logger,	{ logger } );
 
-const hasSSL	= process.env.SSL_KEY_PATH && process.env.SSL_CERT_PATHl;
+const hasSSL	= process.env.ENV !== 'development';
 // Add a user cookie session
 app.apply( app.er_session, { isCookieSession: true, isSecureCookie: hasSSL, sessionKey: 'token' } );
 

@@ -1,12 +1,7 @@
-module.exports	=
-{
-	apps :
-	[
-		{
-			name: 'site',
-			script: `${__dirname}/index.js`,
-			watch: false,
-			env: require( './env' )
-		}
-	]
+module.exports	= {
+	apps : [{
+		name: 'site',
+		script: `${__dirname}/index.js`,
+		watch: false
+	}]
 };
