@@ -7,6 +7,7 @@ RUN npm i && npm run build && npm prune --production && rm -rf src
 FROM node:14-alpine as base
 
 ENV REQUEST_TIMEOUT="60000"
+ENV METRICS_PATH="/tmp"
 ENV ENV="production"
 ENV USER="root"
 ENV PASS="toor"
