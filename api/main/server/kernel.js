@@ -4,6 +4,7 @@
 const app			= require( 'event_request' )();
 const ErrorHandler	= require( '../error/error_handler' );
 const logger		= require( '../logging/logger' );
+const path			= require( 'path' );
 
 app.apply( app.er_cors, {
 	origin: 'er_dynamic',
