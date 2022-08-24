@@ -15,7 +15,7 @@ ENV PASS="toor"
 EXPOSE 80
 WORKDIR /app
 
-COPY --from=builder /app /app
+COPY --from=builder --chown=node:node /app /app
 
 RUN npm i -g pm2
 CMD ["pm2-runtime", "ecosystem.config.js"]
