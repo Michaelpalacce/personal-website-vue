@@ -1,5 +1,43 @@
 module.exports	= [
 	{
+		title: 'Website',
+		technologies: [
+			{
+				isImg: true,
+				content: '/imgs/technologies/node-js-icon.svg',
+				link: 'https://nodejs.org/'
+			},
+			{
+				isImg: true,
+				content: '/imgs/technologies/vuejs-logo.svg',
+				link: 'https://vuejs.org/'
+			},
+			{
+				isImg: false,
+				content: 'EventRequest',
+				link: '#EventRequest'
+			}
+		],
+		badges: [
+			{
+				badge: 'https://img.shields.io/maintenance/yes/2022',
+				link: 'https://github.com/Michaelpalacce/personal-website-vue.git'
+			}
+		],
+		links: [
+			{
+				icon: '/imgs/github-icon.svg',
+				link: 'https://github.com/Michaelpalacce/personal-website-vue.git'
+			}
+		],
+		link: 'https://github.com/Michaelpalacce/personal-website-vue.git',
+		text: 'Nothing to say really! You are looking at it. Uses NodeJS as a backend, VueJs as the front-end.' +
+			'<br/><br/>' +
+			'Main idea of this website was to test how ' +
+			'<a href="https://github.com/Michaelpalacce/EventRequest" class="text-red-600">EventRequest</a> will handle an actual environment.',
+		images: []
+	},
+	{
 		title: 'EventRequest',
 		nodeModule: {
 			version: '12.x'
@@ -331,8 +369,7 @@ module.exports	= [
 		]
 	},
 	{
-		title: 'Docker Cassandra',
-		installCommand: 'docker pull stefangenov/cassandra:3.11',
+		title: 'Docker Projects',
 		technologies: [
 			{
 				isImg: true,
@@ -341,214 +378,9 @@ module.exports	= [
 			}
 		],
 		badges: [],
-		links: [
-			{
-				icon: '/imgs/github-icon.svg',
-				link: 'https://github.com/Michaelpalacce/Docker/tree/master/cassandra'
-			},
-			{
-				icon: '/imgs/technologies/docker.png',
-				link: 'https://hub.docker.com/repository/docker/stefangenov/cassandra'
-			},
-		],
+		links: [],
 		link: 'https://github.com/Michaelpalacce/Docker.git',
-		text: 'Cassandra installation with lucene index plugin.' +
-			' Contains 2 ready probes that can be used to check if the node/seed is up and running.'
-	},
-	{
-		title: 'Docker Jenkins Inbound Agent with NodeJS',
-		installCommand: 'docker pull stefangenov/jenkins-agent:node-latest',
-		technologies: [
-			{
-				isImg: true,
-				content: '/imgs/technologies/docker.png',
-				link: 'https://hub.docker.com/'
-			}
-		],
-		badges: [],
-		links: [
-			{
-				icon: '/imgs/github-icon.svg',
-				link: 'https://github.com/Michaelpalacce/Docker/tree/master/jenkins'
-			},
-			{
-				icon: '/imgs/technologies/docker.png',
-				link: 'https://hub.docker.com/repository/docker/stefangenov/jenkins-agent'
-			},
-		],
-		link: 'https://github.com/Michaelpalacce/Docker.git',
-		text: 'Jenkins Inbound Agent for AMD64 and ARM64 processors based on the'
-			+ ' alpine linux with NodeJS 16.7, git and openssh installed. There are different tags with different NodeJS versions supported'
-	},
-	{
-		title: 'Docker PHP',
-		installCommand: 'docker pull stefangenov/php:7.2',
-		technologies: [
-			{
-				isImg: true,
-				content: '/imgs/technologies/docker.png',
-				link: 'https://hub.docker.com/'
-			}
-		],
-		badges: [],
-		links: [
-			{
-				icon: '/imgs/github-icon.svg',
-				link: 'https://github.com/Michaelpalacce/Docker/tree/master/php/7.2'
-			},
-			{
-				icon: '/imgs/technologies/docker.png',
-				link: 'https://hub.docker.com/repository/docker/stefangenov/php'
-			},
-		],
-		link: 'https://github.com/Michaelpalacce/Docker.git',
-		text: 'A php7.2-fpm installation based on alpine linux.' +
-			' Includes a bunch of configurable Environment Variables. ' +
-			'Contains phpunit, composer, nodejs, cassandra php driver and git installed by default.'
-	},
-	{
-		title: 'Docker rsync',
-		installCommand: 'docker pull stefangenov/rsync:alpine',
-		technologies: [
-			{
-				isImg: true,
-				content: '/imgs/technologies/docker.png',
-				link: 'https://hub.docker.com/'
-			}
-		],
-		badges: [],
-		links: [
-			{
-				icon: '/imgs/github-icon.svg',
-				link: 'https://github.com/Michaelpalacce/Docker/tree/master/rsync'
-			},
-			{
-				icon: '/imgs/technologies/docker.png',
-				link: 'https://hub.docker.com/repository/docker/stefangenov/rsync'
-			},
-		],
-		link: 'https://github.com/Michaelpalacce/Docker.git',
-		text: 'A Simple Docker image with rsync installed'
-	},
-	{
-		title: 'Docker awscli',
-		installCommand: 'docker pull stefangenov/awscli:alpine',
-		technologies: [
-			{
-				isImg: true,
-				content: '/imgs/technologies/docker.png',
-				link: 'https://hub.docker.com/'
-			}
-		],
-		badges: [],
-		links: [
-			{
-				icon: '/imgs/github-icon.svg',
-				link: 'https://github.com/Michaelpalacce/Docker/tree/master/awscli'
-			},
-			{
-				icon: '/imgs/technologies/docker.png',
-				link: 'https://hub.docker.com/repository/docker/stefangenov/awscli'
-			},
-		],
-		link: 'https://github.com/Michaelpalacce/Docker.git',
-		text: 'A Simple Docker image with awscli installed. You can easily configure the awscli with environment variables.'
-	},
-	{
-		title: 'Docker Dashy',
-		installCommand: 'docker pull stefangenov/dashy',
-		technologies: [
-			{
-				isImg: true,
-				content: '/imgs/technologies/docker.png',
-				link: 'https://hub.docker.com/'
-			}
-		],
-		badges: [],
-		links: [
-			{
-				icon: '/imgs/github-icon.svg',
-				link: 'https://github.com/Michaelpalacce/docker-dashy'
-			},
-			{
-				icon: '/imgs/technologies/docker.png',
-				link: 'https://hub.docker.com/repository/docker/stefangenov/dashy'
-			},
-		],
-		link: 'https://github.com/Michaelpalacce/docker-dashy',
-		text: 'Installs a dashy image with a bunch of extra icons added. Also has an arm build, which the original does not have. Built and published with Github Actions!'
-	},
-	{
-		title: 'Docker Homer',
-		installCommand: 'docker pull stefangenov/homer',
-		technologies: [
-			{
-				isImg: true,
-				content: '/imgs/technologies/docker.png',
-				link: 'https://hub.docker.com/'
-			}
-		],
-		badges: [],
-		links: [
-			{
-				icon: '/imgs/github-icon.svg',
-				link: 'https://github.com/Michaelpalacce/Docker'
-			},
-			{
-				icon: '/imgs/technologies/docker.png',
-				link: 'https://hub.docker.com/repository/docker/stefangenov/homer'
-			},
-		],
-		link: 'https://github.com/Michaelpalacce/Docker.git',
-		text: 'Installs a homer image with a bunch of extra icons added. Also has an arm build, which the original does not have.'
-	},
-	{
-		title: 'Docker Diagrams',
-		installCommand: 'docker pull stefangenov/diagrams',
-		technologies: [
-			{
-				isImg: true,
-				content: '/imgs/technologies/docker.png',
-				link: 'https://hub.docker.com/'
-			}
-		],
-		badges: [],
-		links: [
-			{
-				icon: '/imgs/github-icon.svg',
-				link: 'https://github.com/Michaelpalacce/docker-diagrams'
-			},
-			{
-				icon: '/imgs/technologies/docker.png',
-				link: 'https://hub.docker.com/repository/docker/stefangenov/diagrams'
-			},
-		],
-		link: 'https://github.com/Michaelpalacce/docker-diagrams',
-		text: 'A docker diagrams image. Copy of the original but added an arm build. Built and published with Github Actions!'
-	},
-	{
-		title: 'Docker Wallabag',
-		installCommand: 'docker pull stefangenov/wallabag',
-		technologies: [
-			{
-				isImg: true,
-				content: '/imgs/technologies/docker.png',
-				link: 'https://hub.docker.com/'
-			}
-		],
-		badges: [],
-		links: [
-			{
-				icon: '/imgs/github-icon.svg',
-				link: 'https://github.com/Michaelpalacce/docker-wallabag'
-			},
-			{
-				icon: '/imgs/technologies/docker.png',
-				link: 'https://hub.docker.com/repository/docker/stefangenov/wallabag'
-			},
-		],
-		link: 'https://github.com/Michaelpalacce/docker-wallabag',
-		text: 'A docker wallabag image. Copy of the original but added an arm build. Built and published with Github Actions'
+		text: 'A collection of Docker containers that I\'ve created overtime'
 	},
 	{
 		title: 'Ansible Role docker',
@@ -724,43 +556,5 @@ module.exports	= [
 		],
 		link: 'https://github.com/Michaelpalacce/ansible-kubernetes-master-security.git',
 		text: 'Ansible Role that does security checks for kubernetes master nodes'
-	},
-	{
-		title: 'Website',
-		technologies: [
-			{
-				isImg: true,
-				content: '/imgs/technologies/node-js-icon.svg',
-				link: 'https://nodejs.org/'
-			},
-			{
-				isImg: true,
-				content: '/imgs/technologies/vuejs-logo.svg',
-				link: 'https://vuejs.org/'
-			},
-			{
-				isImg: false,
-				content: 'EventRequest',
-				link: '#EventRequest'
-			}
-		],
-		badges: [
-			{
-				badge: 'https://img.shields.io/maintenance/yes/2022',
-				link: 'https://github.com/Michaelpalacce/personal-website-vue.git'
-			}
-		],
-		links: [
-			{
-				icon: '/imgs/github-icon.svg',
-				link: 'https://github.com/Michaelpalacce/personal-website-vue.git'
-			}
-		],
-		link: 'https://github.com/Michaelpalacce/personal-website-vue.git',
-		text: 'Nothing to say really! You are looking at it. Uses NodeJS as a backend, VueJs as the front-end.' +
-			'<br/><br/>' +
-			'Main idea of this website was to test how ' +
-			'<a href="https://github.com/Michaelpalacce/EventRequest" class="text-red-600">EventRequest</a> will handle an actual environment.',
-		images: []
 	}
 ];
