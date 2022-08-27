@@ -6,4 +6,4 @@ const app				= App();
 // Attach the kernel
 require( './kernel' );
 
-app.listen( 80, () => { app.Loggur.log( 'HTTP Server started', 200 ); } )
+app.listen( process.env.APP_PORT || 80, () => { app.Loggur.log( 'HTTP Server started', 200 ); } )

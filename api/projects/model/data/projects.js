@@ -228,6 +228,28 @@ module.exports	= [
 		],
 		link: 'https://github.com/Michaelpalacce/HomeLab.git',
 		text: 'Contains my entire HomeLab architecture on K8S and all my setup scripts',
+		images: [
+			'/imgs/projects/homelab/1.png',
+			'/imgs/projects/homelab/2.png'
+		]
+	},
+	{
+		title: 'Home Recipes',
+		technologies: [
+			{
+				isImg: true,
+				content: '/imgs/technologies/ansible-logo.svg',
+				link: 'https://www.ansible.com/'
+			}
+		],
+		links: [
+			{
+				icon: '/imgs/github-icon.svg',
+				link: 'https://github.com/Michaelpalacce/Home.git'
+			}
+		],
+		link: 'https://github.com/Michaelpalacce/Home.git',
+		text: 'Contains ansible playbooks that setup my home PC. Install updates, setup aliases and take over serves I own.'
 	},
 	{
 		title: 'FsBrowser',
@@ -289,14 +311,6 @@ module.exports	= [
 		],
 		badges: [
 			{
-				badge: 'https://travis-ci.com/Michaelpalacce/er_redis_data_server.svg?branch=master',
-				link: 'https://travis-ci.com/Michaelpalacce/er_redis_data_server'
-			},
-			{
-				badge: 'https://codecov.io/gh/Michaelpalacce/er_redis_data_server/branch/master/graph/badge.svg',
-				link: 'https://codecov.io/gh/Michaelpalacce/er_redis_data_server'
-			},
-			{
 				badge: 'https://img.shields.io/maintenance/yes/2022',
 				link: 'https://github.com/Michaelpalacce/er_redis_data_server.git'
 			}
@@ -336,14 +350,6 @@ module.exports	= [
 			}
 		],
 		badges: [
-			{
-				badge: 'https://travis-ci.com/Michaelpalacce/er_memcached_data_server.svg?branch=master',
-				link: 'https://travis-ci.com/Michaelpalacce/er_memcached_data_server'
-			},
-			{
-				badge: 'https://codecov.io/gh/Michaelpalacce/er_memcached_data_server/branch/master/graph/badge.svg',
-				link: 'https://codecov.io/gh/Michaelpalacce/er_memcached_data_server'
-			},
 			{
 				badge: 'https://img.shields.io/maintenance/yes/2022',
 				link: 'https://github.com/Michaelpalacce/er_memcached_data_server.git'

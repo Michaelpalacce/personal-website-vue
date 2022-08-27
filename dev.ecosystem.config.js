@@ -6,7 +6,6 @@ module.exports	= {
 			watch: true,
 			ignore_watch : [
 				"node_modules",
-				"cache",
 				"logs",
 				"*.log",
 				"*.json",
@@ -25,9 +24,10 @@ module.exports	= {
 			env: {
 				REQUEST_TIMEOUT	: 60000,
 				ENV				: 'development',
-				DATA_PATH		: '.',
+				DATA_PATH		: './tmp',
 				USER			: 'root',
-				PASS			: 'toor'
+				PASS			: 'toor',
+				APP_PORT		: 8080
 			}
 		},
 		{

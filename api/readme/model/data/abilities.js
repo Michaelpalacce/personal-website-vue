@@ -5,6 +5,13 @@ module.exports	= [
 		shown: true,
 		items: [
 			{
+				name: 'TS/Typescript',
+				ready: '4/5',
+				status: 'Running',
+				age: '2021',
+				node: 'both'
+			},
+			{
 				name: 'JS/JavaScript',
 				ready: '5/5',
 				status: 'Running',
@@ -33,15 +40,8 @@ module.exports	= [
 				node: 'both'
 			},
 			{
-				name: 'TS/Typescript',
-				ready: '4/5',
-				status: 'Running',
-				age: '2021',
-				node: 'both'
-			},
-			{
 				name: 'Java',
-				ready: '3.5/5',
+				ready: '4/5',
 				status: 'Running',
 				age: '2021',
 				node: 'professionally'
@@ -66,6 +66,48 @@ module.exports	= [
 				status: 'Running',
 				age: '2018',
 				node: 'amateur'
+			},
+		]
+	},
+	{
+		name: 'Virtualization',
+		command: 'kubectl get po -n virtualization',
+		shown: false,
+		items: [
+			{
+				name: 'Proxmox',
+				ready: '4/5',
+				status: 'Running',
+				age: '2021',
+				node: 'amateur'
+			},
+			{
+				name: 'ESXi',
+				ready: '3/5',
+				status: 'Running',
+				age: '2021',
+				node: 'professionally'
+			},
+			{
+				name: 'vCenter',
+				ready: '3/5',
+				status: 'Running',
+				age: '2021',
+				node: 'professionally'
+			},
+			{
+				name: 'vRealize Orchestratpr',
+				ready: '4/5',
+				status: 'Running',
+				age: '2021',
+				node: 'professionally'
+			},
+			{
+				name: 'vRealize Automation',
+				ready: '4/5',
+				status: 'Running',
+				age: '2021',
+				node: 'professionally'
 			},
 		]
 	},
@@ -115,6 +157,13 @@ module.exports	= [
 				status: 'Running',
 				age: '2020',
 				node: 'both'
+			},
+			{
+				name: 'Tanzu',
+				ready: '4/5',
+				status: 'Running',
+				age: '2022',
+				node: 'professionally'
 			},
 			{
 				name: 'Docker Swarm',
@@ -234,6 +283,13 @@ module.exports	= [
 				status: 'Running',
 				age: '2016',
 				node: 'both'
+			},
+			{
+				name: 'Maven',
+				ready: '3/5',
+				status: 'Running',
+				age: '2021',
+				node: 'professionally'
 			}
 		]
 	},
@@ -258,7 +314,7 @@ module.exports	= [
 			},
 			{
 				name: 'Jasmine',
-				ready: '3/5',
+				ready: '4/5',
 				status: 'Running',
 				age: '2021',
 				node: 'both'
@@ -272,14 +328,14 @@ module.exports	= [
 			},
 			{
 				name: 'Junit',
-				ready: '3/5',
+				ready: '4/5',
 				status: 'Running',
 				age: '2021',
 				node: 'professionally'
 			},
 			{
 				name: 'Mockito',
-				ready: '3/5',
+				ready: '4/5',
 				status: 'Running',
 				age: '2021',
 				node: 'professionally'

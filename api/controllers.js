@@ -2,7 +2,6 @@
 
 const app					= require( 'event_request' )();
 const securityController	= require( '../api/main/security/security' );
-const metricsController		= require( '../api/main/analytics/metrics' );
 const blogsController		= require( './blog/controller/controller' );
 const projectsController	= require( './projects/controller/controller' );
 const readmeController		= require( './readme/controller/controller' );
@@ -12,14 +11,12 @@ const fs					= require( 'fs' );
 const PROJECT_ROOT			= path.parse( require.main.filename ).dir;
 
 // Public section
-require( '../api/main/analytics/analytics' );
 app.add( '/api', blogsController );
 app.add( '/api', projectsController );
 app.add( '/api', readmeController );
 
 // Secured section
 app.add( '/api', securityController );
-app.add( '/api', metricsController );
 
 // Serve Static Resources
 app.apply( app.er_static,		{ paths	: ['dist'], cache: { cacheControl: 'public', expirationDirectives: { 'max-age': 3600 } } } );

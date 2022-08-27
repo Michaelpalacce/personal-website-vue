@@ -4,3 +4,4 @@ dist
 /logs/
 .idea
 /node_modules/
+tmp

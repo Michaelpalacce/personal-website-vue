@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="h-screen w-screen">
 		<TypewriterText class="mx-5" :title="`sg@website: /${$route.name} $ ssh -i ssh.pem user@$(dig +short ${hostname})`" />
 		<TypewriterText class="mx-5" :text="'The authenticity of host \'127.0.0.1 (127.0.0.1)\' can\'t be established.'" :chunks="3"/>
 		<TypewriterText class="mx-5" :text="'ECDSA key fingerprint is SHA256:12ca17b49af2289436f303e01.'" :chunks="3"/>
@@ -33,9 +33,8 @@ export default {
 	},
 	components: { TypewriterText, LinkComponent },
 	methods: {
-		onEnter()
-		{
-			if ( this.yesAnswers.includes( this.selection ) )
+		onEnter() {
+			if ( this.yesAnswers.includes( this.selection.toLowerCase() ) )
 			{
 				this.emitter.emit( 'cover' );
 				this.selection	= '';
@@ -47,8 +46,7 @@ export default {
 				setTimeout( () => { this.$router.go() }, 5000 );
 			}
 		},
-		onClick( selection )
-		{
+		onClick( selection ) {
 			this.selection	= selection;
 			this.onEnter();
 		}

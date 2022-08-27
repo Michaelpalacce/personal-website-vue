@@ -1,5 +1,5 @@
 <template>
-	<div class="flex">
+	<div class="flex" >
 		<transition name="slide">
 			<div class="relative">
 				<span class="absolute left-0 rounded-2xl cursor-pointer w-12 h-full flex text-gray-400 opacity-70 hover:opacity-100" @click="prev" v-if="images.length>1">

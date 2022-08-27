@@ -31,7 +31,7 @@
 				</p>
 
 				<transition name="ability">
-					<div v-if="ability.shown">
+					<div v-if="ability.shown || abilitiesFilter !== ''">
 						<div class="grid grid-cols-4 sm:grid-cols-5">
 							<p @click="sortByName( ability.name )" class="cursor-pointer text-blue-500">NAME</p>
 							<p @click="sortByReady( ability.name )" class="cursor-pointer text-blue-500">READY</p>
@@ -177,11 +177,10 @@ export default {
 		 *
 		 * @return	void
 		 */
-		sortByReady( abilityName )
-		{
+		sortByReady( abilityName ) {
 			this.abilities.map(( ability ) => {
 				if ( ability.name === abilityName )
-					return ability.abilities.sort(( first, second ) => {
+					return ability.items.sort(( first, second ) => {
 						const firstValue	= first.ready.split( '/' )[0];
 						const secondValue	= second.ready.split( '/' )[0];
 
@@ -198,18 +197,16 @@ export default {
 		 *
 		 * @return	void
 		 */
-		sortByName( abilityName )
-		{
-			this.abilities.map(( ability ) => {
-				if ( ability.name === abilityName )
-					return ability.abilities.sort(( first, second ) => {
+		sortByName( abilityName ) {
+			this.abilities.forEach(( ability ) => {
+				if ( ability.name === abilityName ) {
+					ability.items.sort(( first, second ) => {
 						const firstName		= first.name;
 						const secondName	= second.name;
 
 						return firstName > secondName ? 1 : secondName > firstName ? -1 : 0;
 					});
-
-				return ability;
+				}
 			});
 		}
 	},
@@ -225,8 +222,7 @@ export default {
 		 *
 		 * @return	{Array}
 		 */
-		filteredCertificates()
-		{
+		filteredCertificates() {
 			return this.certificates.filter(( certificate ) => {
 				return JSON.stringify( certificate ).toLowerCase().includes( this.certificatesFilter.toLowerCase() );
 			});
@@ -239,22 +235,14 @@ export default {
 		 *
 		 * @return	{Array}
 		 */
-		filteredAbilities()
-		{
-			const filtered	= this.abilities.filter(( ability ) => {
+		filteredAbilities() {
+			return this.abilities.filter(( ability ) => {
 				ability.filteredItems	= ability.items.filter(( ability ) => {
 					return JSON.stringify( ability ).toLowerCase().includes( this.abilitiesFilter.toLowerCase() )
 				});
 
-				ability.shown	= true;
-
 				return ability.filteredItems.length > 0;
 			});
-
-			if ( this.abilitiesFilter === '' )
-				filtered.map( ( ability, index ) => ability.shown = index === 0 )
-
-			return filtered;
 		}
 	}
 }
