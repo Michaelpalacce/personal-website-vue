@@ -208,6 +208,7 @@ module.exports	= [
 			'/imgs/projects/simplesecrets/example-2.png',
 			'/imgs/projects/simplesecrets/example-3.png',
 			'/imgs/projects/simplesecrets/example-4.png',
+			'/imgs/projects/simplesecrets/example-5.png',
 		]
 	},
 	{

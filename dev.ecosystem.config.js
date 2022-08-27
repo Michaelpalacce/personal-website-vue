@@ -14,6 +14,7 @@ module.exports	= {
 				".idea",
 				".git",
 				"Uploads",
+				"tmp",
 				"src",
 				"public"
 			],
@@ -21,7 +22,13 @@ module.exports	= {
 				followSymlinks: false,
 				usePolling: true
 			},
-			env: require( './env' )
+			env: {
+				REQUEST_TIMEOUT	: 60000,
+				ENV				: 'development',
+				DATA_PATH		: '.',
+				USER			: 'root',
+				PASS			: 'toor'
+			}
 		},
 		{
 			name: 'site-vue',
