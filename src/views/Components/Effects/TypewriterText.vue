@@ -45,14 +45,12 @@ export default {
 		 */
 		type()
 		{
-			if ( this.displayText.length !== this.text.length )
-			{
+			if ( this.displayText.length !== this.text.length ) {
 				this.displayText	+= this.text.slice( this.textIndex, this.textIndex + this.chunks );
 				this.textIndex		+=this.chunks;
-				this.timeout	= setTimeout( this.type, this.speed );
+				this.timeout		= setTimeout( this.type, this.speed );
 			}
-			else
-			{
+			else {
 				this.timeout	= setTimeout(()=>{
 					this.$emit( 'done-typing' );
 					if ( this.removeAfter )

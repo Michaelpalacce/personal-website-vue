@@ -1,12 +1,5 @@
 <template>
 	<div class="my-20">
-		<TypewriterText class="md:ml-20 break-words"
-						:title="`sg@website: /${$route.name} $`"
-						:text="`git clone ${link} .`"
-						:speed="10"
-						@done-typing="show = true"
-						v-if="show === false"
-		/>
 
 		<transition name="fade">
 			<div class="mx-auto text-center w-full lg:w-4/6" v-if="show === true" :id="title">
@@ -76,7 +69,6 @@ export default {
 	data: function ()
 	{
 		return {
-			show: false,
 			showLinks: false,
 			title: this.project.title,
 			link: this.project.link,
@@ -90,8 +82,7 @@ export default {
 			installCommand: this.project.installCommand
 		};
 	},
-	mounted: function ()
-	{
+	mounted: function () {
 		if ( this.$route.hash )
 			this.show	= true;
 	},
@@ -113,7 +104,8 @@ export default {
 		TypewriterText
 	},
 	props: {
-		project: Object
+		project: Object,
+		show: Boolean
 	}
 }
 </script>

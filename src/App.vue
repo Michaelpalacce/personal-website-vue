@@ -7,6 +7,10 @@
 		<Navbar />
 		<router-view />
 	</div>
+
+	<div class="fixed bottom-0 text-center w-screen bg-gray-800 h-10">
+		Self hosted with <span> &#128153; </span> on my <a href="https://github.com/Michaelpalacce/HomeLab">Homelab</a>
+	</div>
 </template>
 
 <script>
