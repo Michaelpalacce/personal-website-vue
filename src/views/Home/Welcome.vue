@@ -27,21 +27,18 @@ export default {
 			hostname: window.location.host
 		}
 	},
-	mounted()
-	{
+	mounted() {
 		document.getElementById( 'answer' ).focus();
 	},
 	components: { TypewriterText, LinkComponent },
 	methods: {
 		onEnter() {
-			if ( this.yesAnswers.includes( this.selection.toLowerCase() ) )
-			{
+			if ( this.yesAnswers.includes( this.selection.toLowerCase() ) ) {
 				this.emitter.emit( 'cover' );
 				this.selection	= '';
 				setTimeout(()=>{ this.$store.commit( 'seenWelcomeScreen' ); }, 250);
 			}
-			else
-			{
+			else {
 				this.answeredNo	= true;
 				setTimeout( () => { this.$router.go() }, 5000 );
 			}

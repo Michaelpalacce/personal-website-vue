@@ -147,7 +147,7 @@ export default {
 			abilitiesCommand: './fetchAbilities.sh',
 			languagesCommand: 'cat /etc/default/locale',
 			experienceCommand: 'kubectl get events -n work-history',
-			certificatesCommand: 'kubectl get cm | awk \'NR>1{print $1}\' | xargs kubectl describe cm',
+			certificatesCommand: 'kubectl describe cm',
 			cvCommand: `wget ${window.location.host}/CV`,
 			languages: this.$store.state.languages,
 			experiences: this.$store.state.experiences,

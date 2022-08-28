@@ -1,11 +1,11 @@
 <template>
-	<TypewriterText class="md:ml-20 break-words" chunks="1" speed="15" doneTypingTimeout="0" v-if="loading === true && firstLoadText === true" @done-typing="secondLoadText = true" :text="`Cloning into '.' ...`" />
-	<TypewriterText class="md:ml-20 break-words" chunks="1" speed="15" doneTypingTimeout="0" v-if="loading === true && secondLoadText === true" @done-typing="thirdLoadText = true" :text="`remote: Enumerating objects: 14863, done.`" />
-	<TypewriterText class="md:ml-20 break-words" chunks="1" speed="15" doneTypingTimeout="0" v-if="loading === true && thirdLoadText === true" @done-typing="fourthLoadText = true" :text="`remote: Counting objects: 100% (104/104), done.`" />
-	<TypewriterText class="md:ml-20 break-words" chunks="1" speed="15" doneTypingTimeout="0" v-if="loading === true && fourthLoadText === true" @done-typing="fifthLoadText = true" :text="`remote: Compressing objects: 100% (67/67), done.`" />
-	<TypewriterText class="md:ml-20 break-words" chunks="1" speed="15" doneTypingTimeout="0" v-if="loading === true && fifthLoadText === true" @done-typing="sixthLoadText = true" :text="`remote: Total 14863 (delta 39), reused 69 (delta 24), pack-reused 14759`" />
-	<TypewriterText class="md:ml-20 break-words" chunks="1" speed="15" doneTypingTimeout="0" v-if="loading === true && sixthLoadText === true" @done-typing="seventhLoadText = true" :text="`Receiving objects: 100% (14863/14863), 6.14 MiB | 2.91 MiB/s, done.`" />
-	<TypewriterText class="md:ml-20 break-words" chunks="1" speed="15" doneTypingTimeout="500" v-if="loading === true && seventhLoadText === true" @done-typing="loading = false" :text="`Resolving deltas: 100% (8676/8676), done.`" />
+	<TypewriterText class="md:ml-20 break-words" :chunks="5" :speed="5" :doneTypingTimeout="0" v-if="loading === true && firstLoadText === true" @done-typing="secondLoadText = true" :text="`Cloning into '.' ...`" />
+	<TypewriterText class="md:ml-20 break-words" :chunks="5" :speed="5" :doneTypingTimeout="0" v-if="loading === true && secondLoadText === true" @done-typing="thirdLoadText = true" :text="`remote: Enumerating objects: 14863, done.`" />
+	<TypewriterText class="md:ml-20 break-words" :chunks="5" :speed="5" :doneTypingTimeout="0" v-if="loading === true && thirdLoadText === true" @done-typing="fourthLoadText = true" :text="`remote: Counting objects: 100% (104/104), done.`" />
+	<TypewriterText class="md:ml-20 break-words" :chunks="5" :speed="5" :doneTypingTimeout="0" v-if="loading === true && fourthLoadText === true" @done-typing="fifthLoadText = true" :text="`remote: Compressing objects: 100% (67/67), done.`" />
+	<TypewriterText class="md:ml-20 break-words" :chunks="5" :speed="5" :doneTypingTimeout="0" v-if="loading === true && fifthLoadText === true" @done-typing="sixthLoadText = true" :text="`remote: Total 14863 (delta 39), reused 69 (delta 24), pack-reused 14759`" />
+	<TypewriterText class="md:ml-20 break-words" :chunks="5" :speed="5" :doneTypingTimeout="0" v-if="loading === true && sixthLoadText === true" @done-typing="seventhLoadText = true" :text="`Receiving objects: 100% (14863/14863), 6.14 MiB | 2.91 MiB/s, done.`" />
+	<TypewriterText class="md:ml-20 break-words" :chunks="5" :speed="5" :doneTypingTimeout="500" v-if="loading === true && seventhLoadText === true" @done-typing="loading = false" :text="`Resolving deltas: 100% (8676/8676), done.`" />
 
 	<Project v-for="project in projects" :project="project" :show="!loading"/>
 </template>
@@ -31,6 +31,10 @@ export default {
 	},
 	computed: {
 		projects: function () { return this.$store.state.projects; },
+	},
+	async created() {
+		if ( window.location.hash )
+			this.loading	= false;
 	},
 	async mounted() {
 		this.$store.commit( 'animateNavbarText', { speed: 25, text: 'cd ~/projects', remove: true, removeAfter: 100, callback: () => {

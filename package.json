@@ -1,6 +1,6 @@
 {
   "name": "personal-website-vue",
-  "version": "1.28.6",
+  "version": "1.29.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",

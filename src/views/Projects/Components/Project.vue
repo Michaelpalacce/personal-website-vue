@@ -2,7 +2,7 @@
 	<div class="my-20">
 
 		<transition name="fade">
-			<div class="mx-auto text-center w-full lg:w-4/6" v-if="show === true" :id="title">
+			<div class="mx-auto text-center w-full lg:w-4/6" v-if="show" :id="title">
 				<a :href="linkToPage" class="block mb-3" @click="copyLinkToClipboard">
 					<span class="text-3xl">{{ title }}</span>
 					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block ml-2" viewBox="0 0 20 20" fill="currentColor" >
@@ -24,26 +24,10 @@
 							<a v-for="badge in badges" :href="badge.link" class="mx-auto"><img :src="badge.badge" :alt="badge.link"></a>
 						</div>
 
-<!--						<div class="grid gap-2 gap-y-2 mt-5"-->
-<!--							 :class="`${images.length > 0 ? 'grid-cols-3' : 'md:grid-cols-5 grid-cols-3 '}`"-->
-<!--						>-->
-<!--							<div v-for="technology in technologies">-->
-<!--								<a :href="technology.link">-->
-<!--									<img :src="technology.content" alt="" class="w-16 h-16 mx-auto" v-if="technology.isImg">-->
-<!--									<p v-else class="w-full mt-4 text-red-600">{{ technology.content }}</p>-->
-<!--								</a>-->
-<!--							</div>-->
-<!--						</div>-->
-
 						<div v-if="links.length > 0"
 							 class="grid gap-2 gap-y-2 mt-5"
 							 :class="`${images.length > 0 ? 'grid-cols-3' : 'md:grid-cols-5 grid-cols-3 '}`"
 						>
-<!--							<button class="bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white w-20 rounded mx-auto"-->
-<!--									@click="showLinks = ! showLinks"-->
-<!--							>-->
-<!--								Links-->
-<!--							</button>-->
 							<a v-for="link in links" :href="link.link" class="w-16 h-16 mx-auto" >
 								<img :src="link.icon" alt="" class="h-full">
 							</a>
@@ -72,7 +56,7 @@ export default {
 			showLinks: false,
 			title: this.project.title,
 			link: this.project.link,
-			linkToPage: window.location.origin + window.location.pathname	+ '#' + encodeURIComponent( this.project.title ),
+			linkToPage: window.location.origin + window.location.pathname	+ '#' + this.project.title,
 			text: this.project.text,
 			images: this.project.images || [],
 			nodeModule: this.project.nodeModule || {},
@@ -82,9 +66,12 @@ export default {
 			installCommand: this.project.installCommand
 		};
 	},
+	/**
+	 * @brief	Force another redirect, since loading takes time
+	 */
 	mounted: function () {
-		if ( this.$route.hash )
-			this.show	= true;
+		if ( window.location.hash )
+			this.$router.push({hash: decodeURIComponent(window.location.hash)})
 	},
 	methods: {
 		copyLinkToClipboard()
