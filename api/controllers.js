@@ -1,7 +1,6 @@
 'use strict';
 
 const app					= require( 'event_request' )();
-const securityController	= require( '../api/main/security/security' );
 const blogsController		= require( './blog/controller/controller' );
 const projectsController	= require( './projects/controller/controller' );
 const readmeController		= require( './readme/controller/controller' );
@@ -14,9 +13,6 @@ const PROJECT_ROOT			= path.parse( require.main.filename ).dir;
 app.add( '/api', blogsController );
 app.add( '/api', projectsController );
 app.add( '/api', readmeController );
-
-// Secured section
-app.add( '/api', securityController );
 
 // Serve Static Resources
 app.apply( app.er_static,		{ paths	: ['dist'], cache: { cacheControl: 'public', expirationDirectives: { 'max-age': 3600 } } } );

@@ -2,8 +2,7 @@ import { createRouter, createWebHistory }	from 'vue-router'
 import Home									from '@/views/Home/Home'
 import Projects								from '@/views/Projects/Projects'
 import Readme								from "@/views/Readme/Readme";
-import Login								from "@/views/Login/Login";
-import Admin								from "@/views/Admin/Admin";
+import Terminal								from "@/views/Terminal/Terminal";
 import Blogs								from "@/views/Blog/Blogs";
 import Blog									from "@/views/Blog/Blog";
 
@@ -24,9 +23,9 @@ const routes = [
 		component: Readme
 	},
 	{
-		path: '/login',
-		name: 'login',
-		component: Login
+		path: '/terminal',
+		name: 'terminal',
+		component: Terminal
 	},
 	{
 		path: '/blogs',
@@ -37,11 +36,6 @@ const routes = [
 		path: '/blogs/:blogId',
 		name: 'blog',
 		component: Blog
-	},
-	{
-		path: '/admin',
-		name: 'admin',
-		component: Admin
 	}
 ]
 
