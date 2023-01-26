@@ -46,6 +46,13 @@ module.exports	= [
 				age: '2021',
 				node: 'professionally'
 			},
+			{
+				name: 'Go',
+				ready: '3/5',
+				status: 'Running',
+				age: '2020',
+				node: 'professionally'
+			},
 		]
 	},
 	{
@@ -132,7 +139,7 @@ module.exports	= [
 			},
 			{
 				name: 'KoaJS',
-				ready: '2/5',
+				ready: '1/5',
 				status: 'Running',
 				age: '2021',
 				node: 'amateur'
