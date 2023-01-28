@@ -17,19 +17,11 @@ npm install
 pm2-runtime dev.ecosystem.config.js
 ```
 
-### Compiles and minifies for production
+### Compiles and runs for production
 ```
-npm run build
-```
-
-### Running in production:
-
-```
-npm i --only=prod && pm2 start ecosystem.config.js
+npm run build && pm2-runtime ecosystem.config.js
 ```
 
 ### Deploy:
 
-```
-ansible-playbook -i inventory main.yaml
-```
+To deploy, go to the github action and run the `Release New Version` Action. Select the release type from the inputs. 
