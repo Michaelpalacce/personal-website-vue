@@ -23,6 +23,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - uses: oleksiyrudenko/gha-git-credentials@v2-latest
+        with:
+          token: '${{ secrets.GITHUB_TOKEN }}'
+
       - name: Use Node.js 14.x
         uses: actions/setup-node@v3
         with:
