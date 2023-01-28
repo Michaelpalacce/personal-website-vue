@@ -39,6 +39,7 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Using a PAT beacuse if we use GITHUB_TOKEN the Docker action will not trigger
+          github_token: ${{ secrets.PAT }}
           branch: ${{ github.ref }}
           tags: true
