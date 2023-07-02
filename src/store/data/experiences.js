@@ -1,17 +1,10 @@
 module.exports	= [
 	{
-		lastSeen: '01/2016 - 07/2016',
-		type: 'Full Stack Developer',
-		reason: 'Internship',
-		object: 'Programista',
-		message: 'Student Internship. Worked with PHP. Built numerous little websites. I was promoted as a PHP team lead at the time of the students for performing well.'
-	},
-	{
-		lastSeen: '07/2016 - 02/08/2021',
-		type: 'PHP Developer',
+		lastSeen: '02/08/2021 - Current',
+		type: 'Senior Cloud Automation Developer',
 		reason: 'Work',
-		object: 'EngimaSoft Ltd.',
-		message: 'Full stack PHP Developer with a focus on Backend. Worked with Cassandra, PHP, HMTL/CSS, Javascript. We\'ve developed multiple websites ( one project with an API and Front-End part and the purchase system of the company ).'
+		object: 'VMware',
+		message: 'Helping businesses realize their software and virtualization needs. Mainly working as a Tech/Team lead. Delivered a lot of solutions and built infrastructure in place for clients.'
 	},
 	{
 		lastSeen: '07/2018 - 02/08/2021',
@@ -31,10 +24,17 @@ module.exports	= [
 			' everything has been successfully setup, they are fully idempotent and can be run in sections due to tags in case of failure.'
 	},
 	{
-		lastSeen: '02/08/2021 - Current',
-		type: 'Senior Cloud Automation Developer',
+		lastSeen: '07/2016 - 02/08/2021',
+		type: 'PHP Developer',
 		reason: 'Work',
-		object: 'VMware',
-		message: 'Helping businesses realize their software and virtualization needs.'
+		object: 'EngimaSoft Ltd.',
+		message: 'Full stack PHP Developer with a focus on Backend. Worked with Cassandra, PHP, HMTL/CSS, Javascript. We\'ve developed multiple websites ( one project with an API and Front-End part and the purchase system of the company ).'
+	},
+	{
+		lastSeen: '01/2016 - 07/2016',
+		type: 'Full Stack Developer',
+		reason: 'Internship',
+		object: 'Programista',
+		message: 'Student Internship. Worked with PHP. Built numerous little websites. I was promoted as a PHP team lead at the time of the students for performing well.'
 	},
 ];
