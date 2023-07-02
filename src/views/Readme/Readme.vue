@@ -32,17 +32,17 @@
 
 				<transition name="ability">
 					<div v-if="ability.shown || abilitiesFilter !== ''">
-						<div class="grid grid-cols-4 sm:grid-cols-5">
+						<div class="grid grid-cols-3 sm:grid-cols-5">
 							<p @click="sortByName( ability.name )" class="cursor-pointer text-blue-500">NAME</p>
 							<p @click="sortByReady( ability.name )" class="cursor-pointer text-blue-500">READY</p>
-							<p>STATUS</p>
+							<p class="hidden sm:inline-block">STATUS</p>
 							<p>AGE</p>
 							<p class="hidden sm:inline-block">NODE</p>
 						</div>
-						<div v-for="item in ability.filteredItems" class="grid grid-cols-4 sm:grid-cols-5 my-2">
+						<div v-for="item in ability.filteredItems" class="grid grid-cols-3 sm:grid-cols-5 my-2">
 							<p class="truncate">{{ item.name }}</p>
 							<p class="truncate">{{ item.ready }}</p>
-							<p class="truncate">{{ item.status }}</p>
+							<p class="truncate hidden sm:inline-block">{{ item.status }}</p>
 							<p class="truncate">{{ item.age }}</p>
 							<p class="truncate hidden sm:inline-block">{{ item.node }}</p>
 						</div>
