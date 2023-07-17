@@ -15,11 +15,6 @@ module.exports	= [
 		text: 'LinkedIn'
 	},
 	{
-		image: '/imgs/facebook-icon.svg',
-		link: 'https://www.facebook.com/stefantigro',
-		text: 'Facebook'
-	},
-	{
 		image: '/imgs/telegram-icon.svg',
 		link: 'https://t.me/stefantigro',
 		text: 'Telegram'
