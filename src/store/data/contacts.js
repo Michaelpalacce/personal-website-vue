@@ -11,7 +11,7 @@ module.exports	= [
 	},
 	{
 		image: '/imgs/linkedin-icon.svg',
-		link: 'https://www.linkedin.com/in/stefan-genov-286972a3/',
+		link: 'https://www.linkedin.com/in/%F0%9F%A4%96-stefan-genov-286972a3/',
 		text: 'LinkedIn'
 	},
 	{
