@@ -1,6 +1,6 @@
 module.exports	= [
 	{
-		title: 'Website',
+		title: 'My Website',
 		technologies: [
 			{
 				isImg: true,
