@@ -51,7 +51,7 @@ module.exports	= [
 				ready: '3/5',
 				status: 'Running',
 				age: '2020',
-				node: 'professionally'
+				node: 'both'
 			},
 		]
 	},
