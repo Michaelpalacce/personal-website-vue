@@ -131,6 +131,13 @@ module.exports	= [
 				node: 'amateur'
 			},
 			{
+				name: 'Gin',
+				ready: '3/5',
+				status: 'Running',
+				age: '2023',
+				node: 'amateur'
+			},
+			{
 				name: 'Symfony',
 				ready: '3/5',
 				status: 'Completed',
@@ -189,8 +196,8 @@ module.exports	= [
 		]
 	},
 	{
-		name: 'DevOps tools',
-		command: 'kubectl get po -n ci-cd-tools',
+		name: 'DevOps',
+		command: 'kubectl get po -n dev-ops',
 		shown: false,
 		items: [
 			{
@@ -202,7 +209,7 @@ module.exports	= [
 			},
 			{
 				name: 'Jenkins',
-				ready: '3.5/5',
+				ready: '4/5',
 				status: 'Running',
 				age: '2021',
 				node: 'amateur'
@@ -251,7 +258,7 @@ module.exports	= [
 			},
 			{
 				name: 'Mongo DB',
-				ready: '2.5/5',
+				ready: '3/5',
 				status: 'Running',
 				age: '2018',
 				node: 'amateur'
@@ -297,6 +304,13 @@ module.exports	= [
 				status: 'Running',
 				age: '2021',
 				node: 'professionally'
+			},
+			{
+				name: 'Websockets',
+				ready: '4/5',
+				status: 'Running',
+				age: '2023',
+				node: 'amateur'
 			}
 		]
 	},
@@ -321,7 +335,7 @@ module.exports	= [
 			},
 			{
 				name: 'Jasmine',
-				ready: '4/5',
+				ready: '5/5',
 				status: 'Running',
 				age: '2021',
 				node: 'both'
