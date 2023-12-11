@@ -6,7 +6,7 @@ module.exports	= [
 		items: [
 			{
 				name: 'TS/Typescript',
-				ready: '4/5',
+				ready: '5/5',
 				status: 'Running',
 				age: '2021',
 				node: 'both'
@@ -41,17 +41,24 @@ module.exports	= [
 			},
 			{
 				name: 'Java',
-				ready: '4/5',
+				ready: '3/5',
 				status: 'Running',
 				age: '2021',
 				node: 'professionally'
 			},
 			{
 				name: 'Go',
-				ready: '3/5',
+				ready: '4/5',
 				status: 'Running',
 				age: '2020',
 				node: 'both'
+			},
+			{
+				name: 'Lua',
+				ready: '2/5',
+				status: 'Running',
+				age: '2023',
+				node: 'amateur'
 			},
 		]
 	},
@@ -104,14 +111,14 @@ module.exports	= [
 			},
 			{
 				name: 'vRealize Orchestratpr',
-				ready: '4/5',
+				ready: '5/5',
 				status: 'Running',
 				age: '2021',
 				node: 'professionally'
 			},
 			{
 				name: 'vRealize Automation',
-				ready: '4/5',
+				ready: '5/5',
 				status: 'Running',
 				age: '2021',
 				node: 'professionally'
@@ -132,7 +139,7 @@ module.exports	= [
 			},
 			{
 				name: 'Gin',
-				ready: '3/5',
+				ready: '4/5',
 				status: 'Running',
 				age: '2023',
 				node: 'amateur'
@@ -143,13 +150,6 @@ module.exports	= [
 				status: 'Completed',
 				age: '2016',
 				node: 'professionally'
-			},
-			{
-				name: 'KoaJS',
-				ready: '1/5',
-				status: 'Running',
-				age: '2021',
-				node: 'amateur'
 			},
 		]
 	},
@@ -181,14 +181,14 @@ module.exports	= [
 			},
 			{
 				name: 'Docker Swarm',
-				ready: '4/5',
+				ready: '5/5',
 				status: 'Completed',
 				age: '2020',
 				node: 'both'
 			},
 			{
 				name: 'Docker Compose',
-				ready: '4/5',
+				ready: '5/5',
 				status: 'Running',
 				age: '2020',
 				node: 'both'
@@ -202,7 +202,7 @@ module.exports	= [
 		items: [
 			{
 				name: 'Ansible',
-				ready: '4/5',
+				ready: '5/5',
 				status: 'Running',
 				age: '2019',
 				node: 'both'
@@ -237,7 +237,7 @@ module.exports	= [
 			},
 			{
 				name: 'Linux',
-				ready: '4/5',
+				ready: '5/5',
 				status: 'Running',
 				age: '2016',
 				node: 'both'
@@ -251,7 +251,7 @@ module.exports	= [
 		items: [
 			{
 				name: 'Cassandra DB',
-				ready: '4/5',
+				ready: '5/5',
 				status: 'Running',
 				age: '2016',
 				node: 'professionally'
@@ -293,17 +293,24 @@ module.exports	= [
 		items: [
 			{
 				name: 'GIT',
-				ready: '4/5',
+				ready: '5/5',
 				status: 'Running',
 				age: '2016',
 				node: 'both'
 			},
 			{
 				name: 'Maven',
-				ready: '3/5',
+				ready: '4/5',
 				status: 'Running',
 				age: '2021',
 				node: 'professionally'
+			},
+			{
+				name: 'Vim',
+				ready: '3/5',
+				status: 'Running',
+				age: '2023',
+				node: 'both'
 			},
 			{
 				name: 'Websockets',
