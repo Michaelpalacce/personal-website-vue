@@ -1,6 +1,6 @@
 <template>
 	<div class="flex">
-		<LinkComponent class="text-5xl sm:text-7xl mt-10 w-1/2 mx-auto" text="Hello!"/>
+		<LinkComponent class="text-5xl sm:text-7xl mt-10 w-1/2 mx-auto" text="Hello!" />
 	</div>
 
 	<transition name="whoami">
@@ -17,47 +17,49 @@
 				<span class="text-base sm:text-xl text-center text-white mx-3"> Software Engineer & DevOps </span>
 				<span class="hidden sm:inline-block">&lt;/profession&gt;</span>
 			</div>
+
 		</div>
 	</transition>
 
 	<transition-group name="whois">
 		<div class="grid grid-cols-4 gap-y-20 mt-20" v-if="whois">
-			<a v-for="contact in contacts" :href="contact.link" class="h-10 w-10 sm:h-14 sm:w-14 mx-auto" :key="contact.text">
+			<a v-for="contact in contacts" :href="contact.link" class="h-10 w-10 sm:h-14 sm:w-14 mx-auto"
+				:key="contact.text">
 				<img :src="contact.image" alt="" class="h-full">
 				<p class="mt-2 text-center text-xs sm:text-base">{{ contact.text }}</p>
 			</a>
 		</div>
 
-		<CopyableText class="text-center mt-20 block" v-if="whois" textColor="text-yellow-500" text="stefantigro@gmail.com"/>
+		<CopyableText class="text-center mt-20 block" v-if="whois" textColor="text-yellow-500"
+			text="stefantigro@gmail.com" />
 	</transition-group>
-
 </template>
 
 <script>
-import LinkComponent	from "../Components/LinkComponent";
-import CopyableText		from "../Components/Effects/CopyableText";
+import LinkComponent from "../Components/LinkComponent";
+import CopyableText from "../Components/Effects/CopyableText";
 export default {
 	name: 'Home',
 	components: {
 		CopyableText,
 		LinkComponent
 	},
-	data: function ()
-	{
+	data: function () {
 		return {
 			whois: false,
 			whoami: false,
 			contacts: this.$store.state.contacts
 		};
 	},
-	mounted()
-	{
-		this.$store.commit( 'animateNavbarText', { text: 'cd /home/sg', remove: true, removeAfter: 500, speed: 30, callback: () => {
-				this.whoami	= true;
-				this.$store.commit( 'changeNavbarPath', '/home/sg' );
-				this.$store.commit( 'animateNavbarText', { text: 'whoami', remove: true, removeAfter: 500, callback: () => {
-						this.whois	= true;
-						this.$store.commit( 'animateNavbarText', { text: 'whois stefangenov.site' } );
+	mounted() {
+		this.$store.commit('animateNavbarText', {
+			text: 'cd /home/sg', remove: true, removeAfter: 500, speed: 30, callback: () => {
+				this.whoami = true;
+				this.$store.commit('changeNavbarPath', '/home/sg');
+				this.$store.commit('animateNavbarText', {
+					text: 'whoami', remove: true, removeAfter: 500, callback: () => {
+						this.whois = true;
+						this.$store.commit('animateNavbarText', { text: 'whois stefangenov.site' });
 					}
 				});
 			}

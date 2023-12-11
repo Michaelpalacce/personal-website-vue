@@ -38,6 +38,86 @@ module.exports	= [
 		images: []
 	},
 	{
+		title: '.dotfiles',
+		technologies: [
+			{
+				isImg: true,
+				content: '/imgs/technologies/neovimio-icon.svg',
+				link: 'https://github.com/neovim/neovim'
+			},
+			{
+				isImg: true,
+				content: '/imgs/technologies/tmux.svg',
+				link: 'https://github.com/tmux/tmux'
+			},
+		],
+		badges: [
+			{
+				badge: 'https://img.shields.io/maintenance/yes/2023',
+				link: 'https://github.com/Michaelpalacce/.dotfiles.git'
+			}
+		],
+		links: [
+			{
+				icon: '/imgs/github-icon.svg',
+				link: 'https://github.com/Michaelpalacce/.dotfiles.git'
+			}
+		],
+		link: 'https://github.com/Michaelpalacce/.dotfiles.git',
+		text: 'My personal dotfiles. Contains my neovim, tmux, zsh and other configurations. I use this to setup my environment on any machine I use.',
+		images: []
+	},
+	{
+		title: 'goip',
+		technologies: [
+			{
+				isImg: true,
+				content: '/imgs/technologies/golang-official.svg',
+				link: 'https://go.dev/'
+			},
+		],
+		badges: [
+			{
+				badge: 'https://img.shields.io/maintenance/yes/2023',
+				link: 'https://github.com/Michaelpalacce/goip.git'
+			}
+		],
+		links: [
+			{
+				icon: '/imgs/github-icon.svg',
+				link: 'https://github.com/Michaelpalacce/goip.git'
+			}
+		],
+		link: 'https://github.com/Michaelpalacce/goip.git',
+		text: 'Automatically updates IP address in various dns providers.',
+		images: []
+	},
+	{
+		title: 'NAT',
+		technologies: [
+			{
+				isImg: true,
+				content: '/imgs/technologies/node-js-icon.svg',
+				link: 'https://nodejs.org/'
+			}
+		],
+		badges: [
+			{
+				badge: 'https://img.shields.io/maintenance/yes/2023',
+				link: 'https://github.com/Michaelpalacce/nat.git'
+			}
+		],
+		links: [
+			{
+				icon: '/imgs/github-icon.svg',
+				link: 'https://github.com/Michaelpalacce/nat.git'
+			}
+		],
+		link: 'https://github.com/Michaelpalacce/nat.git',
+		text: 'NodeJS Aria Tools. Faster and bleeding edge.',
+		images: []
+	},
+	{
 		title: 'EventRequest',
 		nodeModule: {
 			version: '12.x'
