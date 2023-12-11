@@ -39,6 +39,7 @@ module.exports	= [
 	},
 	{
 		title: '.dotfiles',
+		installCommand: 'curl -o- https://raw.githubusercontent.com/Michaelpalacce/.dotfiles/master/setup.sh | bash',
 		technologies: [
 			{
 				isImg: true,

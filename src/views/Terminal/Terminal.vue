@@ -3,7 +3,7 @@
 		<p class="">Getting my setup up and running</p>
 		<p class="mt-5">To get started, run the following command in your terminal (Ubuntu/MacOS):</p>
 		<CopyableText class="text-center block mt-5" textColor="text-yellow-500"
-			text=" curl -o- https://raw.githubusercontent.com/Michaelpalacce/.dotfiles/master/setup.sh | bash " />
+			text="curl -o- https://raw.githubusercontent.com/Michaelpalacce/.dotfiles/master/setup.sh | bash" />
 
 		<div class="mt-5">
 			Download a NerdFont from: <a class="text-blue-500"
