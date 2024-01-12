@@ -20,7 +20,7 @@ module.exports	= [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2023',
+				badge: 'https://img.shields.io/maintenance/yes/2024',
 				link: 'https://github.com/Michaelpalacce/personal-website-vue.git'
 			}
 		],
@@ -54,7 +54,7 @@ module.exports	= [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2023',
+				badge: 'https://img.shields.io/maintenance/yes/2024',
 				link: 'https://github.com/Michaelpalacce/.dotfiles.git'
 			}
 		],
@@ -79,7 +79,7 @@ module.exports	= [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2023',
+				badge: 'https://img.shields.io/maintenance/yes/2024',
 				link: 'https://github.com/Michaelpalacce/goip.git'
 			}
 		],
@@ -104,7 +104,7 @@ module.exports	= [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2023',
+				badge: 'https://img.shields.io/maintenance/yes/2024',
 				link: 'https://github.com/Michaelpalacce/nat.git'
 			}
 		],
@@ -169,7 +169,7 @@ module.exports	= [
 				badge: 'https://app.codacy.com/project/badge/Coverage/3c843dd2bc454f06b10eb60820dc6d1b'
 			},
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2023',
+				badge: 'https://img.shields.io/maintenance/yes/2024',
 				link: 'https://github.com/Michaelpalacce/EventRequest.git'
 			}
 		],
@@ -213,7 +213,7 @@ module.exports	= [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2023',
+				badge: 'https://img.shields.io/maintenance/yes/2024',
 				link: 'https://github.com/Michaelpalacce/Server.git'
 			}
 		],
@@ -268,7 +268,7 @@ module.exports	= [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2023',
+				badge: 'https://img.shields.io/maintenance/yes/2024',
 				link: 'https://github.com/Michaelpalacce/SimpleSecrets.git'
 			}
 		],
@@ -348,7 +348,7 @@ module.exports	= [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2023',
+				badge: 'https://img.shields.io/maintenance/yes/2024',
 				link: 'https://github.com/Michaelpalacce/er_redis_data_server.git'
 			}
 		],
@@ -392,7 +392,7 @@ module.exports	= [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2023',
+				badge: 'https://img.shields.io/maintenance/yes/2024',
 				link: 'https://github.com/Michaelpalacce/er_redis_data_server.git'
 			}
 		],
@@ -432,7 +432,7 @@ module.exports	= [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2023',
+				badge: 'https://img.shields.io/maintenance/yes/2024',
 				link: 'https://github.com/Michaelpalacce/er_memcached_data_server.git'
 			}
 		],
@@ -482,7 +482,7 @@ module.exports	= [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2023',
+				badge: 'https://img.shields.io/maintenance/yes/2024',
 				link: 'https://github.com/Michaelpalacce/ansible-docker.git'
 			}
 		],
@@ -511,7 +511,7 @@ module.exports	= [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2023',
+				badge: 'https://img.shields.io/maintenance/yes/2024',
 				link: 'https://github.com/Michaelpalacce/ansible-docker-compose.git'
 			}
 		],
@@ -541,7 +541,7 @@ module.exports	= [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2023',
+				badge: 'https://img.shields.io/maintenance/yes/2024',
 				link: 'https://github.com/Michaelpalacce/ansible-helm.git'
 			}
 		],
@@ -570,7 +570,7 @@ module.exports	= [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2023',
+				badge: 'https://img.shields.io/maintenance/yes/2024',
 				link: 'https://github.com/Michaelpalacce/ansible-kubernetes-preflight.git'
 			}
 		],
@@ -599,7 +599,7 @@ module.exports	= [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2023',
+				badge: 'https://img.shields.io/maintenance/yes/2024',
 				link: 'https://github.com/Michaelpalacce/ansible-kubernetes-cluster.git'
 			}
 		],
@@ -628,7 +628,7 @@ module.exports	= [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2023',
+				badge: 'https://img.shields.io/maintenance/yes/2024',
 				link: 'https://github.com/Michaelpalacce/ansible-kubernetes-master-security.git'
 			}
 		],
