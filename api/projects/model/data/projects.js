@@ -66,7 +66,14 @@ module.exports	= [
 		],
 		link: 'https://github.com/Michaelpalacce/.dotfiles.git',
 		text: 'My personal dotfiles. Contains my neovim, tmux, zsh and other configurations. I use this to setup my environment on any machine I use.',
-		images: []
+		images: [
+			'https://raw.githubusercontent.com/Michaelpalacce/.dotfiles/master/images/Layout.png',
+			'https://raw.githubusercontent.com/Michaelpalacce/.dotfiles/master/images/Debugging.png',
+			'https://raw.githubusercontent.com/Michaelpalacce/.dotfiles/master/images/Setup.png',
+			'https://raw.githubusercontent.com/Michaelpalacce/.dotfiles/master/images/Scripts.png',
+			'https://raw.githubusercontent.com/Michaelpalacce/.dotfiles/master/images/Sessionizer.png',
+			'https://raw.githubusercontent.com/Michaelpalacce/.dotfiles/master/images/cheatsheets.png',
+		]
 	},
 	{
 		title: 'goip',
@@ -169,7 +176,7 @@ module.exports	= [
 				badge: 'https://app.codacy.com/project/badge/Coverage/3c843dd2bc454f06b10eb60820dc6d1b'
 			},
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2023',
+				badge: 'https://img.shields.io/maintenance/yes/2024',
 				link: 'https://github.com/Michaelpalacce/EventRequest.git'
 			}
 		],
