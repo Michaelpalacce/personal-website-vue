@@ -25,8 +25,6 @@ module.exports	= {
 				REQUEST_TIMEOUT	: 60000,
 				ENV				: 'development',
 				DATA_PATH		: './tmp',
-				USER			: 'root',
-				PASS			: 'toor',
 				APP_PORT		: 8080
 			}
 		},
