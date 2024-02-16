@@ -17,9 +17,9 @@ module.exports = [
 		date: '28/6/2021',
 		content: fs.readFileSync(path.join(__dirname, './blogs/06.2021/event_request_intro.html'))
 	},
-	{
-		title: "Transitioning to the Terminal",
-		date: "28/1/2024",
-		content: fs.readFileSync(path.join(__dirname, './blogs/01.2024/transitioning_to_the_terminal.html'))
-	}
+	// {
+	// 	title: "Transitioning to the Terminal",
+	// 	date: "28/1/2024",
+	// 	content: fs.readFileSync(path.join(__dirname, './blogs/01.2024/transitioning_to_the_terminal.html'))
+	// }
 ];
