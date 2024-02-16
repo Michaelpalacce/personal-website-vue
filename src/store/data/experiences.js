@@ -11,24 +11,14 @@ module.exports	= [
 		type: 'Devops Engineer',
 		reason: 'Work',
 		object: 'EngimaSoft Ltd.',
-		message: 'Apart from working as a PHP Fullstack developer I also work as a Devops Engineer. I\'ve used technologies like Bamboo, Chef, AWS. Deployed multiple environments to production.<br/><br/>' +
-			' One of the projects that has been deployed to production was done by using AWS. I\'ve single handedly set-up the entire infrastructure in AWS, configured automatic deployments, builds and testing.' +
-			' I\'ve setup 2 environments, one for production and one for stage. Setup alarms and monitoring as well as logging.<br/><br/>' +
-			' Another project that was deployed to production and stage was using Kubernetes. I\'ve built docker images for all the services in the project, hosting them in ECR.' +
-			' I\'ve setup a Cassandra cluster in the Kubernetes cluster which is all brought up and scaled down if needed automatically without any operator interference needed.' +
-			' I\'ve setup logging (EFK) and monitoring ( Grafana, Prometheus, node-exporter, cAdvisor ). I have successfully configured the services with High Availability and I have configured' +
-			' zero downtime rolling upgrades as well as horizontal pod autoscaling. All of the services deployed have liveness probes, readiness probes, securityContexts preventing any privilege escalations.' +
-			' All of the services have been packaged into private helm charts using S3 as a private Helm Repo.<br/><br/>' +
-			' I have written ansible scripts that setup the entire K8S environment. They are capable of setting up a single master cluster or a multiple stacked master cluster.' +
-			' All of the scripts are super customizable where deemed fit. All of the scripts have a bunch of checks to confirm that' +
-			' everything has been successfully setup, they are fully idempotent and can be run in sections due to tags in case of failure.'
+		message: 'Subsequently recognized for my adeptness and leadership qualities, I got promtoed to the position of DevOps Engineer in 2018. In this elevated capacity, I undertook the architecting and construction of robust stage, pre-live, and live infrastructures leveraging AWS technologies, alongside Cassandra, PHP, Javascript, and HTML/CSS. Employing AWS OpsWorks and Chef for seamless server deployment, I meticulously orchestrated the setup and maintenance of critical project environments. Demonstrating proficiency in containerization, I successfully dockerized three applications, streamlining development workflows and enhancing portability. Moreover, I engineered a streamlined development environment using docker-compose, facilitating rapid setup and consistency across team members. My expertise extended into the realm of Kubernetes (K8S) orchestration, where I played a pivotal role in establishing and managing K8S clusters for project deployments. These clusters boasted advanced features including autoscaling capabilities, zero-downtime rolling updates, and robust logging and monitoring mechanisms comprising Prometheus, node-exporter, Grafana, and the EFK stack. Additionally, I honed my proficiency in Helm, packaging projects into private Helm charts for seamless deployment within Kubernetes environments. Demonstrating a commitment to robust infrastructure and security practices, I authored numerous Ansible scripts, encompassing tasks ranging from setting up Docker, Helm, and K8S binaries to configuring multi-master stacked K8S clusters and implementing cluster security measures aligned with CISecurity benchmarks. Through these initiatives, I ensured the resilience, scalability, and security posture of our project environments, contributing significantly to the overall success and efficiency of our development initiatives.'
 	},
 	{
 		lastSeen: '07/2016 - 02/08/2021',
 		type: 'PHP Developer',
 		reason: 'Work',
 		object: 'EngimaSoft Ltd.',
-		message: 'Full stack PHP Developer with a focus on Backend. Worked with Cassandra, PHP, HMTL/CSS, Javascript. We\'ve developed multiple websites ( one project with an API and Front-End part and the purchase system of the company ).'
+		message: 'Commencing my professional journey as a Full Stack Developer proficient in PHP, I undertook a multifaceted role encompassing the mastery of PHP, Javascript, Cassandra, and AWS services. Embracing a rigorous test-driven development approach and adhering steadfastly to agile principles, I diligently contributed to the evolutionary progression of our projects. '
 	},
 	{
 		lastSeen: '01/2016 - 07/2016',
