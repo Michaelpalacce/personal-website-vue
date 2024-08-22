@@ -1,6 +1,13 @@
-module.exports	= [
+module.exports = [
 	{
-		lastSeen: '02/08/2021 - Current',
+		lastSeen: '08/2023 - Present',
+		object: 'Broadcom',
+		reason: 'Work',
+		type: 'Senior Cloud Automation Developer',
+		message: 'Consulting work for clients in the field of cloud automation. infrastructure automation, CI/CD, and DevOps. Acting as a Tech/Team lead.'
+	},
+	{
+		lastSeen: '02/08/2021 - 08/2023',
 		type: 'Senior Cloud Automation Developer',
 		reason: 'Work',
 		object: 'VMware',

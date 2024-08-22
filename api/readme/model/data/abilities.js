@@ -1,4 +1,4 @@
-module.exports	= [
+module.exports = [
 	{
 		name: 'Languages',
 		command: 'kubectl get po -n languages',
@@ -151,6 +151,13 @@ module.exports	= [
 				age: '2016',
 				node: 'professionally'
 			},
+			{
+				name: "kubebuilder",
+				ready: '4/5',
+				status: 'Running',
+				age: '2024',
+				node: 'both'
+			}
 		]
 	},
 	{
