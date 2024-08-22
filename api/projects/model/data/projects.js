@@ -1,4 +1,4 @@
-module.exports	= [
+module.exports = [
 	{
 		title: 'My Website',
 		technologies: [
@@ -76,7 +76,7 @@ module.exports	= [
 		]
 	},
 	{
-		title: 'goip',
+		title: 'https://github.com/Michaelpalacce/go-ddns-controller',
 		technologies: [
 			{
 				isImg: true,
@@ -87,42 +87,17 @@ module.exports	= [
 		badges: [
 			{
 				badge: 'https://img.shields.io/maintenance/yes/2024',
-				link: 'https://github.com/Michaelpalacce/goip.git'
+				link: 'https://github.com/Michaelpalacce/go-ddns-controller.git'
 			}
 		],
 		links: [
 			{
 				icon: '/imgs/github-icon.svg',
-				link: 'https://github.com/Michaelpalacce/goip.git'
+				link: 'https://github.com/Michaelpalacce/go-ddns-controller.git'
 			}
 		],
-		link: 'https://github.com/Michaelpalacce/goip.git',
-		text: 'Automatically updates IP address in various dns providers.',
-		images: []
-	},
-	{
-		title: 'NAT',
-		technologies: [
-			{
-				isImg: true,
-				content: '/imgs/technologies/node-js-icon.svg',
-				link: 'https://nodejs.org/'
-			}
-		],
-		badges: [
-			{
-				badge: 'https://img.shields.io/maintenance/yes/2024',
-				link: 'https://github.com/Michaelpalacce/nat.git'
-			}
-		],
-		links: [
-			{
-				icon: '/imgs/github-icon.svg',
-				link: 'https://github.com/Michaelpalacce/nat.git'
-			}
-		],
-		link: 'https://github.com/Michaelpalacce/nat.git',
-		text: 'NodeJS Aria Tools. Faster and bleeding edge.',
+		link: 'https://github.com/Michaelpalacce/go-ddns-controller.git',
+		text: 'A Kubernetes controller for managing DDNS records. Written to work with various providers and notifiers.',
 		images: []
 	},
 	{
@@ -199,6 +174,57 @@ module.exports	= [
 			'/imgs/EventRequest-2.png'
 		]
 	},
+
+	{
+		title: 'goip',
+		technologies: [
+			{
+				isImg: true,
+				content: '/imgs/technologies/golang-official.svg',
+				link: 'https://go.dev/'
+			},
+		],
+		badges: [
+			{
+				badge: 'https://img.shields.io/maintenance/no/2024',
+				link: 'https://github.com/Michaelpalacce/goip.git'
+			}
+		],
+		links: [
+			{
+				icon: '/imgs/github-icon.svg',
+				link: 'https://github.com/Michaelpalacce/goip.git'
+			}
+		],
+		link: 'https://github.com/Michaelpalacce/goip.git',
+		text: 'Automatically updates IP address in various dns providers.',
+		images: []
+	},
+	{
+		title: 'NAT',
+		technologies: [
+			{
+				isImg: true,
+				content: '/imgs/technologies/node-js-icon.svg',
+				link: 'https://nodejs.org/'
+			}
+		],
+		badges: [
+			{
+				badge: 'https://img.shields.io/maintenance/no/2024',
+				link: 'https://github.com/Michaelpalacce/nat.git'
+			}
+		],
+		links: [
+			{
+				icon: '/imgs/github-icon.svg',
+				link: 'https://github.com/Michaelpalacce/nat.git'
+			}
+		],
+		link: 'https://github.com/Michaelpalacce/nat.git',
+		text: 'NodeJS Aria Tools. Faster and bleeding edge.',
+		images: []
+	},
 	{
 		title: 'ServerEmulator',
 		technologies: [
@@ -220,7 +246,7 @@ module.exports	= [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2022',
+				badge: 'https://img.shields.io/maintenance/no/2022',
 				link: 'https://github.com/Michaelpalacce/Server.git'
 			}
 		],
@@ -275,7 +301,7 @@ module.exports	= [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2023',
+				badge: 'https://img.shields.io/maintenance/no/2023',
 				link: 'https://github.com/Michaelpalacce/SimpleSecrets.git'
 			}
 		],
@@ -338,7 +364,7 @@ module.exports	= [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2021',
+				badge: 'https://img.shields.io/maintenance/no/2021',
 				link: 'https://github.com/Michaelpalacce/er_redis_data_server.git'
 			}
 		],
@@ -382,7 +408,7 @@ module.exports	= [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2021',
+				badge: 'https://img.shields.io/maintenance/no/2021',
 				link: 'https://github.com/Michaelpalacce/er_redis_data_server.git'
 			}
 		],
@@ -422,7 +448,7 @@ module.exports	= [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2021',
+				badge: 'https://img.shields.io/maintenance/no/2021',
 				link: 'https://github.com/Michaelpalacce/er_memcached_data_server.git'
 			}
 		],
@@ -472,7 +498,7 @@ module.exports	= [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2022',
+				badge: 'https://img.shields.io/maintenance/no/2022',
 				link: 'https://github.com/Michaelpalacce/ansible-docker.git'
 			}
 		],
@@ -501,7 +527,7 @@ module.exports	= [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2023',
+				badge: 'https://img.shields.io/maintenance/no/2023',
 				link: 'https://github.com/Michaelpalacce/ansible-docker-compose.git'
 			}
 		],
@@ -531,7 +557,7 @@ module.exports	= [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2023',
+				badge: 'https://img.shields.io/maintenance/no/2023',
 				link: 'https://github.com/Michaelpalacce/ansible-helm.git'
 			}
 		],
@@ -560,7 +586,7 @@ module.exports	= [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2023',
+				badge: 'https://img.shields.io/maintenance/no/2023',
 				link: 'https://github.com/Michaelpalacce/ansible-kubernetes-preflight.git'
 			}
 		],
@@ -589,7 +615,7 @@ module.exports	= [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2023',
+				badge: 'https://img.shields.io/maintenance/no/2023',
 				link: 'https://github.com/Michaelpalacce/ansible-kubernetes-cluster.git'
 			}
 		],
@@ -618,7 +644,7 @@ module.exports	= [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2023',
+				badge: 'https://img.shields.io/maintenance/no/2023',
 				link: 'https://github.com/Michaelpalacce/ansible-kubernetes-master-security.git'
 			}
 		],
