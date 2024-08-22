@@ -9,8 +9,8 @@ export default createStore({
 		navbarTimeout: null,
 		projects: [],
 		contacts: require('./data/contacts'),
-		abilities: [],
 		languages: require('./data/languages'),
+		abilities: [],
 		experiences: [],
 		certificates: [],
 		blogs: []

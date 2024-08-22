@@ -2,8 +2,8 @@
 
 const app = require('event_request')();
 const router = app.Router();
-const Abilities = require('../model/abilities');
-const Certificates = require('../model/certificates');
+const getAbilities = require('../model/abilities');
+const getCertificates = require('../model/certificates');
 const getExperiences = require('../model/experiences');
 
 /**
@@ -15,9 +15,7 @@ const getExperiences = require('../model/experiences');
  * @return	void
  */
 router.get('/abilities', (event) => {
-	const model = new Abilities();
-
-	event.conditionalSend(model.getAbilities());
+	event.conditionalSend(getAbilities());
 });
 
 /**
@@ -29,9 +27,7 @@ router.get('/abilities', (event) => {
  * @return	void
  */
 router.get('/certificates', (event) => {
-	const model = new Certificates();
-
-	event.conditionalSend(model.getCertificates());
+	event.conditionalSend(getCertificates());
 });
 
 /**
