@@ -50,7 +50,7 @@ class GetBlogs {
 			if (blog.title === blogTitle)
 				return Buffer.from(blog.content);
 
-		throw { code: 'app.api.blog.blogNotFound', status: 400 };
+		throw { code: 'app.api.blog.blogNotFound', status: 404 };
 	}
 }
 
