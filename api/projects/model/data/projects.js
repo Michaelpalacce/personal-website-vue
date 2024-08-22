@@ -76,7 +76,7 @@ module.exports = [
 		]
 	},
 	{
-		title: 'https://github.com/Michaelpalacce/go-ddns-controller',
+		title: 'Go DDNS Controller',
 		technologies: [
 			{
 				isImg: true,
