@@ -1,24 +1,22 @@
 'use strict';
 
-import axios	from 'axios';
+import axios from 'axios';
 
 /**
  * @brief	ApiCommunicator used to make request to the API of the ServerEmulator
  */
-class ApiCommunicator
-{
+class ApiCommunicator {
 	/**
 	 * @brief	Fetches all the projects
 	 *
 	 * @return	{Promise<AxiosResponse<any>>}
 	 */
-	async getAllProjects()
-	{
-		const response	= await axios.get( `/api/projects` ).catch( ( error ) => {
+	async getAllProjects() {
+		const response = await axios.get(`/api/projects`).catch((error) => {
 			return error;
 		});
 
-		if ( response.message )
+		if (response.message)
 			throw response;
 
 		return response;
@@ -29,13 +27,12 @@ class ApiCommunicator
 	 *
 	 * @return	{Promise<AxiosResponse<any>>}
 	 */
-	async getAllAbilities()
-	{
-		const response	= await axios.get( `/api/abilities` ).catch( ( error ) => {
+	async getAllAbilities() {
+		const response = await axios.get(`/api/abilities`).catch((error) => {
 			return error;
 		});
 
-		if ( response.message )
+		if (response.message)
 			throw response;
 
 		return response;
@@ -46,13 +43,12 @@ class ApiCommunicator
 	 *
 	 * @return	{Promise<AxiosResponse<any>>}
 	 */
-	async getAllBlogs()
-	{
-		const response	= await axios.get( `/api/blogs` ).catch( ( error ) => {
+	async getAllBlogs() {
+		const response = await axios.get(`/api/blogs`).catch((error) => {
 			return error;
 		});
 
-		if ( response.message )
+		if (response.message)
 			throw response;
 
 		return response;
@@ -63,13 +59,28 @@ class ApiCommunicator
 	 *
 	 * @return	{Promise<AxiosResponse<any>>}
 	 */
-	async getAllCertificates()
-	{
-		const response	= await axios.get( `/api/certificates` ).catch( ( error ) => {
+	async getAllCertificates() {
+		const response = await axios.get(`/api/certificates`).catch((error) => {
 			return error;
 		});
 
-		if ( response.message )
+		if (response.message)
+			throw response;
+
+		return response;
+	}
+
+	/**
+	 * @brief	Fetches all the experiences
+	 *
+	 * @return	{Promise<AxiosResponse<any>>}
+	 */
+	async getAllExperiences() {
+		const response = await axios.get(`/api/experiences`).catch((error) => {
+			return error;
+		});
+
+		if (response.message)
 			throw response;
 
 		return response;
@@ -82,13 +93,12 @@ class ApiCommunicator
 	 *
 	 * @return	{Promise<AxiosResponse<any>>}
 	 */
-	async getBlogContents( encodedBlogTitle )
-	{
-		const response	= await axios.get( `/api/blogs/${encodedBlogTitle}` ).catch( ( error ) => {
+	async getBlogContents(encodedBlogTitle) {
+		const response = await axios.get(`/api/blogs/${encodedBlogTitle}`).catch((error) => {
 			return error;
 		});
 
-		if ( response.message )
+		if (response.message)
 			throw response;
 
 		return response;
@@ -102,19 +112,17 @@ class ApiCommunicator
 	 *
 	 * @return	{String}
 	 */
-	_formatUrlWithQueryParams( url, queryParams )
-	{
-		let params	= new URLSearchParams();
+	_formatUrlWithQueryParams(url, queryParams) {
+		let params = new URLSearchParams();
 
-		for ( const [key, value] of Object.entries( queryParams ) )
-		{
-			if ( value )
-				params.append( key, value );
+		for (const [key, value] of Object.entries(queryParams)) {
+			if (value)
+				params.append(key, value);
 		}
 
-		params	= params.toString();
+		params = params.toString();
 
-		if ( params )
+		if (params)
 			url += `?${params}`;
 
 		return url;

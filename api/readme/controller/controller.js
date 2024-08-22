@@ -1,9 +1,10 @@
 'use strict';
 
-const app			= require( 'event_request' )();
-const router		= app.Router();
-const Abilities		= require( '../model/abilities' );
-const Certificates	= require( '../model/certificates' );
+const app = require('event_request')();
+const router = app.Router();
+const Abilities = require('../model/abilities');
+const Certificates = require('../model/certificates');
+const getExperiences = require('../model/experiences');
 
 /**
  * @brief	Returns all the abilities
@@ -13,10 +14,10 @@ const Certificates	= require( '../model/certificates' );
  *
  * @return	void
  */
-router.get( '/abilities', ( event ) =>{
-	const model	= new Abilities();
+router.get('/abilities', (event) => {
+	const model = new Abilities();
 
-	event.conditionalSend( model.getAbilities() );
+	event.conditionalSend(model.getAbilities());
 });
 
 /**
@@ -27,10 +28,22 @@ router.get( '/abilities', ( event ) =>{
  *
  * @return	void
  */
-router.get( '/certificates', ( event ) =>{
-	const model	= new Certificates();
+router.get('/certificates', (event) => {
+	const model = new Certificates();
 
-	event.conditionalSend( model.getCertificates() );
+	event.conditionalSend(model.getCertificates());
 });
 
-module.exports	= router;
+/**
+ * @brief	Returns all the experiences
+ *
+ * @details	Required Params: NONE
+ * 			Required Query: NONE
+ *
+ * @return	void
+ */
+router.get('/experiences', (event) => {
+	event.conditionalSend(getExperiences());
+});
+
+module.exports = router;

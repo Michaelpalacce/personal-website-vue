@@ -1,40 +1,44 @@
 <template>
 	<div class="mx-20 my-20 grid grid-cols-1 gap-5">
-		<ReadmeHeader href="#abilities" text="Abilities" :command="abilitiesCommand"/>
-		<ReadmeHeader href="#experience" text="Experience" :command="experienceCommand"/>
-		<ReadmeHeader href="#certificates" text="Certificates" :command="certificatesCommand"/>
-		<ReadmeHeader href="#languages" text="Languages" :command="languagesCommand"/>
-		<ReadmeHeader href="/CV" text="Curriculum vitae" :command="cvCommand"/>
+		<ReadmeHeader href="#abilities" text="Abilities" :command="abilitiesCommand" />
+		<ReadmeHeader href="#experience" text="Experience" :command="experienceCommand" />
+		<ReadmeHeader href="#certificates" text="Certificates" :command="certificatesCommand" />
+		<ReadmeHeader href="#languages" text="Languages" :command="languagesCommand" />
+		<ReadmeHeader href="/CV" text="Curriculum vitae" :command="cvCommand" />
 	</div>
 
-	<hr id="abilities"/>
+	<hr id="abilities" />
 	<transition name="readme">
-		<div class="text-center sm:text-left m-5" v-if="show" >
+		<div class="text-center sm:text-left m-5" v-if="show">
 			<span class="block text-4xl text-center font-semibold mt-10 mb-2">Abilities:</span>
-			<p v-if="show" class="text-xs text-center mx-auto opacity-50 mb-10">Name: Technology; Ready: Rating out of 5; Status: Actively learning it or not; Age: Since when; Node: professionally or not</p>
+			<p v-if="show" class="text-xs text-center mx-auto opacity-50 mb-10">Name: Technology; Ready: Rating out of
+				5; Status: Actively learning it or not; Age: Since when; Node: professionally or not</p>
 
 			<div class="mx-auto text-center">
-				<input
-					type="text" placeholder="Filter Abilities"
+				<input type="text" placeholder="Filter Abilities"
 					class="bg-transparent border-b border-gray border-opacity-75 w-1/2 h-10 outline-none"
-					v-model="abilitiesFilter"
-					ref="abilitiesInput"
-					@keyup="$refs.abilitiesInput.scrollIntoView( { behavior: 'smooth' } )"
-				>
+					v-model="abilitiesFilter" ref="abilitiesInput"
+					@keyup="$refs.abilitiesInput.scrollIntoView({ behavior: 'smooth' })">
 			</div>
 
 			<div v-for="ability in filteredAbilities">
 				<span class="block text-xl text-center font-semibold mt-10">{{ ability.name }}</span>
-				<p class="text-blue-500 cursor-pointer hover:text-blue-300 text-center mx-auto" @click="ability.shown = !ability.shown">
-					<TypewriterText title="sg@website: " :text="ability.command" class="text-xs md:text-base inline-block" />
-					<span class="inline-block ml-2 chevron"><svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" /></svg></span>
+				<p class="text-blue-500 cursor-pointer hover:text-blue-300 text-center mx-auto"
+					@click="ability.shown = !ability.shown">
+					<TypewriterText title="sg@website: " :text="ability.command"
+						class="text-xs md:text-base inline-block" />
+					<span class="inline-block ml-2 chevron"><svg xmlns="http://www.w3.org/2000/svg"
+							class="h-3 w-3 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M19 13l-7 7-7-7m14-8l-7 7-7-7" />
+						</svg></span>
 				</p>
 
 				<transition name="ability">
 					<div v-if="ability.shown || abilitiesFilter !== ''">
 						<div class="grid grid-cols-3 sm:grid-cols-5">
-							<p @click="sortByName( ability.name )" class="cursor-pointer text-blue-500">NAME</p>
-							<p @click="sortByReady( ability.name )" class="cursor-pointer text-blue-500">READY</p>
+							<p @click="sortByName(ability.name)" class="cursor-pointer text-blue-500">NAME</p>
+							<p @click="sortByReady(ability.name)" class="cursor-pointer text-blue-500">READY</p>
 							<p class="hidden sm:inline-block">STATUS</p>
 							<p>AGE</p>
 							<p class="hidden sm:inline-block">NODE</p>
@@ -56,7 +60,8 @@
 	<transition name="experience">
 		<div class="m-5 text-center sm:text-left" v-if="show">
 			<span class="block text-4xl text-center font-semibold mt-10 mb-2">Experience:</span>
-			<p v-if="show" class="text-xs text-center mx-auto opacity-50 mb-10">Last Seen: Working duration; Type: Position; Reason: Work/Internship/Course; Object: Employer/Location; Message: What did I do</p>
+			<p v-if="show" class="text-xs text-center mx-auto opacity-50 mb-10">Last Seen: Working duration; Type:
+				Position; Reason: Work/Internship/Course; Object: Employer/Location; Message: What did I do</p>
 
 			<div class="hidden lg:flex">
 				<p class="w-2/12">LAST SEEN</p>
@@ -67,13 +72,8 @@
 			</div>
 
 			<div class="lg:flex mb-5" v-for="experience in experiences">
-				<ReadmeExperienceSection
-					:lastSeen="experience.lastSeen"
-					:message="experience.message"
-					:type="experience.type"
-					:object="experience.object"
-					:reason="experience.reason"
-				/>
+				<ReadmeExperienceSection :lastSeen="experience.lastSeen" :message="experience.message"
+					:type="experience.type" :object="experience.object" :reason="experience.reason" />
 			</div>
 		</div>
 	</transition>
@@ -84,13 +84,10 @@
 			<span class="text-center block text-4xl font-semibold my-10">Courses && Certificates:</span>
 
 			<div class="mx-auto text-center">
-				<input
-					type="text" placeholder="Filter Certificates"
+				<input type="text" placeholder="Filter Certificates"
 					class="bg-transparent border-b border-gray border-opacity-75 w-1/2 h-10 outline-none"
-					v-model="certificatesFilter"
-					ref="certificateInput"
-					@keyup="$refs.certificateInput.scrollIntoView( { behavior: 'smooth' } )"
-				>
+					v-model="certificatesFilter" ref="certificateInput"
+					@keyup="$refs.certificateInput.scrollIntoView({ behavior: 'smooth' })">
 			</div>
 			<div class="grid lg:grid-cols-2">
 				<transition-group name="filterCertificates">
@@ -107,7 +104,9 @@
 							<span>Labels:</span>
 							<div class="grid grid-cols-1">
 								<p v-for="label in certificate.labels" class="mt-1">
-									{{ label.key }}=<span v-if="!label.link">{{ label.value }}</span><a class="text-blue-500" :href="label.value" v-if="label.link === true">{{ label.linkName || label.value }}</a>
+									{{ label.key }}=<span v-if="!label.link">{{ label.value }}</span><a
+										class="text-blue-500" :href="label.value" v-if="label.link === true">{{
+											label.linkName || label.value }}</a>
 								</p>
 							</div>
 						</div>
@@ -139,9 +138,8 @@ import ReadmeHeader from "./ReadmeHeader";
 import ReadmeExperienceSection from "./ReadmeExperienceSection";
 export default {
 	name: 'Readme',
-	components: {ReadmeExperienceSection, ReadmeHeader, TypewriterText},
-	data: function ()
-	{
+	components: { ReadmeExperienceSection, ReadmeHeader, TypewriterText },
+	data: function () {
 		return {
 			show: false,
 			abilitiesCommand: './fetchAbilities.sh',
@@ -150,26 +148,27 @@ export default {
 			certificatesCommand: 'kubectl describe cm',
 			cvCommand: `wget ${window.location.host}/CV`,
 			languages: this.$store.state.languages,
-			experiences: this.$store.state.experiences,
 			certificatesFilter: '',
 			abilitiesFilter: ''
 		};
 	},
 	async mounted() {
-		if ( this.$route.hash )
-			this.show	= true;
+		if (this.$route.hash)
+			this.show = true;
 
-		this.$store.commit( 'animateNavbarText', { text: 'cd ~', remove: true, removeAfter: 200, callback: () => {
-				this.$store.commit( 'changeNavbarPath', '~' )
-				this.$store.commit( 'animateNavbarText', { text: `cat README.md && ${this.abilitiesCommand}`, speed: 20 } );
-				this.show	= true;
+		this.$store.commit('animateNavbarText', {
+			text: 'cd ~', remove: true, removeAfter: 200, callback: () => {
+				this.$store.commit('changeNavbarPath', '~')
+				this.$store.commit('animateNavbarText', { text: `cat README.md && ${this.abilitiesCommand}`, speed: 20 });
+				this.show = true;
 			}
 		});
 
-		await this.$store.dispatch( 'populateAbilities' ).catch( console.log );
-		await this.$store.dispatch( 'populateCertificates' ).catch( console.log );
+		await this.$store.dispatch('populateAbilities').catch(console.log);
+		await this.$store.dispatch('populateCertificates').catch(console.log);
+		await this.$store.dispatch('populateExperiences').catch(console.log);
 	},
-	methods:{
+	methods: {
 		/**
 		 * @brief	Sorts abilities by how well I know them
 		 *
@@ -177,12 +176,12 @@ export default {
 		 *
 		 * @return	void
 		 */
-		sortByReady( abilityName ) {
-			this.abilities.map(( ability ) => {
-				if ( ability.name === abilityName )
-					return ability.items.sort(( first, second ) => {
-						const firstValue	= first.ready.split( '/' )[0];
-						const secondValue	= second.ready.split( '/' )[0];
+		sortByReady(abilityName) {
+			this.abilities.map((ability) => {
+				if (ability.name === abilityName)
+					return ability.items.sort((first, second) => {
+						const firstValue = first.ready.split('/')[0];
+						const secondValue = second.ready.split('/')[0];
 
 						return secondValue - firstValue;
 					});
@@ -197,12 +196,12 @@ export default {
 		 *
 		 * @return	void
 		 */
-		sortByName( abilityName ) {
-			this.abilities.forEach(( ability ) => {
-				if ( ability.name === abilityName ) {
-					ability.items.sort(( first, second ) => {
-						const firstName		= first.name;
-						const secondName	= second.name;
+		sortByName(abilityName) {
+			this.abilities.forEach((ability) => {
+				if (ability.name === abilityName) {
+					ability.items.sort((first, second) => {
+						const firstName = first.name;
+						const secondName = second.name;
 
 						return firstName > secondName ? 1 : secondName > firstName ? -1 : 0;
 					});
@@ -213,6 +212,7 @@ export default {
 	computed: {
 		abilities: function () { return this.$store.state.abilities; },
 		certificates: function () { return this.$store.state.certificates; },
+		experiences: function () { return this.$store.state.experiences; },
 
 		/**
 		 * @brief	Filters certificates according to a filter
@@ -223,8 +223,8 @@ export default {
 		 * @return	{Array}
 		 */
 		filteredCertificates() {
-			return this.certificates.filter(( certificate ) => {
-				return JSON.stringify( certificate ).toLowerCase().includes( this.certificatesFilter.toLowerCase() );
+			return this.certificates.filter((certificate) => {
+				return JSON.stringify(certificate).toLowerCase().includes(this.certificatesFilter.toLowerCase());
 			});
 		},
 
@@ -236,9 +236,9 @@ export default {
 		 * @return	{Array}
 		 */
 		filteredAbilities() {
-			return this.abilities.filter(( ability ) => {
-				ability.filteredItems	= ability.items.filter(( ability ) => {
-					return JSON.stringify( ability ).toLowerCase().includes( this.abilitiesFilter.toLowerCase() )
+			return this.abilities.filter((ability) => {
+				ability.filteredItems = ability.items.filter((ability) => {
+					return JSON.stringify(ability).toLowerCase().includes(this.abilitiesFilter.toLowerCase())
 				});
 
 				return ability.filteredItems.length > 0;
@@ -310,6 +310,7 @@ export default {
 }
 
 @keyframes slide {
+
 	0%,
 	100% {
 		transform: translate(0, 0);
@@ -320,7 +321,7 @@ export default {
 	}
 }
 
-.chevron{
+.chevron {
 	animation: slide 1s linear infinite;
 }
 </style>

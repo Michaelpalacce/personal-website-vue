@@ -1,23 +1,23 @@
-import { createStore }	from 'vuex'
-import communicator		from "../app/main/communicator";
+import { createStore } from 'vuex'
+import communicator from "../app/main/communicator";
 
 export default createStore({
 	state: {
-		welcomeScreen	: localStorage.welcomeScreen || 0,
-		navbarText		: '',
-		navbarPath		: '',
-		navbarTimeout	: null,
-		projects		: [],
-		contacts		: require( './data/contacts' ),
-		abilities		: [],
-		languages		: require( './data/languages' ),
-		experiences		: require( './data/experiences' ),
-		certificates	: [],
-		blogs			: []
+		welcomeScreen: localStorage.welcomeScreen || 0,
+		navbarText: '',
+		navbarPath: '',
+		navbarTimeout: null,
+		projects: [],
+		contacts: require('./data/contacts'),
+		abilities: [],
+		languages: require('./data/languages'),
+		experiences: [],
+		certificates: [],
+		blogs: []
 	},
 	mutations: {
-		seenWelcomeScreen( state ){ state.welcomeScreen		= localStorage.welcomeScreen	= 1; },
-		unseenWelcomeScreen( state ){ state.welcomeScreen	= localStorage.welcomeScreen	= 0; },
+		seenWelcomeScreen(state) { state.welcomeScreen = localStorage.welcomeScreen = 1; },
+		unseenWelcomeScreen(state) { state.welcomeScreen = localStorage.welcomeScreen = 0; },
 
 		/**
 		 * @brief	Populate the blogs with the given data
@@ -27,8 +27,8 @@ export default createStore({
 		 *
 		 * @return	void
 		 */
-		populateBlogs( state, data ) {
-			state.blogs	= data;
+		populateBlogs(state, data) {
+			state.blogs = data;
 		},
 
 		/**
@@ -39,8 +39,8 @@ export default createStore({
 		 *
 		 * @return	void
 		 */
-		populateProjects( state, data ) {
-			state.projects	= data;
+		populateProjects(state, data) {
+			state.projects = data;
 		},
 
 		/**
@@ -51,8 +51,8 @@ export default createStore({
 		 *
 		 * @return	void
 		 */
-		populateCertificates( state, data ) {
-			state.certificates	= data;
+		populateCertificates(state, data) {
+			state.certificates = data;
 		},
 
 		/**
@@ -63,8 +63,20 @@ export default createStore({
 		 *
 		 * @return	void
 		 */
-		populateAbilities( state, data ) {
-			state.abilities	= data;
+		populateAbilities(state, data) {
+			state.abilities = data;
+		},
+
+		/**
+		 * @brief	Populate the experiences with the given data
+		 *
+		 * @param	{Object} state
+		 * @param	{Object} data
+		 *
+		 * @return	void
+		 */
+		populateExperiences(state, data) {
+			state.experiences = data;
 		},
 
 		/**
@@ -75,9 +87,9 @@ export default createStore({
 		 *
 		 * @return	void
 		 */
-		populateBlog( state, data ) {
-			const blog		= this.getters.getBlog( data.encodedTitle );
-			blog.content	= data.content;
+		populateBlog(state, data) {
+			const blog = this.getters.getBlog(data.encodedTitle);
+			blog.content = data.content;
 		},
 
 		/**
@@ -88,9 +100,9 @@ export default createStore({
 		 *
 		 * @return	void
 		 */
-		setNavbarText( state, text = '' ) {
-			clearTimeout( state.navbarTimeout );
-			state.navbarText	= text;
+		setNavbarText(state, text = '') {
+			clearTimeout(state.navbarTimeout);
+			state.navbarText = text;
 		},
 
 		/**
@@ -109,30 +121,28 @@ export default createStore({
 		 *
 		 * @return	void
 		 */
-		animateNavbarText( state, { text, speed = 50, chunks = 1, remove = false, removeAfter = 2000, callback = () => {} } ) {
-			const animateText	= ( index = 0 ) => {
-				if ( text.length !== state.navbarText.length )
-				{
-					state.navbarText	+= text.slice( index, index + chunks );
-					index				+= chunks;
-					state.navbarTimeout	= setTimeout( () => {
-						animateText( index );
-					}, speed );
+		animateNavbarText(state, { text, speed = 50, chunks = 1, remove = false, removeAfter = 2000, callback = () => { } }) {
+			const animateText = (index = 0) => {
+				if (text.length !== state.navbarText.length) {
+					state.navbarText += text.slice(index, index + chunks);
+					index += chunks;
+					state.navbarTimeout = setTimeout(() => {
+						animateText(index);
+					}, speed);
 				}
-				else
-				{
-					if ( remove )
-						state.navbarTimeout	= setTimeout(() => {
+				else {
+					if (remove)
+						state.navbarTimeout = setTimeout(() => {
 							state.navbarText = '';
 							callback();
-						}, removeAfter )
+						}, removeAfter)
 					else
 						callback();
 				}
 			}
 
-			clearTimeout( state.navbarTimeout );
-			state.navbarText	= '';
+			clearTimeout(state.navbarTimeout);
+			state.navbarText = '';
 			animateText();
 		},
 
@@ -144,8 +154,8 @@ export default createStore({
 		 *
 		 * @return	void
 		 */
-		changeNavbarPath( state, path ) {
-			state.navbarPath	= path;
+		changeNavbarPath(state, path) {
+			state.navbarPath = path;
 		}
 	},
 	actions: {
@@ -161,21 +171,20 @@ export default createStore({
 		 *
 		 * @return {Promise<Object>}
 		 */
-		async getBlog( { commit, dispatch, getters }, encodedTitle )
-		{
-			await dispatch( 'populateBlogs' );
-			const blog	= getters.getBlog( encodedTitle );
+		async getBlog({ commit, dispatch, getters }, encodedTitle) {
+			await dispatch('populateBlogs');
+			const blog = getters.getBlog(encodedTitle);
 
-			if ( blog === null )
+			if (blog === null)
 				return null;
 
-			if ( blog.content !== '' )
+			if (blog.content !== '')
 				return blog;
 
-			const blogResponse	= await communicator.getBlogContents( encodedTitle );
-			const content		= blogResponse.data;
+			const blogResponse = await communicator.getBlogContents(encodedTitle);
+			const content = blogResponse.data;
 
-			commit( 'populateBlog', { encodedTitle, content } );
+			commit('populateBlog', { encodedTitle, content });
 
 			return blog;
 		},
@@ -188,15 +197,14 @@ export default createStore({
 		 *
 		 * @return	{Promise<void>}
 		 */
-		async populateBlogs( { state, commit } )
-		{
-			if ( state.blogs.length !== 0 )
+		async populateBlogs({ state, commit }) {
+			if (state.blogs.length !== 0)
 				return;
 
-			const blogsResponse	= await communicator.getAllBlogs();
-			const blogs			= blogsResponse.data;
+			const blogsResponse = await communicator.getAllBlogs();
+			const blogs = blogsResponse.data;
 
-			commit( 'populateBlogs', blogs );
+			commit('populateBlogs', blogs);
 		},
 
 		/**
@@ -207,15 +215,14 @@ export default createStore({
 		 *
 		 * @return	{Promise<void>}
 		 */
-		async populateCertificates( { state, commit } )
-		{
-			if ( state.certificates.length !== 0 )
+		async populateCertificates({ state, commit }) {
+			if (state.certificates.length !== 0)
 				return;
 
-			const certificatesResponse	= await communicator.getAllCertificates();
-			const certificates			= certificatesResponse.data;
+			const certificatesResponse = await communicator.getAllCertificates();
+			const certificates = certificatesResponse.data;
 
-			commit( 'populateCertificates', certificates );
+			commit('populateCertificates', certificates);
 		},
 
 		/**
@@ -226,15 +233,14 @@ export default createStore({
 		 *
 		 * @return	{Promise<void>}
 		 */
-		async populateProjects( { state, commit } )
-		{
-			if ( state.projects.length !== 0 )
+		async populateProjects({ state, commit }) {
+			if (state.projects.length !== 0)
 				return;
 
-			const projectsResponse	= await communicator.getAllProjects();
-			const projects			= projectsResponse.data;
+			const projectsResponse = await communicator.getAllProjects();
+			const projects = projectsResponse.data;
 
-			commit( 'populateProjects', projects );
+			commit('populateProjects', projects);
 		},
 
 		/**
@@ -245,15 +251,32 @@ export default createStore({
 		 *
 		 * @return	{Promise<void>}
 		 */
-		async populateAbilities( { state, commit } )
-		{
-			if ( state.abilities.length !== 0 )
+		async populateAbilities({ state, commit }) {
+			if (state.abilities.length !== 0)
 				return;
 
-			const abilitiesResponse	= await communicator.getAllAbilities();
-			const abilities			= abilitiesResponse.data;
+			const abilitiesResponse = await communicator.getAllAbilities();
+			const abilities = abilitiesResponse.data;
 
-			commit( 'populateAbilities', abilities );
+			commit('populateAbilities', abilities);
+		},
+
+		/**
+		 * @brief	Populates the experiences if needed
+		 *
+		 * @param	{Object} state
+		 * @param	{Function} commit
+		 *
+		 * @return	{Promise<void>}
+		 */
+		async populateExperiences({ state, commit }) {
+			if (state.experiences.length !== 0)
+				return;
+
+			const experiencesResponse = await communicator.getAllExperiences();
+			const experiences = experiencesResponse.data;
+
+			commit('populateExperiences', experiences);
 		}
 	},
 	getters: {
@@ -264,8 +287,8 @@ export default createStore({
 		 *
 		 * @return	{Function}
 		 */
-		getBlog: ( state ) => ( encodedBlogTitle ) => {
-			return state.blogs.find( blog => blog.encodedTitle === encodedBlogTitle );
+		getBlog: (state) => (encodedBlogTitle) => {
+			return state.blogs.find(blog => blog.encodedTitle === encodedBlogTitle);
 		}
 	},
 	modules: {
