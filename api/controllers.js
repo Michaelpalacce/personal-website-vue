@@ -19,8 +19,7 @@ app.apply(app.er_static, { paths: ['dist'], cache: { cacheControl: 'public', exp
 
 // CV
 app.get('/CV', app.er_cache.cache({ cacheControl: 'public', expirationDirectives: { 'max-age': 3600 } }), (event) => {
-	event.setResponseHeader('Content-Type', 'application/pdf');
-	fs.createReadStream(`${PROJECT_ROOT}/dist/CV.pdf`).pipe(event.response);
+	event.redirect('https://resume.stefangenov.site/sgenov/stefan-genov')
 });
 
 // Frontend
