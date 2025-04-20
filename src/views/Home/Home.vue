@@ -59,7 +59,7 @@ export default {
 				this.$store.commit('animateNavbarText', {
 					text: 'whoami', remove: true, removeAfter: 500, callback: () => {
 						this.whois = true;
-						this.$store.commit('animateNavbarText', { text: 'whois stefangenov.site' });
+						this.$store.commit('animateNavbarText', { text: 'whois sgenov.dev' });
 					}
 				});
 			}
