@@ -31,7 +31,7 @@
 		</div>
 
 		<CopyableText class="text-center mt-20 block" v-if="whois" textColor="text-yellow-500"
-			text="sgenov94@gmail.com" />
+			text="stefan@sgenov.dev" />
 	</transition-group>
 </template>
 
