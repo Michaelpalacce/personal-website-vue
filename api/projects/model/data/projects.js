@@ -20,7 +20,7 @@ module.exports = [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2024',
+				badge: 'https://img.shields.io/maintenance/yes/2025',
 				link: 'https://github.com/Michaelpalacce/personal-website-vue.git'
 			}
 		],
@@ -54,7 +54,7 @@ module.exports = [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2024',
+				badge: 'https://img.shields.io/maintenance/yes/2025',
 				link: 'https://github.com/Michaelpalacce/.dotfiles.git'
 			}
 		],
@@ -86,7 +86,7 @@ module.exports = [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2024',
+				badge: 'https://img.shields.io/maintenance/yes/2025',
 				link: 'https://github.com/Michaelpalacce/go-ddns-controller.git'
 			}
 		],
@@ -151,7 +151,7 @@ module.exports = [
 				badge: 'https://app.codacy.com/project/badge/Coverage/3c843dd2bc454f06b10eb60820dc6d1b'
 			},
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2024',
+				badge: 'https://img.shields.io/maintenance/yes/2025',
 				link: 'https://github.com/Michaelpalacce/EventRequest.git'
 			}
 		],
