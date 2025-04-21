@@ -100,6 +100,32 @@ module.exports = [
 		text: 'A Kubernetes controller for managing DDNS records. Written to work with various providers and notifiers.',
 		images: []
 	},
+
+	{
+		title: 'go-btva',
+		technologies: [
+			{
+				isImg: true,
+				content: '/imgs/technologies/golang-official.svg',
+				link: 'https://go.dev/'
+			},
+		],
+		badges: [
+			{
+				badge: 'https://img.shields.io/maintenance/yes/2025',
+				link: 'https://github.com/Michaelpalacce/go-btva.git'
+			}
+		],
+		links: [
+			{
+				icon: '/imgs/github-icon.svg',
+				link: 'https://github.com/Michaelpalacce/go-btva.git'
+			}
+		],
+		link: 'https://github.com/Michaelpalacce/go-btva.git',
+		text: 'Zero Dependency Environment setup for Build Tools For VMware Aria',
+		images: []
+	},
 	{
 		title: 'EventRequest',
 		nodeModule: {
