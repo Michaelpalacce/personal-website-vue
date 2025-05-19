@@ -1,6 +1,6 @@
 <template>
 	<div class="flex">
-		<LinkComponent class="text-5xl sm:text-7xl mt-10 w-1/2 mx-auto" text="Hello!" />
+		<LinkComponent class="text-5xl sm:text-7xl mt-10 w-1/2 mx-auto text-center" text="Hello!" />
 	</div>
 
 	<transition name="whoami">
