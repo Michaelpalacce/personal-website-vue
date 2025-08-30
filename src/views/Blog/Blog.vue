@@ -66,9 +66,7 @@ export default {
 		this.blogEncName	= encodeURIComponent( this.blogTitle ).toLowerCase();
 		this.$store.commit( 'animateNavbarText', { text: `less ${this.blogEncName}.blog`, speed: 20 } );
 
-		setImmediate(()=>{
-			hljs.highlightAll();
-		});
+		hljs.highlightAll();
 	},
 
 	methods: {

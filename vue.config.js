@@ -1,7 +1,6 @@
-const config	= {
+const config = {
 	configureWebpack: {
-		devServer: {
-		}
+		devServer: {}
 	},
 	productionSourceMap: false,
 	devServer: {
@@ -9,4 +8,4 @@ const config	= {
 	}
 };
 
-module.exports	= config;
+module.exports = config;
