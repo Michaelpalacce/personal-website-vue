@@ -2,7 +2,9 @@
 	"name": "personal-website-vue",
 	"version": "2.15.0",
 	"private": true,
-	"engines": {},
+	"engines": {
+		"node": "v22"
+	},
 	"scripts": {
 		"serve": "vue-cli-service serve",
 		"build": "rm -rf dist && vue-cli-service build"
