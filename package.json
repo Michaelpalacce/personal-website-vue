@@ -25,7 +25,7 @@
 		"axios": "^1.6.7",
 		"fs-browser": "^1.0.0",
 		"mitt": "^2.1.0",
-		"postcss": "^8.0.0",
+		"postcss": "^8.5.6",
 		"sass": "^1.26.5",
 		"sass-loader": "^8.0.2",
 		"tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2",

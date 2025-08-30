@@ -1,10 +1,10 @@
-FROM node:14-alpine as builder
+FROM node:16-alpine AS builder
 
 WORKDIR /app
 COPY . .
 RUN npm i && npm run build && npm prune --production && rm -rf src
 
-FROM node:14-alpine as base
+FROM node:16-alpine AS base
 
 ENV REQUEST_TIMEOUT="60000"
 ENV DATA_PATH="/tmp"
