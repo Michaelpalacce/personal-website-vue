@@ -112,7 +112,7 @@ module.exports = [
 		],
 		badges: [
 			{
-				badge: 'https://img.shields.io/maintenance/yes/2025',
+				badge: 'https://img.shields.io/maintenance/no/2025',
 				link: 'https://github.com/Michaelpalacce/go-btva.git'
 			}
 		],
