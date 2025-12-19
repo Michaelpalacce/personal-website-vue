@@ -33,6 +33,12 @@
 		<CopyableText class="text-center mt-20 block" v-if="whois" textColor="text-yellow-500"
 			text="stefan@sgenov.dev" />
 	</transition-group>
+
+	<transition-group name="wife">
+		<div class="text-center w-screen bg-gray-800 h-10 mt-20 text-xl" v-if="wife">
+			Looking for a great photographer based in Plovdiv? Click <a class="text-red-600" href="https://adygenova.com">here</a>
+		</div>
+	</transition-group>
 </template>
 
 <script>
@@ -48,6 +54,7 @@ export default {
 		return {
 			whois: false,
 			whoami: false,
+			wife: false,
 			contacts: this.$store.state.contacts
 		};
 	},
@@ -60,6 +67,12 @@ export default {
 					text: 'whoami', remove: true, removeAfter: 500, callback: () => {
 						this.whois = true;
 						this.$store.commit('animateNavbarText', { text: 'whois sgenov.dev' });
+
+						this.$store.commit('animateNavbarText', {
+							text: 'cat /home/adygenova/intro', remove: true, removeAfter: 500, speed: 20, callback: () => {
+								this.wife = true;
+							}
+						});
 					}
 				});
 			}
@@ -86,6 +99,16 @@ export default {
 
 .whoami-enter-from,
 .whoami-leave-to {
+	opacity: 0;
+}
+
+.wife-enter-active,
+.wife-leave-active {
+	transition: opacity 1s ease;
+}
+
+.wife-enter-from,
+.wife-leave-to {
 	opacity: 0;
 }
 </style>

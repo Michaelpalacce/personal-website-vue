@@ -100,32 +100,6 @@ module.exports = [
 		text: 'A Kubernetes controller for managing DDNS records. Written to work with various providers and notifiers.',
 		images: []
 	},
-
-	{
-		title: 'go-btva',
-		technologies: [
-			{
-				isImg: true,
-				content: '/imgs/technologies/golang-official.svg',
-				link: 'https://go.dev/'
-			},
-		],
-		badges: [
-			{
-				badge: 'https://img.shields.io/maintenance/no/2025',
-				link: 'https://github.com/Michaelpalacce/go-btva.git'
-			}
-		],
-		links: [
-			{
-				icon: '/imgs/github-icon.svg',
-				link: 'https://github.com/Michaelpalacce/go-btva.git'
-			}
-		],
-		link: 'https://github.com/Michaelpalacce/go-btva.git',
-		text: 'Zero Dependency Environment setup for Build Tools For VMware Aria',
-		images: []
-	},
 	{
 		title: 'EventRequest',
 		nodeModule: {
@@ -199,6 +173,55 @@ module.exports = [
 			'/imgs/EventRequest-1.svg',
 			'/imgs/EventRequest-2.png'
 		]
+	},
+
+	{
+		title: 'HomeLab',
+		technologies: [
+			{
+				isImg: true,
+				content: '/imgs/technologies/k8s.png',
+				link: 'https://kubernetes.io/'
+			}
+		],
+		links: [
+			{
+				icon: '/imgs/github-icon.svg',
+				link: 'https://github.com/Michaelpalacce/HomeLab.git'
+			}
+		],
+		link: 'https://github.com/Michaelpalacce/HomeLab.git',
+		text: 'Contains my entire HomeLab architecture on K8S and all my setup scripts',
+		images: [
+			'/imgs/projects/homelab/1.png',
+			'/imgs/projects/homelab/2.png'
+		]
+	},
+
+	{
+		title: 'go-btva',
+		technologies: [
+			{
+				isImg: true,
+				content: '/imgs/technologies/golang-official.svg',
+				link: 'https://go.dev/'
+			},
+		],
+		badges: [
+			{
+				badge: 'https://img.shields.io/maintenance/no/2025',
+				link: 'https://github.com/Michaelpalacce/go-btva.git'
+			}
+		],
+		links: [
+			{
+				icon: '/imgs/github-icon.svg',
+				link: 'https://github.com/Michaelpalacce/go-btva.git'
+			}
+		],
+		link: 'https://github.com/Michaelpalacce/go-btva.git',
+		text: 'Zero Dependency Environment setup for Build Tools For VMware Aria',
+		images: []
 	},
 
 	{
@@ -351,29 +374,6 @@ module.exports = [
 			'/imgs/projects/simplesecrets/example-5.png',
 		]
 	},
-	{
-		title: 'HomeLab',
-		technologies: [
-			{
-				isImg: true,
-				content: '/imgs/technologies/k8s.png',
-				link: 'https://kubernetes.io/'
-			}
-		],
-		links: [
-			{
-				icon: '/imgs/github-icon.svg',
-				link: 'https://github.com/Michaelpalacce/HomeLab.git'
-			}
-		],
-		link: 'https://github.com/Michaelpalacce/HomeLab.git',
-		text: 'Contains my entire HomeLab architecture on K8S and all my setup scripts',
-		images: [
-			'/imgs/projects/homelab/1.png',
-			'/imgs/projects/homelab/2.png'
-		]
-	},
-
 	{
 		title: 'FsBrowser',
 		technologies: [
