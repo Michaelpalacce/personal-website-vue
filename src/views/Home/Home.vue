@@ -1,11 +1,11 @@
 <template>
 	<div class="flex">
-		<LinkComponent class="text-5xl sm:text-7xl mt-10 w-1/2 mx-auto text-center" text="Hello!" />
+		<LinkComponent class="text-5xl sm:text-7xl mt-6 w-1/2 mx-auto text-center" text="Hello!" />
 	</div>
 
 	<transition name="whoami">
 		<div v-if="whoami">
-			<div class="text-blue-500 text-base text-center mt-20 tracking-wider">
+			<div class="text-blue-500 text-base text-center mt-10 tracking-wider">
 				&lt;name&gt;
 				<span class="hidden sm:inline-block text-white text-xl mx-3">My name is</span>
 				<span class="text-white text-2xl sm:text-3xl">Stefan Genov</span>
@@ -35,7 +35,7 @@
 	</transition-group>
 
 	<transition-group name="wife">
-		<div class="text-center w-screen bg-gray-800 h-10 mt-20 text-xl" v-if="wife">
+		<div class="text-center w-screen bg-gray-800 h-10 mt-10 text-xl" v-if="wife">
 			Looking for a great photographer based in Plovdiv? <a class="text-red-600" href="https://adygenova.com">https://adygenova.com</a>
 		</div>
 	</transition-group>
