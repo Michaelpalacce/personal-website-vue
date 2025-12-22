@@ -3,7 +3,7 @@
 
 	<Welcome v-if="$store.state.welcomeScreen == 0"/>
 
-	<div v-if="$store.state.welcomeScreen == 1">
+	<div class="pb-36" v-if="$store.state.welcomeScreen == 1">
 		<Navbar />
 		<router-view />
 	</div>

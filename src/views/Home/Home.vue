@@ -36,7 +36,7 @@
 
 	<transition-group name="wife">
 		<div class="text-center w-screen bg-gray-800 h-10 mt-20 text-xl" v-if="wife">
-			Looking for a great photographer based in Plovdiv? Click <a class="text-red-600" href="https://adygenova.com">here</a>
+			Looking for a great photographer based in Plovdiv? <a class="text-red-600" href="https://adygenova.com">https://adygenova.com</a>
 		</div>
 	</transition-group>
 </template>
@@ -60,16 +60,16 @@ export default {
 	},
 	mounted() {
 		this.$store.commit('animateNavbarText', {
-			text: 'cd /home/sg', remove: true, removeAfter: 500, speed: 30, callback: () => {
+			text: 'cd /home/sg', remove: true, removeAfter: 250, speed: 30, callback: () => {
 				this.whoami = true;
 				this.$store.commit('changeNavbarPath', '/home/sg');
 				this.$store.commit('animateNavbarText', {
-					text: 'whoami', remove: true, removeAfter: 500, callback: () => {
+					text: 'whoami', remove: true, removeAfter: 250, callback: () => {
 						this.whois = true;
 						this.$store.commit('animateNavbarText', { text: 'whois sgenov.dev' });
 
 						this.$store.commit('animateNavbarText', {
-							text: 'cat /home/adygenova/intro', remove: true, removeAfter: 500, speed: 20, callback: () => {
+							text: 'cat /home/adygenova/intro', remove: true, removeAfter: 250, speed: 20, callback: () => {
 								this.wife = true;
 							}
 						});
