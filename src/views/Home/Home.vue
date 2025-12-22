@@ -22,7 +22,7 @@
 	</transition>
 
 	<transition-group name="whois">
-		<div class="grid grid-cols-4 gap-y-20 mt-20" v-if="whois">
+		<div class="grid grid-cols-4 gap-y-20 mt-10" v-if="whois">
 			<a v-for="contact in contacts" :href="contact.link" class="h-10 w-10 sm:h-14 sm:w-14 mx-auto"
 				:key="contact.text">
 				<img :src="contact.image" alt="" class="h-full">
@@ -30,7 +30,7 @@
 			</a>
 		</div>
 
-		<CopyableText class="text-center mt-20 block" v-if="whois" textColor="text-yellow-500"
+		<CopyableText class="text-center mt-10 block" v-if="whois" textColor="text-yellow-500"
 			text="stefan@sgenov.dev" />
 	</transition-group>
 
