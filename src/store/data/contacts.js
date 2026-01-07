@@ -1,4 +1,4 @@
-module.exports	= [
+module.exports = [
 	{
 		image: '/imgs/github-icon.svg',
 		link: 'https://github.com/Michaelpalacce',
@@ -18,5 +18,10 @@ module.exports	= [
 		image: '/imgs/telegram-icon.svg',
 		link: 'https://t.me/stefantigro',
 		text: 'Telegram'
+	},
+	{
+		image: '/imgs/quartz-icon.png',
+		link: 'https://garden.sgenov.dev',
+		text: 'Brain'
 	}
 ];
