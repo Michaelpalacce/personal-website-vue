@@ -62,7 +62,6 @@ export default {
 			nodeModule: this.project.nodeModule || {},
 			links: this.project.links || [],
 			badges: this.project.badges || [],
-			// technologies: this.project.technologies || [],
 			installCommand: this.project.installCommand
 		};
 	},
