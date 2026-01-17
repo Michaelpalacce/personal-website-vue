@@ -259,7 +259,7 @@ module.exports = [
         link: "https://garden.sgenov.dev/The-Fallacy-Of-Self-Contributions-Benefiting-Corporations",
       },
     ],
-    text: 'STEF Integration testing framework that I wrote to optimize the processes internally at broadcom. Read more about this: <a href="" class="text-red-500">NPM</a>',
+    text: 'STEF Integration testing framework that I wrote to optimize the processes internally at broadcom. Read more about this: <a href="https://garden.sgenov.dev/The-Fallacy-Of-Self-Contributions-Benefiting-Corporations" class="text-red-500">Blog</a>',
     images: [],
   },
   {
