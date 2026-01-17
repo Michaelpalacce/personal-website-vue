@@ -225,6 +225,25 @@ module.exports = [
     images: ["/imgs/projects/homelab/1.png", "/imgs/projects/homelab/2.png"],
   },
   {
+    title: "HomeLab-IaC",
+    technologies: [
+      {
+        isImg: true,
+        content: "/imgs/technologies/terraform.png",
+        link: "https://www.hashicorp.com/en/products/terraform",
+      },
+    ],
+    links: [
+      {
+        icon: "/imgs/github-icon.svg",
+        link: "https://github.com/Michaelpalacce/HomeLab-IaC.git",
+      },
+    ],
+    link: "https://github.com/Michaelpalacce/HomeLab-IaC.git",
+    text: "An extension of my HomeLab, containing my terraform scripts focused on keeping my infra in a desired state.",
+    images: [],
+  },
+  {
     title: "Software Testing Enterprise Framework",
     technologies: [
       {
