@@ -225,6 +225,25 @@ module.exports = [
     images: ["/imgs/projects/homelab/1.png", "/imgs/projects/homelab/2.png"],
   },
   {
+    title: "Software Testing Enterprise Framework",
+    technologies: [
+      {
+        isImg: true,
+        content: "/imgs/technologies/node-js-icon.svg",
+        link: "https://nodejs.org/",
+      },
+    ],
+    badges: [],
+    links: [
+      {
+        icon: "/imgs/quartz-icon.png",
+        link: "https://garden.sgenov.dev/The-Fallacy-Of-Self-Contributions-Benefiting-Corporations",
+      },
+    ],
+    text: 'STEF Integration testing framework that I wrote to optimize the processes internally at broadcom. Read more about this: <a href="" class="text-red-500">NPM</a>',
+    images: [],
+  },
+  {
     title: "go-btva",
     technologies: [
       {
