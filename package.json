@@ -1,6 +1,6 @@
 {
 	"name": "personal-website-vue",
-	"version": "2.24.1",
+	"version": "2.25.0",
 	"private": true,
 	"engines": {
 		"node": "v22"
