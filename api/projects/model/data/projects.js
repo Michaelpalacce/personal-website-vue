@@ -62,6 +62,35 @@ module.exports = [
     images: ["/imgs/Garden.png"],
   },
   {
+    title: "ReplacedBy",
+    technologies: [
+      {
+        isImg: true,
+        content: "/imgs/technologies/golang-official.svg",
+        link: "https://go.dev/",
+      },
+    ],
+    badges: [
+      {
+        badge: "https://img.shields.io/maintenance/yes/2026",
+        link: "https://github.com/Michaelpalacce/ReplacedBy.git",
+      },
+    ],
+    links: [
+      {
+        icon: "/imgs/replacedby.ico",
+        link: "https://replacedby.net",
+      },
+      {
+        icon: "/imgs/github-icon.svg",
+        link: "https://github.com/Michaelpalacce/ReplacedBy",
+      },
+    ],
+    link: "https://replacedby.net",
+    text: "A memorial of sorts for people who have been replaced by AI/Automation/Robots.",
+    images: ["/imgs/ReplacedBy.png"],
+  },
+  {
     title: ".dotfiles",
     installCommand:
       "curl -o- https://raw.githubusercontent.com/Michaelpalacce/.dotfiles/master/setup.sh | bash",
